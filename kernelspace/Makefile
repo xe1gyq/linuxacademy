@@ -3,6 +3,7 @@ obj-m += timer.o
 obj-m += tasklet.o
 obj-m += workqueue.o
 obj-m += kthread.o
+obj-m += input.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
