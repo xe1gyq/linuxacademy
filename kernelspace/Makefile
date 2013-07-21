@@ -5,6 +5,7 @@ obj-m += workqueue.o
 obj-m += kthread.o
 obj-m += input.o
 obj-m += procfs.o
+obj-m += sysfs.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
