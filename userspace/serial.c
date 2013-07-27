@@ -53,14 +53,20 @@ int main(int argc, char *argv[])
 {
 	int arg_seconds;
 	int fd;
-	char *serialdev = "/dev/ttyS0";
+	char *serialdev = (argv[2]);
 
-	if(argc > 1) {
+	if (argc > 1) {
 		arg_seconds=atoi(argv[1]);
 	}
 	else {
 		printf("Please introduce the sleep time in seconds: ./serial X \n");
 		return 1;
+	}
+
+	if ((argv[2]==0))  {
+		printf("Please add a /dev/ttyXX terminal to be used by serial. \n");
+		return 1;
+
 	}
 
 	fd = openserial(serialdev, arg_seconds);
