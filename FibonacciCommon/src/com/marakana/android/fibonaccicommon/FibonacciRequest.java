@@ -21,6 +21,11 @@ public class FibonacciRequest implements Parcelable {
 		this.type = type;
 	}
 
+	public FibonacciRequest(Parcel in) {
+		this.n = in.readLong();
+		this.type = Type.values()[in.readInt()];
+	}
+	
 	public long getN() {
 		return n;
 	}
@@ -40,9 +45,7 @@ public class FibonacciRequest implements Parcelable {
 
 	public static final Parcelable.Creator<FibonacciRequest> CREATOR = new Parcelable.Creator<FibonacciRequest>() {
 		public FibonacciRequest createFromParcel(Parcel in) {
-			long n = in.readLong();
-			Type type = Type.values()[in.readInt()];
-			return new FibonacciRequest(n, type);
+			return new FibonacciRequest(in);
 		}
 
 		public FibonacciRequest[] newArray(int size) {

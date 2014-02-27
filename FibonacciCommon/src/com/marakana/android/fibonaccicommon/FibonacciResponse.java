@@ -13,6 +13,11 @@ public class FibonacciResponse implements Parcelable {
 		this.result = result;
 		this.timeInMillis = timeInMillis;
 	}
+	
+	public FibonacciResponse(Parcel in) {
+		this.result = in.readLong();
+		this.timeInMillis = in.readLong();
+	}
 
 	public long getResult() {
 		return result;
@@ -33,7 +38,7 @@ public class FibonacciResponse implements Parcelable {
 
 	public static final Parcelable.Creator<FibonacciResponse> CREATOR = new Parcelable.Creator<FibonacciResponse>() {
 		public FibonacciResponse createFromParcel(Parcel in) {
-			return new FibonacciResponse(in.readLong(), in.readLong());
+			return new FibonacciResponse(in);
 		}
 
 		public FibonacciResponse[] newArray(int size) {
