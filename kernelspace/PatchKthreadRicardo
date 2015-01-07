@@ -1,0 +1,25 @@
+--- ../../linlearn2/linuxlearning/kernelspace/kthread.c	2015-01-06 23:35:40.169438452 -0600
++++ kthread.c	2015-01-06 14:36:27.877563779 -0600
+@@ -1,7 +1,7 @@
+ #include <linux/delay.h>
+ #include <linux/init.h>
+ #include <linux/module.h>
+-#include <linux/sched.h>
++#include <linux/kthread.h>
+ 
+ static int kthread_function(void *unused) {
+ 
+@@ -17,11 +17,11 @@
+ 
+ static int __init kthread_init_function(void)
+ {
+-	int ret_val;
++	struct task_struct *task;
+ 
+ 	printk(KERN_INFO "Kthread? Hello!\n");
+ 
+-	ret_val = kernel_thread(kthread_function, NULL, CLONE_FS);
++	task = kthread_create(kthread_function, NULL, "ASUPER_THREAD");
+ 
+ 	return 0;
+ }

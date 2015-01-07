@@ -6,15 +6,16 @@
 #include <linux/uaccess.h>
 
 static char procfs_buffer[256];
+struct proc_dir_entry *fd_procfs;
 
-int procfs_read(char *buffer, char **start, off_t offset, int count, int *eof, void *data)
+ssize_t procfs_read(struct file *file, char __user *buffer, size_t count, loff_t *offset)
 {
 	int buffer_length;
 	buffer_length = snprintf(buffer, count, "%s", procfs_buffer);
 	return buffer_length;
 }
 
-static int procfs_write(struct file *file, const char *buffer, unsigned long count, void *data)
+ssize_t procfs_write(struct file *file, const char __user *buffer, size_t count, loff_t *offset)
 {
 	copy_from_user(procfs_buffer, buffer, count);
 	procfs_buffer[count] = '\0';
@@ -23,12 +24,15 @@ static int procfs_write(struct file *file, const char *buffer, unsigned long cou
 
 static int procfs_init_function(void)
 {
-	struct proc_dir_entry *fd_procfs = create_proc_entry("procfs_module", 0667, 0);
+	const static struct file_operations fops = {
+		.owner = THIS_MODULE,
+		.write = procfs_write,
+		.read = procfs_read
+	};
+
+	fd_procfs = proc_create("procfs_module", 0667, NULL, &fops);
 
 	printk(KERN_INFO "Procfs? Hello!\n");
-
-	fd_procfs->read_proc = procfs_read;
-	fd_procfs->write_proc = procfs_write;
 
 	sprintf(procfs_buffer, "Procf? Hello!\n");
 	return 0 ;
@@ -36,7 +40,7 @@ static int procfs_init_function(void)
 
 void __exit procfs_cleanup_function(void) {
 
-	remove_proc_entry("procfs_module", NULL);
+	remove_proc_entry("procfs_module", fd_procfs);
 	printk(KERN_INFO "Goodbye Procfs!\n");
 
 }
