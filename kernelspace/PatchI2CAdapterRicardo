@@ -1,0 +1,27 @@
+--- ../../linlearn2/linuxlearning/kernelspace/i2c_adapter.c	2015-01-06 23:35:40.169438452 -0600
++++ i2c_adapter.c	2015-01-06 17:07:24.078088546 -0600
+@@ -17,7 +17,6 @@
+ 
+ 
+ #include <linux/kernel.h>
+-#include <linux/config.h>
+ #include <linux/module.h>
+ #include <linux/stddef.h>
+ #include <linux/i2c.h>
+@@ -86,15 +85,13 @@
+ }
+ 
+ static struct i2c_algorithm tiny_algorithm = {
+-	.name		= "tiny algorithm",
+-	.id		= I2C_ALGO_SMBUS,
+ 	.smbus_xfer	= tiny_access,
+ 	.functionality	= tiny_func,
+ };
+ 
+ static struct i2c_adapter tiny_adapter = {
+ 	.owner		= THIS_MODULE,
+-	.class		= I2C_ADAP_CLASS_SMBUS,
++	.class		= I2C_CLASS_HWMON,
+ 	.algo		= &tiny_algorithm,
+ 	.name		= "tiny adapter",
+ };
