@@ -1,0 +1,15 @@
+--- ../../linlearn2/linuxlearning/kernelspace/Makefile	2015-01-06 23:35:40.169438452 -0600
++++ Makefile	2015-01-06 17:08:31.318092443 -0600
+@@ -6,6 +6,12 @@
+ obj-m += input.o
+ obj-m += procfs.o
+ obj-m += sysfs.o
++obj-m += gpio.o
++obj-m += i2c_adapter.o
++obj-m += i2c_chip.o
++obj-m += libfs.o
++obj-m += seqfile.o
++obj-m += usb.o
+ 
+ all:
+ 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
