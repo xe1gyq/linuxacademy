@@ -25,9 +25,9 @@ gitUpdate() {
 
 compileKernel() {
 	make oldconfig
-	make 
-	make modules_install 
-	make install
+	make -j3
+	su root -c "make modules_install"
+	su root -c "make install"
 }
 
 # =============================================================================
