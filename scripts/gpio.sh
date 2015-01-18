@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 # https://developer.ridgerun.com/wiki/index.php?title=How_to_use_GPIO_signals
 
