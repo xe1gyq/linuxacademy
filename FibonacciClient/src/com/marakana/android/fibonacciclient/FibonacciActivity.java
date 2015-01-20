@@ -62,8 +62,11 @@ public class FibonacciActivity extends Activity implements OnClickListener,
 		// and passing ourselves as the ServiceConnection object
 		// We'll get the actual IFibonacciService via a callback to
 		// onServiceConnected() below
-		if (!super.bindService(new Intent(IFibonacciService.class.getName()),
-				this, BIND_AUTO_CREATE)) {
+		Intent serviceIntent = new Intent();
+		serviceIntent.setComponent(new ComponentName("com.marakana.android.fibonacciservice",
+				"com.marakana.android.fibonacciservice.FibonacciService"));
+		
+		if (!super.bindService(serviceIntent, this, BIND_AUTO_CREATE)) {
 			Log.w(TAG, "Failed to bind to service");
 		}
 	}
