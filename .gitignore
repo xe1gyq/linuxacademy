@@ -17,6 +17,7 @@ obj/
 # project files
 .project
 .classpath
+.settings/
 
 # Local configuration file (sdk path, etc)
 local.properties
