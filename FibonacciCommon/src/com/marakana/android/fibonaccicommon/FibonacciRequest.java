@@ -9,10 +9,9 @@ public class FibonacciRequest implements Parcelable {
 		RECURSIVE_JAVA, ITERATIVE_JAVA, RECURSIVE_NATIVE, ITERATIVE_NATIVE
 	}
 
-	private final long n;
-
-	private final Type type;
-
+	private long n;
+	private Type type;
+	
 	public FibonacciRequest(long n, Type type) {
 		this.n = n;
 		if (type == null) {
@@ -21,10 +20,18 @@ public class FibonacciRequest implements Parcelable {
 		this.type = type;
 	}
 
-	public FibonacciRequest(Parcel in) {
-		this.n = in.readLong();
-		this.type = Type.values()[in.readInt()];
+	/** Constructors used implicitly with Parcelable */
+	
+	public FibonacciRequest() {
+		this.n = 0;
+		this.type = Type.RECURSIVE_JAVA;
 	}
+	
+	public FibonacciRequest(Parcel in) {
+		readFromParcel(in);
+	}
+	
+	/** Public Accessors */
 	
 	public long getN() {
 		return n;
@@ -34,6 +41,8 @@ public class FibonacciRequest implements Parcelable {
 		return type;
 	}
 
+	/** Explicit Parcelable Requirements */
+	
 	public int describeContents() {
 		return 0;
 	}
@@ -43,6 +52,13 @@ public class FibonacciRequest implements Parcelable {
 		parcel.writeInt(this.type.ordinal());
 	}
 
+	/** Implicit Parcelable Requirements */
+	
+	public void readFromParcel(Parcel in) {
+		this.n = in.readLong();
+		this.type = Type.values()[in.readInt()];
+	}
+	
 	public static final Parcelable.Creator<FibonacciRequest> CREATOR = new Parcelable.Creator<FibonacciRequest>() {
 		public FibonacciRequest createFromParcel(Parcel in) {
 			return new FibonacciRequest(in);
