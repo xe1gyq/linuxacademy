@@ -1,0 +1,89 @@
+Linux Learning Training
+
+|0| Prerequisites
+
+    |0.1| Workstation
+    |0.2| Github
+    |0.3| Working Directory Structure
+
+|1| Core Development
+
+    |1.1| Tools
+
+          |1.1.1| GIT
+
+    |1.2| Programming Languages
+
+          |1.2.1| C
+          |1.2.2| Shell Scripting
+          |1.2.3| Python
+
+    |1.3| Embedded
+
+          |1.3.1| Linux Kernel Introduction
+          |1.3.2| Embedded Systems
+          |1.3.3| Minnowboard MAX
+
+|2| Linux
+
+    |2.1| Kernel Space
+
+          |2.1.1| Architecture
+          |2.1.2| Device Drivers
+          |2.1.3| Subsystems
+          |2.1.4| Debug
+
+    |2.2| Embedded
+
+          |2.2.1| Initialization
+          |2.2.2| Kernel Interfaces
+          |2.2.3| User Space Drivers
+
+|3| Android
+
+    |3.1| Architecture
+    |3.2| Building
+    |3.3| Deep Dive
+
+============================================================================
+
+|0| Prerequisites
+    |0.1| Workstation
+
+- 30 GB available in hard disks
+- Workstation Debian based
+
+============================================================================
+
+|0| Prerequisites
+    |0.2| Github
+
+- Github account (External))
+
+============================================================================
+
+|0| Prerequisites
+    |0.2| Working Directory Structure
+
+Take in mind you need to follow this directory structure where
+
+ - <username> is your github username
+ - XX is a consecutive number for your exercises
+
+   linuxlearning/
+     training/
+       users/
+         <username>/
+           01.core/
+             pythonlearning/
+             scriptinglearning/
+             c01.c
+             cXX.c
+             python01.py
+             pythonXX.py
+             shell01.py
+             shellXX.py
+           02.linux/
+           03.android/
+
+# End of file
