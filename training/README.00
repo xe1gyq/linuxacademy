@@ -50,7 +50,8 @@ Linux Learning Training
 |0| Prerequisites
     |0.1| Workstation
 
-- 30 GB available in hard disks
+- 30 GB available in hard disk if Desktop will be installed
+- 16 GB available in hard disk if no Desktop will be installed
 - Workstation Debian based
 
 ============================================================================
