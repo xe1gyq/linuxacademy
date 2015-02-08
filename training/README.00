@@ -21,7 +21,7 @@ Linux Learning Training
     |1.3| Embedded
 
           |1.3.1| Linux Kernel Introduction
-          |1.3.2| Embedded Systems
+          |1.3.2| Embedded Systems Programming
           |1.3.3| Minnowboard MAX
 
 |2| Linux
@@ -79,10 +79,7 @@ Take in mind you need to follow this directory structure where
              shelllearning/
              c01.c
              cXX.c
-             python01.py
-             pythonXX.py
-             shell01.py
-             shellXX.py
+             ...
            02.linux/
            03.android/
 

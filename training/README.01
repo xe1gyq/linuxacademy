@@ -182,10 +182,11 @@ Proficiency Level: Basic
 Guess what? Port the previous script to Python :) remember to change the
 name of the host directory, now called, pythonlearning 
 
-|- 01.core
-  |- pythonlearning
-    |- kernelimages  (directory)
-       ... ...
+...
+  |- 01.core
+    |- pythonlearning
+      |- kernelimages  (directory)
+         ... ...
 
 ============================================================================
 
@@ -432,5 +433,22 @@ root@workstation:~# make install
 root@workstation:~# shutdown -r now
 <reboot>
 user@workstation:~$ dmesg
+
+============================================================================
+
+|1| Core Development
+    ...
+    |1.3| Embedded
+          |1.3.2| Embedded Systems Programming
+
+Objective: Learn various fundamentals issues as well as practical development
+skill in the area of embedded systems programming.
+Proficiency Level: Basic
+
+2 Weeks Training (20 minute/lecture, 4 lectures/day)
+
+Go to
+ http://rts.lab.asu.edu/web_ESP_Summer2014/ESP_Main_page.htm
+to start learning! Feel free to code if possible!
  
 # End of file
