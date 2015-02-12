@@ -7,6 +7,8 @@ Objective: Develop your Git skills using github infrastructure
 Proficiency Level: Medium
 
 Make sure you have git installed:
+# apt-get update
+# apt-get upgrade
 # apt-get install git-core
 
 Configure your name and email under Git:
