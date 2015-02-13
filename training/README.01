@@ -11,11 +11,16 @@ available at
  http://git-scm.com/book/en/v2
 
 Make sure you have git installed:
+
+   On /etc/apt/sources.list append:
+	deb http://ftp.debian.org/debian/ squeeze main contrib non-free
+ 
 # apt-get update
 # apt-get upgrade
+/* Obsolete */
 # apt-get install git-core
-
-  ** Andres R to incorporate information on new git apt package installation
+/***********/
+# apt-get install git
 
 Configure your name and email under Git:
 $ git config --global user.name "YourName YourLastName"
