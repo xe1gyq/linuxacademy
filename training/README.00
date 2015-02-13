@@ -54,6 +54,8 @@ Linux Learning Training
 - 16 GB available in hard disk if no Desktop will be installed
 - Workstation Debian based (Virtualized is Ok)
 - Internet Access
+  * If you required a proxy remember to use
+    $ export http_proxy=http://proxy.domain.com:port
 
 ============================================================================
 
