@@ -11,6 +11,8 @@ Make sure you have git installed:
 # apt-get upgrade
 # apt-get install git-core
 
+  ** Andres R to incorporate information on new git apt package installation
+
 Configure your name and email under Git:
 $ git config --global user.name "YourName YourLastName"
 $ git config --global user.email "your.email.address@wherever.com"
