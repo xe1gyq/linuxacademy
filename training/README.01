@@ -27,6 +27,20 @@ So you can make a fork, sync, push and ask for a pull request of
 xe1gyq/linuxlearning instead of the example octocat/Spoon-Knife:
  https://github.com/xe1gyq/linuxlearning
 
+The following section shows the steps described in the links above, you are
+strongly required to read through all of them to really understand what
+we are doing in our terminal. 
+
+ Fork a Repo
+ - On Github go to xe1gyq/linuxlearning and on the top-right corner
+   of the page, click Fork
+ - On command line in your Linux box type the commands below and look
+   at the output
+   $ git clone https://github.com/YOUR_USERNAME/linuxlearning
+   $ git remote -v
+   $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
+   $ git remote -v
+
 You are now ready to go! Remember you will be pushing your changes to
 xe1gyq/linuxlearning
 
