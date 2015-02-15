@@ -51,6 +51,10 @@ we are doing in our terminal.
  - Push your local branch to your remote repository
    $ git push origin master
 
+ Using Pull Requests
+ - This is a process entirely done at Github webpage, please follow the
+   instructions found under the link above
+
 You are now ready to go! Remember you will be pushing your changes to
 xe1gyq/linuxlearning
 
