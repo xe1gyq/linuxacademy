@@ -37,9 +37,15 @@ we are doing in our terminal.
  - On command line in your Linux box type the commands below and look
    at the output
    $ git clone https://github.com/YOUR_USERNAME/linuxlearning
+   $ cd linuxlearning
    $ git remote -v
    $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
    $ git remote -v
+
+ Syncing a Fork
+ -  In the same linuxlearning cloned directory 
+   $ git fetch upstream
+   $ git merge upstream/master
 
 You are now ready to go! Remember you will be pushing your changes to
 xe1gyq/linuxlearning
