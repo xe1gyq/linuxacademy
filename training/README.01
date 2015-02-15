@@ -43,9 +43,13 @@ we are doing in our terminal.
    $ git remote -v
 
  Syncing a Fork
- -  In the same linuxlearning cloned directory 
+ - In the same linuxlearning cloned directory 
    $ git fetch upstream
    $ git merge upstream/master
+
+ Pushing to a remote
+ - Push your local branch to your remote repository
+   $ git push origin master
 
 You are now ready to go! Remember you will be pushing your changes to
 xe1gyq/linuxlearning
