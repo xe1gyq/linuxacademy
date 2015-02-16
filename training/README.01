@@ -6,6 +6,10 @@
 Objective: Develop your Git skills using github infrastructure
 Proficiency Level: Medium
 
+If you want to master your Git skills at a super level then read Pro Git Book
+available at
+ http://git-scm.com/book/en/v2
+
 Make sure you have git installed:
 # apt-get update
 # apt-get upgrade
