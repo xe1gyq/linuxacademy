@@ -27,9 +27,10 @@ So you can make a fork, sync, push and ask for a pull request of
 xe1gyq/linuxlearning instead of the example octocat/Spoon-Knife:
  https://github.com/xe1gyq/linuxlearning
 
-The following section shows the steps described in the links above, you are
-strongly required to read through all of them to really understand what
-we are doing in our terminal. 
+The following section shows all the steps described in the links above
+plus the way to commit your first changes, you are strongly required
+to read through all the links where apply to really understand what we
+are doing in our terminal. 
 
  Fork a Repo
  - On Github go to xe1gyq/linuxlearning and on the top-right corner
@@ -47,6 +48,37 @@ we are doing in our terminal.
    $ git fetch upstream
    $ git merge upstream/master
 
+ Code and Commit
+ - This first part creates both the directories needed and the c file
+   $ mkdir -p training/users/<yourgithubusername>/01.core
+   $ cd training/users/<yourhithubusername>/01.core
+   $ nano c01.c
+
+     #include <stdio.h>
+     
+     int main()
+     {
+     	printf("Hello World\n");
+     	return 0;
+     }
+
+     /* End of File */
+
+ - This second part is the one you'll use everytime you modify a file.
+   Now let's tell git we want to add a new file or include new changes
+   into its database.
+   When we commit our changes
+    First line: Title starting with your githubusername, 50 chars max
+    Second line: a blank line 
+    Third line: Description of the changes, as many lines as required,
+                80 chars max per line 
+ 
+   $ git add c01.c
+   $ git commit -s
+     githubusername: My first C Programming Example
+     
+     My first example of a code in C language
+
  Pushing to a remote
  - Push your local branch to your remote repository
    $ git push origin master
@@ -55,7 +87,15 @@ we are doing in our terminal.
  - This is a process entirely done at Github webpage, please follow the
    instructions found under the link above
 
-You are now ready to go! Remember you will be pushing your changes to
+So remember every time you'll work in your local repository you'll need to
+follow the next steps:
+
+ 1. Syncing a Fork
+ 2. Code and Commit
+ 3. Pushing to a Remote
+ 4. Using Pull Requests
+
+You are now ready to go! Remember you will be pushing all your work to
 xe1gyq/linuxlearning
 
 ============================================================================
