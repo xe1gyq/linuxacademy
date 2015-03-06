@@ -5,6 +5,7 @@ Linux Learning Training
     |0.1| Workstation
     |0.2| Github
     |0.3| Working Directory Structure
+    |0.4| Timeline
 
 |1| Core Development
 
@@ -67,7 +68,7 @@ Linux Learning Training
 ============================================================================
 
 |0| Prerequisites
-    |0.2| Working Directory Structure
+    |0.3| Working Directory Structure
 
 Take in mind you need to follow this directory structure where
 
@@ -86,5 +87,12 @@ Take in mind you need to follow this directory structure where
              ...
            02.linux/
            03.android/
+
+============================================================================
+
+|0| Prerequisites
+    |0.4| Timeline
+
+# Per suggestion, proposed timeline to be defined
 
 # End of file
