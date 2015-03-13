@@ -18,9 +18,9 @@ Make sure you have git installed:
 # apt-get update
 # apt-get upgrade
 /* Obsolete */
-# apt-get install git-core
+# apt-get install git-core git-email
 /***********/
-# apt-get install git
+# apt-get install git git-email
 
 Configure your name and email under Git:
 $ git config --global user.name "YourName YourLastName"
