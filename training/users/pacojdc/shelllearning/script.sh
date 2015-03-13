@@ -83,14 +83,15 @@ else
 	echo "Parameter for extension on file is not valid: $3"
 	exit 2
 fi
+LOCAL_PATH="$HOME/kernelimages/linux-$2.tar.$3"
+URL_VER="$URL_PATH/linux-$2.tar.$3"
 
 if [ $1 = "internet" ]
-then
-	URL_VER="$URL_PATH/linux-$2.tar.$3"
-	if [ -e "$HOME/kernelimages/linux-$2.tar.$3" ]
+then	
+	if [ -e $LOCAL_PATH]
 	then
 		echo "Removing Existing file"
-		rm $HOME/kernelimages/linux-$2.tar.$3
+		rm $LOCAL_PATH
 	fi
 	echo "Downloading Kernel from $URL_VER"
 	wget --spider -nv $URL_VER
@@ -105,16 +106,32 @@ then
 elif [ $1 = "local" ]
 then
 	echo "Looking for kernel $2 locally..."
-
+	if [ -e $LOCAL_PATH]
+	then
+		echo "File exists"
+	else
+		echo "This File doesn't exist locally, please use internet option to download it"
+		exit 2
+	fi
 else
-	echo "Parameter not recognized $1"
+	echo "Parameter not recognized: $1"
 	exit 2
 fi
 
+#Uncompress the file into preworkspace directory
+UNZIP_PATH="$HOME/preworkspace/"
+cp $LOCAL_PATH $UNZIP_PATH
+cd preworkspace
+tar xf "linux-$2.tar.$3"
+rm "linux-$2.tar.$3"
+cd ..
 
-#PRE-processing
+###########PRE-processing#################3
 
-#
+
+
+
+
 
 
 echo "Script finished sucessfully"
