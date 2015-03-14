@@ -1,0 +1,18 @@
+Kernel Compilation
+
+user@Minnowboard:~$ uname -a
+Linux Minnowboard A.BB.CC ...
+root@Minnowboard:~# apt-get update
+root@Minnowboard:~# apt-get upgrade
+root@Minnowboard:~# apt-get install linux-headers-$(uname -r) kernel-package libncurses5 libncurses5-dev git
+user@Minnowboard:~$ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+user@Minnowboard:~$ cd linux
+user@Minnowboard:~$ make oldconfig
+user@Minnowboard:~$ make
+root@Minnowboard:~# make modules_install
+root@Minnowboard:~# make install
+
+Ready! Reboot the board and check again Kernel Version
+
+user@Minnowboard:~$ uname -a
+Linux Minnowboard X.YY.ZZ ...
