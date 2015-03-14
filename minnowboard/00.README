@@ -3,5 +3,6 @@ Minnowboard
 |00| README
 |01| Kernel Compilation
 |02| Camera
+|03| GPIO
 
 # End of file
