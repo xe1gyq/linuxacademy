@@ -4,5 +4,6 @@ Minnowboard
 |01| Kernel Compilation
 |02| Camera
 |03| GPIO
+|04| LED
 
 # End of file
