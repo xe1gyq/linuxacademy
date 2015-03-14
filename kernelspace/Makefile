@@ -13,6 +13,7 @@ obj-m += libfs.o
 obj-m += seqfile.o
 obj-m += usb.o
 obj-m += pci.o
+obj-m += seabass-leds.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
