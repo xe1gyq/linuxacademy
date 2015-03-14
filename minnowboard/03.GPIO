@@ -17,10 +17,8 @@ GPIO, Drivers Enablement
 One way to enable GPIOs is to follow
  http://www.elinux.org/Minnowboard:MinnowMaxLinuxKernel
 
-Let's manually do it, fir compile your kernel
-  http://xe1gyq.blogspot.mx/2014/12/proyecto-huatulco-v2_30.html
-
-Once compiled, we enable all needed drivers via menuconfig
+Compile your kernel, once compiled we enable all needed drivers
+via menuconfig:
 
 user@Minnowboard:~$ cd linux
 user@Minnowboard:~$ make menuconfig
