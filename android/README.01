@@ -15,6 +15,7 @@ SysFs
  $ cat brightness
  $ ls /sys/class/timed_output/vibrator/
 ToDo! Get into details of Sysfs implementation
+ToDo! Look at sysfsutils package
 
 DevFs
  $ echo hola > /dev/null
@@ -30,7 +31,7 @@ Forked from mainline
 Busybox
 User Space Vs Kernel Space
  $ ls /system/bin/tmp
-Idea! Practice with Tmpfs / Ramdisk / Ram Disk
+ToDo! Practice with Tmpfs / Ramdisk / Ram Disk
  $ ls /data/system/users/ #
 
  $ id
@@ -91,12 +92,49 @@ InstallDaemon by Zygote
  - Kernel Level Security Check
  - Location Service in Java through XML file
 
- 2. Binder
- $ ls /dev/binder
+Kernel Drivers
+
+ $ ls ~/kernel/goldfish/drivers/staging/android
+
+ Binder
+  $ ls /dev/binder
+ Ashmem
+ Physical Memory Allocator ION
+ Autosleep + Wake Locks
+  $ cd /sys/power/
+  $ cat wakelock
+  $ dumpsys
+  ToDo! DebugFs
+ Alarm
+  ToDo! Expand on alarm driver
+ CPU Frequency Governor Interactive
+  ToDo! Understand about Frequency Scaling Framework
+  ToDo! Look at cpufrequtils
+ Paranoid Network Security
+  $ ls ~/aosp/framework/base/data/etc/platform.xml
 
 ToDo! AIDL Android Interface Definition Language
 
+Building Android from the Source
+
+ $ ls aosp/frameworks/base/core
+
+Application cannot communicate to a Service directly, so Binder is here to help
+GoTo
+ developer.android.com
+and search for LocationManager
+Look at all the functions provided version by version
+The Manager (LocationManager) is responsible to pass information from the Manager to the Service
+All Managers seats under
+ $ ls /framework/base/core/
+Managers are compiled under framework.jar
+All Services seats under
+ $ ls /framework/base/services/
+Services are compiled under services.jar
+So in the application you will hve your framework.jar
+
 Other Information
 http://users.encs.concordia.ca/~clark/papers/2012_spsm.pdf
+http://github.com/ReconInstruments
 
 # End of File
