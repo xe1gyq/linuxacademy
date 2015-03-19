@@ -221,6 +221,31 @@ $ source build/envsetup.sh
  …
 $ lunch full_alpha-eng
 $ make -j4
+$ mkdir ~/kernel/
+$ cd ~/kernel/
+$ git clone https://android.googlesource.com/kernel/goldfish.git
+$ cd goldfish/
+$ git branch -a
+$ git checkout -t remotes/origin/android-goldfish-3.10
+$ cd ~/kernel/goldfish/
+$ make i386_emu_defconfig
+$ cp .config arch/x86/configs/alpha_defconfig
+$ ~/aosp/external/qemu/distrib/build-kernel.sh --arch=x86 --config=alpha
+$ mv /tmp/kernel-qemu/kernel-3.10.0-qemu-x86 ~/aosp/device/newcircle/alpha
+$ cd ~/aosp
+$ nano ~aosp/device/newcircle/alpha/BoardConfig.mk
+ …
+ TARGET_NO_KERNEL := false
+ …
+$ nano ~/aosp/device/newcircle/alpha/common.mk
+ ...
+ # Enable our custom kernel
+ LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+ PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+$ make -j10
+$ emulator -kernel out/target/product/alpha/kernel &
+$ adb shell cat /proc/version
+Linux version 3.10.0+ (student@newcircle) (gcc version 4.8 (GCC) ) #15 PREEMPT Tue Jan 6 11:04:34 PST 2015
  …
  Installed file list: out/target/product/alpha/installed-files.txt
  Target system fs image: out/target/product/alpha/obj/PACKAGING/systemimage_intermediates/system.img
