@@ -166,7 +166,7 @@ add a configuration with add_lunch_combo plus its name, 3 build types
 
 # End Content vendorsetup.sh
 
-For Minnowboard (minnowboard.org && 01.org Android on IA)
+For Minnowboard Android on IA (minnowboard.org && 01.org)
 
 ./device/intel/baytrail/vendorsetup.sh
 
@@ -218,7 +218,7 @@ Application Runtime 1.0 Dalvik
 =============================================================================
 
 Custom implementation of a Virtual Machine
-Take .class and convert it to .dex file
+Take .java to .class and convert it to .dex file
 JIT Support <> Just in Time
 
 Working Example
@@ -234,5 +234,43 @@ Working Example
  com/
  assests/
  ...
+
+=============================================================================
+Application Runtime 2.0 ART
+=============================================================================
+
+Successor to Dalvik introduced in Android 4.4
+Take .java to .class to .dex to .oat
+OAT Ahead Of Time
+Garage Collections enhacements
+ToDo! Google "Google IO 2014 Art" and watch the Youtube video
+
+Code of compiled Apps goes to /data/dalvik-cache/
+$ cd /data/dalvik-cache/arm64/
+$ oatdump --oat-file=system@priv-app@SystemUI.apk@classes.dex
+$ ll /data/dalvik-cache
+$ objdump -t system@priv-app@SystemUI.apk@classes.dex
+
+Default applications are pre-compiled
+.odex optimized dex code is a compressed dex code
+$ ls /system/framework/arm64/*.odex
+
+ToDo! Learn more about .dex and .odex files
+
+=============================================================================
+Apk Installation
+=============================================================================
+
+AndroidManifest.xml is read, insctruction how to install
+Divided what need to be what
+$ ls ~/aosp/packages/
+
+Artifacts are resources files
+
+A folder is created under /data/data/
+$ ls /data/data/com.skype.raider/
+
+A folder is created under /data/dalvik-cached
+$ ls /data/dalvik-cached
 
 # End of File
