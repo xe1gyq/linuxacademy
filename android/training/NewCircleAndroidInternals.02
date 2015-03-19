@@ -252,6 +252,70 @@ ToDo! Learn more about "SDK Add On"
 Random! Text To Speech under Android
 Link! http://en.wikipedia.org/wiki/SVOX
 
+
+=============================================================================
+Deploying Individual Applications
+=============================================================================
+
+ToDo! Review Android ScreenCast
+
+$ apt-get install icedtea-netx
+$ adb
+$ javaws ../androidcast.jnlp
+$ cd ~/aosp
+$ source build/env_setup.sh
+$ aosp-eng
+$ cd packages/apps/Calculator/res/values
+$ nano strings.xml
+<changed values>
+
+2 ways to recompile the package
+
+1. Long way, make the name of the package under ~/aosp directory
+2. Short way, mm under the component directory
+
+ Review also packages under ~/aosp/external/iptuils/Android.mk
+ Review also ~/aosp/hardware/intel/audio_media/hdmi/Android.mk
+ $ nano Android.mk
+ include $(CLEAR_VARS) # Resets all the local "_"s
+ include $(BUILD_PACKAGE)
+
+ Way 1
+ $ cd ~/aosp
+ $ make Calculator
+
+ Way 2
+ $ cd ~/aosp/packages/apps/Calculator
+ $ mm
+
+Check what version is available of the application, newer version is priority
+
+$ cd /data/dalvik-cache/arm
+$ ls -l | grep -i calcul
+$ ls -l | grep -i youtu
+
+Go to the target folder
+
+$ cd out/target/product/grouper/system/app/Calculator
+$ ls -l
+$ adb remount # make system partition read/write
+$ adb push Calculator.apk /system/app/
+$ adb push *.odex 
+$ ls /data/dalvik-cache/arm
+$ adb push # push both apk and odex files
+$ cd /system/app/Calculator/arm64/
+$ ls -l
+$ ls ~/aosp/out/target/product/alpha/system/
+For Music as example
+$ adb install -r ~/aosp/out/target/../Music.apk
+$ ls -l | grep -i music
+$ abd uninstall com.android.music
+adb install does not work when apk and .odex are present
+
+.odex is activated by enabling a flag called WITH_DEXPREOPT
+
+Open up the Calculator
+
 =============================================================================
 Other Notable Native Daemons
 =============================================================================
