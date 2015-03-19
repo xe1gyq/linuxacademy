@@ -3,9 +3,19 @@
 
 Some Theory
 
- developer.android.com/training/index.html
- developer.android.com/guide/components/processes-and-threads.html
- www.thenewcircle.com
+ Link! developer.android.com/training/index.html
+ Link! developer.android.com/guide/components/processes-and-threads.html
+ Link! source.android.com
+ Link! www.thenewcircle.com
+ Application Life Cycle
+ Android Stack
+  - App / Framework / Native / Kernel
+  - Languages Java/C/C++/XML
+ Application Component
+  - Activity
+  - Service
+  - Content Provider
+  - Broadcaster Receiver
 
 Android Device Access
  $ adb shell
@@ -28,14 +38,15 @@ ToDo! Include /lib/linux* directory to Audio Workshop
 
 Linux Kernel
 Forked from mainline
-Busybox
+Busybox ToolBox
 User Space Vs Kernel Space
  $ ls /system/bin/tmp
+
 ToDo! Practice with Tmpfs / Ramdisk / Ram Disk
  $ ls /data/system/users/ #
-
  $ id
  $ ps -aux | grep eclipse
+
 Each Android Application is a new user
 Data Vs System Partitions
 When you flash your device in the factory there are 2 images:
@@ -43,10 +54,10 @@ When you flash your device in the factory there are 2 images:
  - userdata.im
  $ ls /system/
  $ ls /system/lib
+
 System is a read-only partition
 Applications are put into /data
 System expands content under /data partition
-
  $ cd /data/data/com.google.android.gm/databases
  $ ls -l | grep gm
  $ ps | grep gm
@@ -66,18 +77,21 @@ InstallDaemon by Zygote
 
  Location Service / GPS / Binder
  $ top -t | grep system_server
+
  Mean to communicate between Application to Services? Binder
  Vibrator
  $ ls ~/aosp/frameworks/base/services/core/java/com/android/server/VibratorService.java
  $ ls /sys/class/timed_output/vibrator
  $ cat /home/student/aosp/frameworks/base/services/core/jni/com_android_server_VibratorService.cpp
  $ nano android/server/LocationManagerService.java
+
  Talk about permissions
  How do we ask access for permissions? Android Manifest
  HelloWorld application lookin to get Location Services
  Added under Android Manifest as ACCESS_FINE_LOCATION
  $ ls /data/system/packages.xml
  $ adb pull /data/system/packages.xml
+
  Looked at the line where HelloWorld application
  Package Manager Service and Location Services are both under System Service
  $ adb push ...
@@ -127,9 +141,11 @@ Look at all the functions provided version by version
 The Manager (LocationManager) is responsible to pass information from the Manager to the Service
 All Managers seats under
  $ ls /framework/base/core/
+
 Managers are compiled under framework.jar
 All Services seats under
  $ ls /framework/base/services/
+
 Services are compiled under services.jar
 So in the application you will hve your framework.jar
 
