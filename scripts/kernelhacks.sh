@@ -25,3 +25,6 @@ echo 'nc -u -l 9876'
 
 # Debugging Level
 echo 'dmesg -n debug'
+
+# Debugfs
+mount -t debugfs none /sys/kernel/debug
