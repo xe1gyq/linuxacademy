@@ -172,6 +172,85 @@ For Minnowboard Android on IA (minnowboard.org && 01.org)
 
 $ source build/envsetup.sh
 $ build
+$ nano ~/aosp/device/newcircle/alpha/AndroidProducts.mk
+
+  PRODUCT_MAKEFILES := $(LOCAL_DIR)/full_alpha.mk
+
+$ nano ~/aosp/device/newcircle/alpha/common.mk
+
+  # Include all makefiles in sub-directories (one level deep)
+  include $(call all-subdir-makefiles)
+
+$ nano ~/aosp/device/newcircle/alpha/full_alpha.mk
+
+  # Include the common definitions and packages
+  include $(LOCAL_PATH)/common.mk
+
+  # Inherit from the emulator product, which defines the base OS
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/full_x86.mk)
+
+  # Discard inherited values and use our own instead
+  PRODUCT_NAME := full_alpha
+  PRODUCT_DEVICE := alpha
+  PRODUCT_MODEL := Full Alpha Image for Emulator
+
+$ cp build/target/board/generic_x86/BoardConfig.mk device/newcircle/alpha/.
+$ cp build/target/board/generic_x86/system.prop device/newcircle/alpha/.
+
+The following files are modified:
+
+	modified:   AndroidProducts.mk
+	modified:   BoardConfig.mk
+	modified:   common.mk
+	modified:   full_alpha.mk
+	modified:   vendorsetup.sh
+        modified:   system.prop
+
+Changing the Launcher Background
+
+We can do that by adding an overlay directory and the full path of the
+actual function to override e.g. frameworks/base/core/res/res/draqable-nodpi
+
+$ mkdir -p overlay/frameworks/base/core/res/res/drawable-nodpi/
+$ cp anypicture.jpg overlay/.../drawable-nodpi/default_wallpaper.jpg
+$ mkdir -p overlay/packages/apps/Calculator/res/values/strings.xml
+$ nano packages/apps/Calculator/res/values/strings.xml
+Only the value you want to override
+$ source build/envsetup.sh
+ including device/newcircle/alpha/vendorsetup.sh
+ …
+$ lunch full_alpha-eng
+$ make -j4
+ …
+ Installed file list: out/target/product/alpha/installed-files.txt
+ Target system fs image: out/target/product/alpha/obj/PACKAGING/systemimage_intermediates/system.img
+ Install system fs image: out/target/product/alpha/system.img
+
+What about Permissions?
+$ ls /system/etc/permissions
+
+Changing the Launcher Background
+$ cd ~/aosp/framework/
+
+What can we build in Android?
+ - .apk
+ - .jar
+ - .so
+ - exe
+
+ ToDo! Android is a long list of the above things to be built, see how it works by
+ looking at the code starting from the below file with the inherit-product
+ call in every file, track till the end
+ $ cat ~/aosp/device/moto/shamu/aosp_shamu.mk | grep nherit
+   # Inherit from the common Open Source product configuration
+   $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+ToDo! Learn more about "SDK Add On"
+ - Automatic updates
+ - .jar file but not deployed in the device, code is present on it, api there
+
+Random! Text To Speech under Android
+Link! http://en.wikipedia.org/wiki/SVOX
 
 =============================================================================
 Other Notable Native Daemons
@@ -254,6 +333,7 @@ $ objdump -t system@priv-app@SystemUI.apk@classes.dex
 Default applications are pre-compiled
 .odex optimized dex code is a compressed dex code
 $ ls /system/framework/arm64/*.odex
+$ ls /system/app/YoutTube/arm/
 
 ToDo! Learn more about .dex and .odex files
 
