@@ -1,0 +1,70 @@
+==============================================================================
+Native Layer
+==============================================================================
+
+Why needed?
+ - We have Java so we need to cleanly open files at Kernel level, this where
+   C++ comes in
+ - Speed, think about having Sqlite written in C++ or Java
+ - Reuse of Libraries e.g. libcamera, libgps
+
+==============================================================================
+Bionic Library
+==============================================================================
+
+Custom standard C library
+Faster than libc
+Cross Compilation
+
+==============================================================================
+User Space Hardware Abstraction Layer (HAL)
+==============================================================================
+
+Userspace C/C++ hardware abstraction layer as shared libraries
+Makes porting easier
+Link! source.android.com
+Talked about Sensors
+ToDo! Sensor Fusion @ Wikipedia
+
+ goog senso lib.so
+     sensors.h
+ -----------------
+        api
+ -----------------
+ sensors.intel.so
+ -----------------
+ Acce   Mag   Gyro
+
+ Link! http://source.android.com/devices/sensors/
+ Link! ~/aosp/hardware/libhardware/include/hardware
+  - Camera
+  - NFC
+  - Audio
+  - Etc ...
+ Looked at sensors.h
+
+ Pointers to a Function
+ How functions are activated?
+ Example! Look at activate function in both files
+ Link! ~/aosp/hardware/libhardware/include/hardware/sensors.h
+ Link! ~/aosp/hardware/invensense/6515/libsensors_iio$ nano sensors_mpl.cpp
+
+ Nexxus TV uses Intel
+
+ ToDo! Find out about HDMI code in the next directories/files
+ Link! ~/aosp/hardware/intel/audio_media/hdmi
+       struct audio_module HAL_MODULE_INFO_SYM = { ...
+       adev->hw_device.
+       out->pcm = pcm_open(adev->card, adev->device, PCM_OUT, &out->pcm_config);
+ Link! ~/aosp/external/tinyalsa/pcm.c
+        struct pcm *pcm_open(unsigned int card, unsigned int device,
+ Link! ~/aosp/device/
+ Link! ~/aosp/device/asus/fugu
+
+ Vibrator
+
+ ToDo! Find out about Vibrator code in the next directories/files
+ Link! ~/aosp/hardware/libhardware_legacy/vibrator/vibrator.c
+ Function may come prepackage as an *.so
+
+# End of File
