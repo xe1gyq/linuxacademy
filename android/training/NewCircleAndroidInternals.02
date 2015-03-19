@@ -58,13 +58,63 @@ ToDo! Sensor Fusion @ Wikipedia
        out->pcm = pcm_open(adev->card, adev->device, PCM_OUT, &out->pcm_config);
  Link! ~/aosp/external/tinyalsa/pcm.c
         struct pcm *pcm_open(unsigned int card, unsigned int device,
+ Vendor specific
  Link! ~/aosp/device/
  Link! ~/aosp/device/asus/fugu
 
  Vibrator
 
- ToDo! Find out about Vibrator code in the next directories/files
+ ToDo! Find out about Vibrator code starting at this directory
  Link! ~/aosp/hardware/libhardware_legacy/vibrator/vibrator.c
  Function may come prepackage as an *.so
+
+ Audio
+
+ ToDo! Find out about Audio code starting at this directory
+ Link! ~/aosp/hardware/intel/audio_media/hdmi/tinyaudio_hw.c
+       static int get_card_number_by_name(const char* name)
+
+ More about Hardware Components
+
+ Look at this link
+ Link! http://developers.google.com/android/nexus/drivers
+ Now download Fugu Intel intel-fugu-lrx21m-4bd2d189.tgz, decompress and look
+ at its content
+ Link! https://developers.google.com/android/nexus/drivers#fugu
+ 
+ vendor/
+ vendor/asus/
+ vendor/asus/fugu/
+ vendor/asus/fugu/device-vendor.mk
+ vendor/asus/fugu/BoardConfigVendor.mk
+ vendor/intel/
+ vendor/intel/fugu/
+ vendor/intel/fugu/proprietary/
+ vendor/intel/fugu/proprietary/libhardware_legacy.so
+ vendor/intel/fugu/proprietary/bcc.moorefield
+ vendor/intel/fugu/proprietary/libRSCpuRef.so
+
+ Sensor Hub
+
+ Classic version of how this used to be handle? CPU taking care of Sensors
+ There is a need to have a lot of sensors running
+ Today it seems sensors seats in a coprocessor which is a low power ic
+ Integrated Sensor Hub
+
+ Host <> Coprocessor
+
+ ToDo! Look at any Platform Service Hub (PSH) QC SoC Block Diagram
+ Link! http://en.wikipedia.org/wiki/Atom_%28system_on_chip%29#Merrifield_and_Moorefield_smartphone_platforms
+ Link! http://www.anandtech.com/show/7789/intel-talks-merrifield-moorefield-and-lte-at-mwc-2014
+ In Summary
+  Activate Sensor.h
+  Call sensor.cpp
+  Call coprocessor.cpp
+  Call sensor specific
+ At Kernel level look at
+  KernelCode! drivers/hid/hid-sensor-hub.c
+  KernelCode! Documentation/hid/
+ More about Sensors
+ Link! source.android.com/devices/sensors/batching.html
 
 # End of File
