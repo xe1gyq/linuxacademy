@@ -88,7 +88,7 @@ URL_VER="$URL_PATH/linux-$2.tar.$3"
 
 if [ $1 = "internet" ]
 then	
-	if [ -e $LOCAL_PATH]
+	if [ -e $LOCAL_PATH ]
 	then
 		echo "Removing Existing file"
 		rm $LOCAL_PATH
@@ -103,10 +103,18 @@ then
 	cd kernelimages 
 	wget -nv $URL_VER
 	cd ..
+	
+	#Uncompress the file into preworkspace directory
+	UNZIP_PATH="$HOME/preworkspace/"
+	cp $LOCAL_PATH $UNZIP_PATH
+	cd preworkspace
+	tar xf "linux-$2.tar.$3"
+	rm "linux-$2.tar.$3"
+	cd ..
 elif [ $1 = "local" ]
 then
 	echo "Looking for kernel $2 locally..."
-	if [ -e $LOCAL_PATH]
+	if [ -e $LOCAL_PATH ]
 	then
 		echo "File exists"
 	else
@@ -118,19 +126,43 @@ else
 	exit 2
 fi
 
-#Uncompress the file into preworkspace directory
-UNZIP_PATH="$HOME/preworkspace/"
-cp $LOCAL_PATH $UNZIP_PATH
-cd preworkspace
-tar xf "linux-$2.tar.$3"
-rm "linux-$2.tar.$3"
-cd ..
-
 ###########PRE-processing#################3
+cd "preworkspace/linux-$2"
+PREWORK_DIR="$HOME/preworkspace/linux-$2"
 
+echo ""
+echo "Starting preprocessing, working directory:"
+pwd
+echo ""
 
+# Readme files
+NUM_README=$(find . -type f -name "*README*" | wc -l)
+echo "README Files = $NUM_README"
+#Kconfig Files
+NUM_KC=$(find . -type f -name "Kconfig*" | wc -l)
+echo "Kconfig Files = $NUM_KC"
+#Kbuild Files
+NUM_KB=$(find . -type f -name "Kbuild*" | wc -l)
+echo "Kbuild Files = $NUM_KB"
+#Make Files
+NUM_MK=$(find . -type f -name "Makefile" | wc -l)
+echo "Make Files = $NUM_MK"
+#C Files
+NUM_C=$(find . -type f -name "*.c" | wc -l)
+echo "C Files = $NUM_C"
+#Header Files
+NUM_H=$(find . -type f -name "*.h" | wc -l)
+echo "Header Files = $NUM_H"
+#PL Files
+NUM_PL=$(find . -type f -name "*.pl" | wc -l)
+echo "Pearl Files = $NUM_PL"
+#Other Files
+NUM_OTHER=$(find . -type f -not -name "*.pl" -not -name "*.h" -not -name "*.c" -not -name "*README*" -not -name "Kconfig*" -not -name "Kbuild*" -not -name "Makefile" | wc -l)
+echo "Other Files = $NUM_OTHER"
 
-
+#Number of total files
+NUM_TOTAL=$(find . -type f | wc -l)
+echo "Total Files = $NUM_TOTAL"
 
 
 
