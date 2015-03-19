@@ -136,9 +136,13 @@ ToDo! Sensor Fusion @ Wikipedia
 Alpha Product
 =============================================================================
 
+If you want to work with full Alpha product clone this repo into
+~/aosp/devices/newcircle/
 $ git clone https://github.com/thenewcircle/alpha.git
 $ cd ~/alpha
 $ git checkout -b myx86 origin/x86
+
+Basics for adding a Product
 
 $ cd ~/aosp/device
 $ mkdir newcircle/
@@ -153,13 +157,82 @@ add a configuration with add_lunch_combo plus its name, 3 build types
 - Engineering
 - User Debug
 - User
-# Content vendorsetup.sh
 
-add_lunch_combo full_alpha-eng
-add_lunch_combo full_alpha-userdebug
-add_lunch_combo full_alpha-user
+# Start Content vendorsetup.sh
+
+ add_lunch_combo full_alpha-eng
+ add_lunch_combo full_alpha-userdebug
+ add_lunch_combo full_alpha-user
+
+# End Content vendorsetup.sh
+
+For Minnowboard (minnowboard.org && 01.org Android on IA)
+
+./device/intel/baytrail/vendorsetup.sh
 
 $ source build/envsetup.sh
 $ build
+
+=============================================================================
+Other Notable Native Daemons
+=============================================================================
+
+Application / Java / Class / ByteCode
+Java Virtual Machine C/C++
+Native Instruction Set
+
+Middleware / System Service
+JAR File | Java Virtual Machine
+C++
+Init Process
+
+/system/bin/servicemanager
+/system/bin/vold
+/system/bin/sdcard
+/system/bin/installd
+/system/bin/adbd
+
+$ ps -aux | grep /system/bin
+$ ps -aux | grep com.
+
+Daemon is called Service in Android
+Daemons run in background and perform specific operations
+
+=============================================================================
+Surface Flinger, Other Native Executables
+=============================================================================
+
+The term Flinger is the "device" that combines either the visual surfaces or
+the audio output from multiple applications into a common stream that is sent
+to hardware. Surface and Audio flingers present.
+
+=============================================================================
+Function Libraries
+=============================================================================
+
+Computation intensive services to the rest of the platform
+Many borrowed from Open source projects
+
+=============================================================================
+Application Runtime 1.0 Dalvik
+=============================================================================
+
+Custom implementation of a Virtual Machine
+Take .class and convert it to .dex file
+JIT Support <> Just in Time
+
+Working Example
+
+ $ cd /data/app
+ $ cd com.skype.raider-1
+ $ ls .
+ base.apk
+ Apk is a Zip file, see its content
+ $ ls unzipped file
+ AndroidManifest.xml
+ classes.dex
+ com/
+ assests/
+ ...
 
 # End of File
