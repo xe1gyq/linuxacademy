@@ -117,4 +117,49 @@ ToDo! Sensor Fusion @ Wikipedia
  More about Sensors
  Link! source.android.com/devices/sensors/batching.html
 
+ How to load Vendor Shared Objects (.so)
+
+ Follow some kind of template and put the files inside 2 folders
+  vendor/lib/hw
+  system/lib/hw
+ First part of the name are defined by Google
+ Second part of the name is important cause is the specific board name where
+ hardware is hosted, e.g.
+  - camera.tegra123.so
+  - camera.flounder.so
+ Remember! CPU name Vs Board Name, it is all about naming
+ $ getprop | grep ro.product.board
+ $ getprop | grep ro.board.platform
+ $ getprop | grep ro.prod
+
+=============================================================================
+Alpha Product
+=============================================================================
+
+$ git clone https://github.com/thenewcircle/alpha.git
+$ cd ~/alpha
+$ git checkout -b myx86 origin/x86
+
+$ cd ~/aosp/device
+$ mkdir newcircle/
+$ cd newcircle
+$ mkdir alpha
+$ cd alpha
+$ nano vendorsetup.sh
+
+Android will look for specific files, in this case vendorsetup.sh, a file
+that defines the build system, you can find up to 3 devices configurations,
+add a configuration with add_lunch_combo plus its name, 3 build types
+- Engineering
+- User Debug
+- User
+# Content vendorsetup.sh
+
+add_lunch_combo full_alpha-eng
+add_lunch_combo full_alpha-userdebug
+add_lunch_combo full_alpha-user
+
+$ source build/envsetup.sh
+$ build
+
 # End of File
