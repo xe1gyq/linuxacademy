@@ -1,0 +1,210 @@
+=============================================================================
+Android Compatibility
+=============================================================================
+
+Needed for Compatibility?
+ - Performance
+ - Allowing Platform Stability and Compatibility for Developers
+ - What should be for the Android Device?
+
+Link! http://source.android.com/compatibility/
+Link! http://developer.android.com/index.html
+
+=============================================================================
+System Server Process
+=============================================================================
+
+It contains almost all functionality for the applications
+
+ 
+ ---------
+ IFo.Proxy   Serialize [1]
+ ---------
+ IFo.Stub    DeSerialize [2]
+ ---------
+  Binder      pass information
+ ---------
+ FooNative    function
+ ----------
+ libfoo_jni   function
+  --------
+   libfoo
+  --------
+  /dev/foo
+
+ [1] Java object needs to be serialized to pass it and then deserialize
+
+
+ # Applied Example
+
+   class Service
+
+   [1] create(student)
+   [2] delete(int id)
+   [3] update(int id, student, student)
+
+   create(student)
+   [1] [1 object/0 null] [id int] [Stream] 
+
+   delete(int)
+   [2] [id]
+
+   update(int id, student, student)
+   [3] [id] [1 object/0 null] [id] [stream]
+
+ # Vibrator, Living Example
+
+ Application
+ Link! http://stackoverflow.com/questions/13950338/how-to-make-an-android-device-vibrate
+ 
+ Vibrator API
+ Link! http://developer.android.com/reference/android/os/Vibrator.html
+  - cancel
+  - hasVibrator
+  - vibrate
+  
+  Abstract
+  $ cd /~aosp/frameworks/base/core/java/android/os/
+  $ nano Vibrator.java
+  All needs to do is serialize the request to a service
+
+  Actual Implentation
+  $ nano SystemVibrator.java
+
+  Manager Code is executed in the application
+
+  Proxy Object @ SystemVibrator.java
+     public SystemVibrator() {
+        mService = IVibratorService.Stub.asInterface(
+                ServiceManager.getService("vibrator"));
+    }
+
+  This will be serialized @ SystemVibrator.java
+    @Override
+    public void vibrate(int uid, String opPkg, long milliseconds, AudioAttributes attributes) {
+        if (mService == null) {
+            Log.w(TAG, "Failed to vibrate; no vibrator service.");
+            return;
+        }
+        try {
+            mService.vibrate(uid, opPkg, milliseconds, usageForAttributes(attributes), mToken);
+        } catch (RemoteException e) {
+            Log.w(TAG, "Failed to vibrate.", e);
+        }
+    }
+
+  IVibratorService.aidl file
+  Aidl generator will take these
+  These are the functions that the service would like to expose
+
+    package android.os;
+
+   /** {@hide} */
+   interface IVibratorService
+   {
+       boolean hasVibrator();
+       void vibrate(int uid, String opPkg, long milliseconds, int usageHint, IBinder token);
+       void vibratePattern(int uid, String opPkg, in long[] pattern, int repeat, int usageHint, IBinder token);
+       void cancelVibrate(IBinder token);
+   }
+
+  Vibrator Service
+  $ cd ~/aosp/frameworks/base/services/core/java/com/android/server/
+  $ nano VibratorService.java 
+  
+    @Override // Binder call
+    public void vibrate(int uid, String opPkg, long milliseconds, int usageHint,
+            IBinder token) {
+        if (mContext.checkCallingOrSelfPermission(android.Manifest.permission.VIBRATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            throw new SecurityException("Requires VIBRATE permission");
+        }
+
+=============================================================================
+Managers Services
+=============================================================================
+
+ Activity Manager Service
+  Manages lifecycles of applications and their components
+ Package Manager Service
+  Along with installd responsible for installation of .apk on the system
+ Power Manager Service
+  Toggles power device states
+ Alarm Manager Service
+  Alarms!
+ Notification Manager Service
+  Notify the user of events that may be of interest, used by apps and other
+  services
+ Location Manager Services
+ Sensors Manager Services
+ Connnectivity Manager Services
+ WiFi Manager Serrvice
+ Display Manager Service
+ Download Manager Service
+ ...
+
+ Important! This is very important for Debugging
+ ToDo! Look at Audio domain the same as in Power
+
+ Base Core, These Managers seats inside the application
+ $ cd ~/aosp/frameworks/base/core/java
+ $ find | grep -i power
+ ./com/android/internal/os/PowerProfile.java
+ ./android/os/PowerManagerInternal.java
+ ./android/os/IPowerManager.aidl
+ ./android/os/PowerManager.java
+
+ Service Process, These Services seats outside applications
+ $ cd ~/aosp/frameworks/base/services
+ $ find | grep -i power
+ ./core/jni/com_android_server_power_PowerManagerService.h
+ ./core/jni/com_android_server_power_PowerManagerService.cpp
+ ./core/java/com/android/server/display/DisplayPowerState.java
+ ./core/java/com/android/server/display/DisplayPowerController.java
+ ./core/java/com/android/server/hdmi/DevicePowerStatusAction.java
+ ./core/java/com/android/server/hdmi/PowerStatusMonitorAction.java
+ ./core/java/com/android/server/power
+ ./core/java/com/android/server/power/ScreenOnBlocker.java
+ ./core/java/com/android/server/power/SuspendBlocker.java
+ ./core/java/com/android/server/power/WirelessChargerDetector.java
+ ./core/java/com/android/server/power/ShutdownThread.java
+ ./core/java/com/android/server/power/Notifier.java
+ ./core/java/com/android/server/power/PowerManagerService.java
+
+ Kernel Interface
+  $ echo /sys/class/timed_output/vibrator
+
+ How possible looking at the above links, from one kernel function we can
+ implement 4 functions?
+
+=============================================================================
+Product Development
+=============================================================================
+$ cd ~/aosp/out/target/product/alpha
+$ ls -l *.img
+-rw-r--r-- 1 student student   4743168 Mar 19 22:22 boot.img
+-rw-r--r-- 1 student student  69206016 Mar 19 22:33 cache.img
+-rw-rw-r-- 1 student student   1014703 Mar 19 08:39 ramdisk.img
+-rw-rw-r-- 1 student student   1853805 Mar 19 22:22 ramdisk-recovery.img
+-rw-r--r-- 1 student student   5582848 Mar 19 22:22 recovery.img
+-rw-r--r-- 1 student student 786432000 Mar 19 22:33 system.img
+-rw-r--r-- 1 student student 576716800 Mar 19 08:52 userdata.img
+-rw------- 1 student student 576716800 Mar 19 22:36 userdata-qemu.img
+
+$ adb kill-server
+$ adb services
+$ adb -d shell # device
+$ adb -e shell # emulator
+$ adb -s SERIAL shell
+$ dumpsys meminfo # gives information about memory
+
+=============================================================================
+Android Native Development Kit (NDK)
+=============================================================================
+
+
+
+ToDo! Think about GPIO
+
+# End of File
+
