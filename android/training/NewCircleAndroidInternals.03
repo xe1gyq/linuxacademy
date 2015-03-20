@@ -335,7 +335,8 @@ FibonacciNative
 
 $ git clone Fibo...Nati..
 Open Eclipse
-File / Import / Import Project
+File / Import / Import Project / Android
+Run As / Android Application
 
 ToDo! Think about GPIO
 
