@@ -293,6 +293,50 @@ Android Native Development Kit Module (NDK)
 
    $ java -Djava.library.path=libs -classpath bin com.marakana.jniexamples.Hello Student 5
 
+   $ cd ~/aosp/frameworks/base/services/core/
+   $ cd ~/aosp/frameworks/base/core/jni/android/graphics/
+   $ find getFieldIDCheck
+
+   Vibrator Source Code Review
+
+   $ ~/aosp/frameworks/base/services/core/java/com/android/server/VibratorService.java
+   Search for the word "native"
+    native static boolean vibratorExists();
+    native static void vibratorOn(long milliseconds);
+    native static void vibratorOff();
+   Name of the JNI code
+    com_android_server_VibratorService.cpp
+   $ nano ~/aosp/frameworks/base/services/core/jni/com_android_server_VibratorService.cpp
+   vibratorOn belongs to Vibrator Service object, same object as the Java one
+   $ ls -l ~/aosp/hardware/libhardware_legacy/include
+   $ nano ~/aosp/hardware/libhardware_legacy/vibrator/vibrator.c
+   $ ~/aosp/hardware/libhardware_legacy/Android.mk
+     Where .so file is compiled?
+       ...
+       # Setting LOCAL_PATH will mess up all-subdir-makefiles, so do it beforehand.legacy_modules := power uevent vibrator wifi qemu qemu_tracing
+       ...
+       LOCAL_MODULE:= libhardware_legacy
+       include $(BUILD_SHARED_LIBRARY)
+   $ cd ~/aosp/framework/base/core/
+   $ nano Android.mk
+     Search for LOCAL
+   $ cd ../
+   $ nano Android.mk
+     Search for LOCAL
+   $ nano ~/aosp/hardware/libhardware_legacy/vibrator/vibrator.c
+   Now we look at the content of vibrator.c
+     #define THE_DEVICE "/sys/class/timed_output/vibrator/enable"
+
+   Option not to generate Javah
+
+=============================================================================
+FibonacciNative
+=============================================================================
+
+$ git clone Fibo...Nati..
+Open Eclipse
+File / Import / Import Project
+
 ToDo! Think about GPIO
 
 # End of File
