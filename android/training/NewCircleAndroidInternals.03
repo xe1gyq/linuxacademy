@@ -198,10 +198,27 @@ $ adb -e shell # emulator
 $ adb -s SERIAL shell
 $ dumpsys meminfo # gives information about memory
 
+Debugging Memory Leaks ... How do we check for a Memory Leak?
+
+ $ adb -d shell
+ $ top | grep zinio # com.zinio.mobile.android.reader
+ Then randomize
+ $ monkey -p com.zinio.mobile.android.reader 1000
+
+ $ dumpsys meminfo
+ $ top | grep com.rubycell.pianisthd
+ $ monkey -p com.rubycell.pianisthd 1000
+
+Debugging CPU Usage ... How do I see the CPU usage of my System?
+
+ Run any application as an example
+ $ top | grep -v ' 0%'
+   Take a look CPU 18%
+ $ top -t | grep -v ' 0%'
+
 =============================================================================
 Android Native Development Kit (NDK)
 =============================================================================
-
 
 
 ToDo! Think about GPIO
