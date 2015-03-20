@@ -21,6 +21,8 @@ User Space Hardware Abstraction Layer (HAL)
 ==============================================================================
 
 Userspace C/C++ hardware abstraction layer as shared libraries
+Standard way to create software hooks in between the Android platform stack
+and your hardware
 Makes porting easier
 Link! source.android.com
 Talked about Sensors
@@ -35,6 +37,9 @@ ToDo! Sensor Fusion @ Wikipedia
  -----------------
  Acce   Mag   Gyro
 
+ sensors.h
+ sensors.<platform/default/arch>.so
+
  Link! http://source.android.com/devices/sensors/
  Link! ~/aosp/hardware/libhardware/include/hardware
   - Camera
@@ -42,6 +47,11 @@ ToDo! Sensor Fusion @ Wikipedia
   - Audio
   - Etc ...
  Looked at sensors.h
+
+ An example of an implementation of the HAL:
+ A co-processor might actually do the sensor fusion, while
+ sensors.platform.so will provide just the access to that co-proccessor
+ and the real sensor fusion is on a different chip.
 
  Pointers to a Function
  How functions are activated?
@@ -254,9 +264,6 @@ Linux version 3.10.0+ (student@newcircle) (gcc version 4.8 (GCC) ) #15 PREEMPT T
 What about Permissions?
 $ ls /system/etc/permissions
 
-Changing the Launcher Background
-$ cd ~/aosp/framework/
-
 What can we build in Android?
  - .apk
  - .jar
@@ -345,6 +352,9 @@ Open up the Calculator
 Other Notable Native Daemons
 =============================================================================
 
+Dalvik
+A lighter JVM that uses it's own bytecode called DEX bytecode
+
 Application / Java / Class / ByteCode
 Java Virtual Machine C/C++
 Native Instruction Set
@@ -387,7 +397,15 @@ Application Runtime 1.0 Dalvik
 
 Custom implementation of a Virtual Machine
 Take .java to .class and convert it to .dex file
+.java (javac) -> .class (dex compiler) -> .dex
+ODEX
+ An optimized DEX file that is optimized for your device by prelinking
+ needed libraries by hardconding their path into the ODEX file
 JIT Support <> Just in Time
+ Once we load the application for the first time after reboot, we compile the
+ DEX bytecode into ARM/x86 instructions set
+GC: 2 steps: Mark and Sweep- Pause the Application and GC
+An uncompressed DEX file is 30% smaller than compressed JAR
 
 Working Example
 
@@ -409,8 +427,15 @@ Application Runtime 2.0 ART
 
 Successor to Dalvik introduced in Android 4.4
 Take .java to .class to .dex to .oat
+Garbage Collections enhacements
+OAT File (.dex)
+ 3x bigger than original dex file. Because the Dalvik bytecode and the native
+ instruction set. Also it has OAT Data which links the Dalvik code to the
+ native instruction set
 OAT Ahead Of Time
-Garage Collections enhacements
+ If it is an application you download, during install time, we compile to OAT
+ format. If it is a pre loaded /(system/app) it is already precompiled into
+ OAT format
 ToDo! Google "Google IO 2014 Art" and watch the Youtube video
 
 Code of compiled Apps goes to /data/dalvik-cache/
