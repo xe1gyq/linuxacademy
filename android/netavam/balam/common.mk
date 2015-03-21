@@ -6,3 +6,7 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 # Enable our custom kernel
 # LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 # PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+
+# Include all packages from this file
+include $(LOCAL_PATH)/packages.mk
+
