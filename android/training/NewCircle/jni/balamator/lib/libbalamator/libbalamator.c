@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <sys/ioctl.h>
 
-static const char THE_DEVICE[] = "/sys/kernel/balam/status";
+static const char THE_DEVICE[] = "/sys/kernel/balamator/status";
 
 static int balamator_exists() {
     int fd;
