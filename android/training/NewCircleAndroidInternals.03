@@ -349,4 +349,8 @@ Package .so from Eclipse
 Note! A crash has a side effect crashes
 ToDo! Try ndk-build with Company/Product directory
 
+Debug First Time
+got to the project and execute
+$ ndk-gdb
+
 # End of File
