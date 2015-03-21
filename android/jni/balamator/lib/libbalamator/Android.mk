@@ -3,7 +3,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../include/
-LOCAL_SRC_FILES := balamator.c
+LOCAL_SRC_FILES := libbalamator.c
 LOCAL_SHARED_LIBRARIES := libcutils
 LOCAL_CFLAGS += -g -O0 -Wno-unused-parameter
 #Also defines the output file name 

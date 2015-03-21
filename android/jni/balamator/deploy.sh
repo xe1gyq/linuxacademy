@@ -5,10 +5,10 @@ set -x
 ROOT=`pwd`
 INCLUDE=$ROOT/include
 LIB=$ROOT/lib
-HAL=$LIB/balamator
+HAL=$LIB/libbalamator
 
 # Name of Packages
-BALAMATORLIB=$HAL/balamator.c
+BALAMATORLIB=$HAL/libbalamator.c
 BALAMATORMK=$HAL/Android.mk
 BALAMATORI=$INCLUDE/balamator.h
 
@@ -20,7 +20,7 @@ HARDWAREMI=$ROOT/hardware/libhardware/include/hardware
 AOSP=/home/student/aosp
 COMPANY=newcircle
 PRODUCT=alpha
-PRODUCTMO=$AOSP/device/$COMPANY/$PRODUCT/lib/balamator
+PRODUCTMO=$AOSP/device/$COMPANY/$PRODUCT/lib/libbalamator
 PRODUCTIO=$AOSP/device/$COMPANY/$PRODUCT/include
 
 # AOSP Integration
