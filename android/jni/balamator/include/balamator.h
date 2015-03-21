@@ -12,8 +12,7 @@ __BEGIN_DECLS
 
 #define BALAMATOR_HARDWARE_MODULE_ID "balamator"
 
-struct balamator_device;
-typedef struct balamator_device {
+struct balamator_device_t {
   /*
    * Common HAL device structure.
    * Always placed at the head of the module definition.
@@ -22,7 +21,7 @@ typedef struct balamator_device {
 
   int (*balamator_on)(struct balamator_device* dev, unsigned int status);
   int (*balamator_off)(struct balamator_device* dev);
-} balamator_device_t;
+};
 
 __END_DECLS
 

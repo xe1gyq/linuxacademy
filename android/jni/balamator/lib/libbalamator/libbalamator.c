@@ -1,5 +1,5 @@
 #define LOG_NDEBUG 1                                               /* <1> */
-#define LOG_TAG "BalamAtor"                                          /* <1> */
+#define LOG_TAG "balamator"                                          /* <1> */
 #define LOG_ID LOG_ID_MAIN                                         /* <2> */
 
 #include <balamator.h>                                               /* <3> */
@@ -55,13 +55,13 @@ static int sendit(unsigned int status)
     return ret;
 }
 
-static int balamator_on(balamator_device_t* balamdev __unused, unsigned int status)
+static int balamator_on(struct balamator_device_t* balamdev, unsigned int status)
 {
 	return sendit(status);
 }
 
 
-static int balamator_off(balamator_device_t* balamdev __unused, unsigned int status)
+static int balamator_off(struct balamator_device_t* balamdev, unsigned int status)
 {
 	return sendit(0);
 }
@@ -74,9 +74,8 @@ static int open_balamator(const struct hw_module_t *module, char const *name,
         return -ENODEV;
     }
 
-    balamator_device_t *balamatordev = calloc(1, sizeof(balamator_device_t));
-
-    if (!balamatordev) {
+    struct balamator_device_t *dev = malloc(sizeof(struct balamator_device_t));
+    if (!dev) {
         ALOGE("Can not allocate memory for balamator device");
         return -ENOMEM;
     }
