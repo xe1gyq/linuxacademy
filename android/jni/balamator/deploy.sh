@@ -3,31 +3,43 @@
 set -x
 
 ROOT=`pwd`
-INCLUDE=$ROOT/include/
-LIB=$ROOT/lib/
-BALAM=$LIB/balam/
+INCLUDE=$ROOT/include
+LIB=$ROOT/lib
+HAL=$LIB/balamator
 
-AOSP=/home/student/aosp/
-HARDWAREMO=$AOSP/hardware/libhardware/modules/balam/
-HARDWAREIO=$AOSP/hardware/libhardware/include/hardware/
+# Name of Packages
+BALAMATORLIB=$HAL/balamator.c
+BALAMATORMK=$HAL/Android.mk
+BALAMATORI=$INCLUDE/balamator.h
 
-HARDWAREMS=$ROOT/hardware/libhardware/modules/balam/
-HARDWAREMI=$ROOT/hardware/libhardware/include/hardware/
+# Local Integration
+HARDWAREMS=$ROOT/hardware/libhardware/modules/balamator
+HARDWAREMI=$ROOT/hardware/libhardware/include/hardware
 
-HARDWAREM_BALAMC=$HARDWAREMS/balam.c
-HARDWAREM_ANDROIDMK=$HARDWAREMS/Android.mk
-HARDWAREI_BALAMH=$HARDWAREMI/balam.h
+# Product Integration
+AOSP=/home/student/aosp
+COMPANY=newcircle
+PRODUCT=alpha
+PRODUCTMO=$AOSP/device/$COMPANY/$PRODUCT/lib/balamator
+PRODUCTIO=$AOSP/device/$COMPANY/$PRODUCT/include
 
-test -d $HARDWAREMO || mkdir $HARDWAREMO
-test -d $HARDWAREIO || mkdir $HARDWAREIO
+# AOSP Integration
+AOSP=/home/student/aosp
+HARDWAREMO=$AOSP/hardware/libhardware/modules/balamator
+HARDWAREIO=$AOSP/hardware/libhardware/include/hardware
+
 test -d $INCLUDE || mkdir $INCLUDE
 test -d $LIB || mkdir $LIB
 test -d $BALAM || mkdir $BALAM
 
-cp $HARDWAREM_BALAMC $HARDWAREMO
-cp $HARDWAREM_ANDROIDMK $HARDWAREMO
-cp $HARDWAREI_BALAMH $HARDWAREIO
+test -d $PRODUCTMO || mkdir $PRODUCTMO
+test -d $PRODUCTIO || mkdir $PRODUCTIO
 
-cp $HARDWAREM_BALAMC $BALAM
-cp $HARDWAREM_ANDROIDMK $BALAM
-cp $HARDWAREI_BALAMH $INCLUDE
+test -d $HARDWAREMO || mkdir $HARDWAREMO
+test -d $HARDWAREIO || mkdir $HARDWAREIO
+
+cp $BALAMATORLIB $PRODUCTMO
+cp $BALAMATORMK $PRODUCTMO
+cp $BALAMATORI $PRODUCTIO
+
+# Enf of File
