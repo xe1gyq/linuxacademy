@@ -334,10 +334,19 @@ FibonacciNative
 =============================================================================
 
 $ git clone Fibo...Nati..
-Open Eclipse
-File / Import / Import Project / Android
-Run As / Android Application
 
-ToDo! Think about GPIO
+Open Eclipse
+ File / Import / Import Project / Android
+Execute from Eclipse
+ Run As / Android Application
+Execute form Command Line
+ $ ndk-build
+ $ ndk-build clean
+
+Package .so from Eclipse
+ Right clic the Project / Android Tools / Add Native Support
+
+Note! A crash has a side effect crashes
+ToDo! Try ndk-build with Company/Product directory
 
 # End of File
