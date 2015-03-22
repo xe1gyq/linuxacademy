@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <sys/ioctl.h>
 
-static const char BALAMATOR_TEMP[] = "/sys/class/net/eth0/statistics/rx_bytes";
+static const char BALAMATOR_TEMP[] = "/sys/kernel/balamator/status";
 
 static int balamator_on(struct balamator_device_t* balamdev, unsigned int status)
 {

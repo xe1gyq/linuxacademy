@@ -8,3 +8,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_x86.mk)
 PRODUCT_NAME := full_balam
 PRODUCT_DEVICE := balam
 PRODUCT_MODEL := Full Balam Image for Emulator
+
+PRODUCT_PACKAGES += BalamatorNative
