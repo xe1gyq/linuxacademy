@@ -9,8 +9,78 @@
     tools:context="com.example.balamex.BalamexActivity" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textSize="35sp" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number" />
+
+    <RadioGroup
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/input"
+        android:layout_below="@+id/input"
+        android:layout_marginTop="22dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/type_balamator_jon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/balamatorJOn" />
+
+        <RadioButton
+            android:id="@+id/type_balamator_joff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/balamatorJOff" />
+
+        <RadioButton
+            android:id="@+id/type_balamator_ioff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/balamatorIOff" />
+
+        <RadioButton
+            android:id="@+id/type_balamator_ion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/balamatorIOn" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/type"
+        android:layout_below="@+id/type"
+        android:layout_marginTop="15dp"
+        android:text="@string/button" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp" />
 
 </RelativeLayout>

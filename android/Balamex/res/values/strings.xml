@@ -2,7 +2,12 @@
 <resources>
 
     <string name="app_name">Balamex</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Netavam Balam</string>
+    <string name="balamatorJOn">JOn</string>
+    <string name="balamatorJOff">JOff</string>
+    <string name="balamatorIOn">IOn</string>
+    <string name="balamatorIOff">IOff</string>
+    <string name="button">Get Balamator</string>
     <string name="action_settings">Settings</string>
 
 </resources>
