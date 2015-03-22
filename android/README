@@ -41,5 +41,19 @@ Balamex
       $ ndk-build "APP_ABI=armeabi-v7a x86"
 
   11. Create Application.mk (Setting to compile code)
+  12. Load com_example_balamex_BalamexLib library @ BalamexLib.java
+      System.loadLibrary("com_example_balamex_BalamexLib");
+  13. Create the UI
+  14. Implement UI functions
+  15. Create Android Virtual Device
+  16. Start AVD
+  17. Monitor progress
+      $ adb logcat
+  18. Understand application from command line
+      $ adb shell
+      # ls /data/data/com.example.balamex/lib/
+      libcom_example_balamex_BalamexLib.so
+  19. Run Application
+  20. Interact with it
 
 # End of File
