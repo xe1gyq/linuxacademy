@@ -31,8 +31,8 @@ public final class R {
         public static final int output=0x7f080008;
         public static final int textView1=0x7f080000;
         public static final int type=0x7f080002;
-        public static final int type_balamator_ioff=0x7f080005;
-        public static final int type_balamator_ion=0x7f080006;
+        public static final int type_balamator_ioff=0x7f080006;
+        public static final int type_balamator_ion=0x7f080005;
         public static final int type_balamator_joff=0x7f080004;
         public static final int type_balamator_jon=0x7f080003;
     }

@@ -81,7 +81,7 @@ public class BalamexActivity extends Activity implements OnClickListener {
 						break;
 				}
 				t = System.currentTimeMillis() - t;
-				return String.format("Balamator %d in %d", result, t);
+				return String.format("Balamator Result %d", result);
 			}
 			@Override
 			protected void onPostExecute(String result) {
