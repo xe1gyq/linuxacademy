@@ -1,6 +1,45 @@
 Android Open Source Project
 
-netavam . Android Custom Device from Netavam Inc.
+Balamex  . NDK learning
+netavam  . Android Custom Device from Netavam Inc.
 training . All relevant documentation and examples obtained from attendance to trainings
+ 
+Balamex
+
+  1. Create App
+     Balamex
+     BalamexActivity.java
+  2. Add a Library
+     BalamexLib.java
+  3. Go to project command line and create jni directory
+     $ mkdir jni
+  4. Execute javah to generateh .h file from class file
+     $ javah -jni -classpath bin/classes/ -d jni com.example.balamex.BalamexLib
+  5. Look at the .h file created
+     $ ls jni/
+     com_example_balamex_BalamexLib.h
+  6. Create C file
+  7. Create Android.mk (How to compile code)
+  8. Compile
+     $ ndk-build
+  9. Look at the library compiled
+     $ ls libs/armeabi/libcom_example_balamex_BalamexLib.so
+ 10. See file type
+     $ file libs/armeabi/libcom_example_balamex_BalamexLib.so
+     libs/armeabi/libcom_example_balamex_BalamexLib.so: ELF 32-bit LSB  shared object, ARM, EABI5 version 1 (SYSV), dynamically linked (uses shared libs), stripped
+
+     Architecture Specific
+
+      $ ndk-build APP_ABI=x86
+      [x86] Compile        : com_example_balamex_BalamexLib <= com_example_balamex_BalamexLib.c
+      [x86] SharedLibrary  : libcom_example_balamex_BalamexLib.so
+      [x86] Install        : libcom_example_balamex_BalamexLib.so => libs/x86/libcom_example_balamex_BalamexLib.so
+      $ file libs/x86/libcom_example_balamex_BalamexLib.so 
+      libs/x86/libcom_example_balamex_BalamexLib.so: ELF 32-bit LSB  shared object, Intel 80386, version 1 (SYSV), dynamically linked, stripped
+
+      $ ndk-build APP_ABI=all
+      $ ndk-build "APP_ABI=armeabi-v7a x86"
+
+  11. Create Application.mk (Setting to compile code)
 
 # End of File
