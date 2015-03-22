@@ -240,17 +240,18 @@ $ git checkout -t remotes/origin/android-goldfish-3.10
 $ cd ~/kernel/goldfish/
 $ make i386_emu_defconfig
 $ cp .config arch/x86/configs/alpha_defconfig
+$ make menuconfig
 $ ~/aosp/external/qemu/distrib/build-kernel.sh --arch=x86 --config=alpha
 $ mv /tmp/kernel-qemu/kernel-3.10.0-qemu-x86 ~/aosp/device/newcircle/alpha
 $ cd ~/aosp
-$ nano ~aosp/device/newcircle/alpha/BoardConfig.mk
+$ nano ~/aosp/device/newcircle/alpha/BoardConfig.mk
  …
  TARGET_NO_KERNEL := false
  …
 $ nano ~/aosp/device/newcircle/alpha/common.mk
  ...
  # Enable our custom kernel
- LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+ LOCAL_KERNEL := $(LOCAL_PATH)/kernelimagename
  PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
 $ make -j10
 $ emulator -kernel out/target/product/alpha/kernel &
