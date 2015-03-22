@@ -11,4 +11,8 @@ public class BalamexLib {
 		return 0;
 	}
 	public native static long balamatorIOff(long status);
+	
+	static {
+		System.loadLibrary("com_example_balamex_BalamexLib");
+	}
 }
