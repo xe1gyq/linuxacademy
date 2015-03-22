@@ -22,9 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
+        android:layout_centerVertical="true"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:gravity="center"
+        android:gravity="center_horizontal|center_vertical"
         android:inputType="number" />
 
     <RadioGroup
@@ -80,7 +81,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="15dp"
+        android:gravity="center_horizontal|center_vertical"
         android:textSize="25sp" />
 
 </RelativeLayout>
