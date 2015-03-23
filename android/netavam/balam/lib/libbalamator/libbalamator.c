@@ -6,7 +6,7 @@
 #include <sys/ioctl.h>
 #include <cutils/log.h>
 
-static const char BALAMATOR_KERNEL_INTERFACE[] = "/sys/class/net/lo/statistics/rx_bytes";
+static const char BALAMATOR_KERNEL_INTERFACE[] = "/sys/class/net/lo/statistics/tx_bytes";
 
 static int balamator_on_local(struct balamator_device_t* balamatordev)
 {
