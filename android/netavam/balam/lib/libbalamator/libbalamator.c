@@ -6,7 +6,8 @@
 #include <sys/ioctl.h>
 #include <cutils/log.h>
 
-static const char BALAMATOR_KERNEL_INTERFACE[] = "/sys/class/net/lo/statistics/tx_bytes";
+static const char BALAMATOR_KERNEL_INTERFACE_ON[] = "/sys/class/net/lo/statistics/tx_bytes";
+static const char BALAMATOR_KERNEL_INTERFACE_OFF[] = "/sys/class/net/lo/statistics/rx_bytes";
 
 static int balamator_on_local(struct balamator_device_t* balamatordev)
 {
@@ -14,7 +15,7 @@ static int balamator_on_local(struct balamator_device_t* balamatordev)
 	long int li;
 	char value[PAGE_SIZE];
 
-	fd = open(BALAMATOR_KERNEL_INTERFACE, O_RDONLY);
+	fd = open(BALAMATOR_KERNEL_INTERFACE_ON, O_RDONLY);
 	if (fd < 0)
 		return errno;
 	read(fd, value, sizeof(value));
@@ -25,7 +26,17 @@ static int balamator_on_local(struct balamator_device_t* balamatordev)
 
 static int balamator_off_local(struct balamator_device_t* balamatordev)
 {
-	return 0;
+        int fd;
+        long int li;
+        char value[PAGE_SIZE];
+
+        fd = open(BALAMATOR_KERNEL_INTERFACE_OFF, O_RDONLY);
+        if (fd < 0)
+                return errno;
+        read(fd, value, sizeof(value));
+        li = atol(value);
+        close(fd);
+        return(li);
 }
 
 static int balamator_close(hw_device_t *device)
