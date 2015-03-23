@@ -1,5 +1,5 @@
-#ifndef _BALAMATOR_INTERFACE_H
-#define _BALAMATOR_INTERFACE_H
+#ifndef _BALAMATOR_HARDWARE_H
+#define _BALAMATOR_HARDWARE_H
 
 #include <stdint.h>
 #include <sys/cdefs.h>
@@ -10,14 +10,15 @@ __BEGIN_DECLS
 
 #define BALAMATOR_HARDWARE_MODULE_ID "balamator"
 
-struct balamator_device_t {
+typedef struct balamator_device_t {
 
   struct hw_device_t common;
 
-  int (*balamator_on)(struct balamator_device_t* dev, unsigned int status);
-  int (*balamator_off)(struct balamator_device_t* dev, unsigned int status);
-};
+  int (*balamator_on)(struct balamator_device_t* device);
+  int (*balamator_off)(struct balamator_device_t* device);
+
+} balamator_device_t;
 
 __END_DECLS
 
-#endif /* End of the _BALAMATOR_INTERFACE_H block */
+#endif /* End of the _BALAMATOR_HARDWARE_H block */

@@ -1,27 +1,29 @@
 #include <stdio.h>
-
 #include <balamator.h>
 #include <hardware/hardware.h>
 
-int main(int argc, char* argv[])
+int main(void)
 {
-	printf("Hello Balam!\n");
+        int status;
+	int output;
+
 	hw_module_t* module;
-	int ret = hw_get_module(BALAMATOR_HARDWARE_MODULE_ID, (hw_module_t const**)&module);
-	if (ret ==0) {
-		struct balamator_device_t *dev;
-		ret =  module->methods->open(module, 0, (struct hw_device_t **) &dev);
-		if (ret == 0) {
-			printf("Hello Balam Device Opened!\n");
-			ret = 0;
-			dev->common.close((struct hw_device_t *)dev);
+
+	status = hw_get_module(BALAMATOR_HARDWARE_MODULE_ID, (hw_module_t const**)&module);
+	if (!status) {
+		struct balamator_device_t *balamatordev;
+		status =  module->methods->open(module, 0, (struct hw_device_t **) &balamatordev);
+		if (!status) {
+			output = balamatordev->balamator_on(balamatordev);
+                        fprintf(stdout, "Balamator Library Interface Value: %d\n", output);
+			balamatordev->common.close((struct hw_device_t *)balamatordev);
 		} else {
-			fprintf(stderr, "Failed to open Device! Id %d\n", ret);
-			ret = 2;
+			fprintf(stderr, "Failed to open Device! Id %d\n");
+			return 2;
 		}
 	} else {
 		fprintf(stderr, "Failed to get module %s", BALAMATOR_HARDWARE_MODULE_ID);
-		ret = 1;
+		return 1;
 	}
 	return 0;
 }
