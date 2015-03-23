@@ -1,0 +1,10 @@
+The New Circle Github Android Projects
+
+$ git remote add fibonaccinative https://github.com/thenewcircle/FibonacciNative.git
+$ git fetch fibonaccinative
+$ git merge -s ours --no-commit fibonaccinative/master
+$ git read-tree --prefix=android/training/NewCircle/github/FibonacciNative -u fibonaccinative/master
+$ git commit -m "Imported FibonacciNative as a Subtree"
+$ git pull -s subtree fibonaccinative master
+
+# End of File
