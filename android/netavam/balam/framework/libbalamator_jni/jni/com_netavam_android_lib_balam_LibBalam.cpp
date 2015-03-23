@@ -46,7 +46,7 @@ static jint balamatorOn(JNIEnv *env, jobject object) {
   struct balamator_device_t *dev = getDevice(env, object);
   int ret = 0;
   if (dev) {
-    ret = dev->balamator_on(dev, 1);
+    ret = dev->balamator_on(dev);
     if (ret < 0) {
       throwLibBalamException(env, "Failed to get total log size");
     }
@@ -58,7 +58,7 @@ static jint balamatorOff(JNIEnv *env, jobject object) {
   struct balamator_device_t *dev = getDevice(env, object);
   int ret = 0;
   if (dev) {
-    ret = dev->balamator_off(dev, 1);
+    ret = dev->balamator_off(dev);
     if (ret < 0) {
       throwLibBalamException(env, "Failed to get used log size");
     }
@@ -72,7 +72,6 @@ static JNINativeMethod method_table[] = {
   { "balamatorOn", "()I", (void *) balamatorOn },
   { "balamatorOff", "()I", (void *) balamatorOff }
 };
-
 
 extern "C" jint JNI_OnLoad(JavaVM* vm, void* reserved) {
   JNIEnv* env = NULL;
