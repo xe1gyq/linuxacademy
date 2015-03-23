@@ -6,9 +6,9 @@ public class Main {
     try {
       LibBalam libBalam = new LibBalam();
       try {
-        int on = libBalam.balamatorOn();
-        int off = libBalam.balamatorOff();
-        System.out.printf("Seems it works\n");
+        int onc = libBalam.balamatorOn();
+        int offc = libBalam.balamatorOff();
+        System.out.printf("Seems it works! Received %d | %d\n", onc, offc);
       } finally {
         libBalam.close();
       }

@@ -48,7 +48,7 @@ static jint balamatorOn(JNIEnv *env, jobject object) {
   if (dev) {
     ret = dev->balamator_on(dev);
     if (ret < 0) {
-      throwLibBalamException(env, "Failed to get total log size");
+      throwLibBalamException(env, "Failed to get On value");
     }
   }
   return ret;
@@ -60,7 +60,7 @@ static jint balamatorOff(JNIEnv *env, jobject object) {
   if (dev) {
     ret = dev->balamator_off(dev);
     if (ret < 0) {
-      throwLibBalamException(env, "Failed to get used log size");
+      throwLibBalamException(env, "Failed to get Off state");
     }
   }
   return ret;
