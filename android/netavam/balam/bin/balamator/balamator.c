@@ -15,7 +15,7 @@ int main(void)
 		status =  module->methods->open(module, 0, (struct hw_device_t **) &balamatordev);
 		if (!status) {
 			output = balamatordev->balamator_on(balamatordev);
-                        fprintf(stdout, "Balamator Library Interface Value: %ud\n", output);
+                        fprintf(stdout, "Balamator Library Interface Value: %u\n", output);
 			balamatordev->common.close((struct hw_device_t *)balamatordev);
 		} else {
 			fprintf(stderr, "Failed to open Device! Id %d\n", status);
