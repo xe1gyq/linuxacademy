@@ -5,7 +5,7 @@ training . All relevant documentation and examples obtained from attendance to t
 
 Balam Device by Netavam Inc.
 
-To use netavam/balam device in AOSP copy the below directories to
+To use netavam/balam device in AOSP copy the below directories and file to
  $AOSP/device/generic/mini-emulator-x86/
 
  - app
@@ -13,6 +13,7 @@ To use netavam/balam device in AOSP copy the below directories to
  - framework
  - include
  - lib
+ - packages.mk
 
 And modify mini_emulator_x86.mk according to this patch
 
