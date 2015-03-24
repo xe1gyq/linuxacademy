@@ -154,6 +154,98 @@ AOSP/out/../grouper/
 $ repo grep init.grouper.rc
 adb reboot bootloader
 
+=============================================================================================
+Libmrknlog
+=============================================================================================
+
+struct    copy
+struct *  address of the structure, already created
+struct ** we are creating device and returning a device
+
+Debug Time
+
+$ ls /system/lib/hw/balamator.default.so
+Create a crash diving by 0 and update files
+$ adb remount
+$ adb sync
+$ adb forward tcp:5039 tcp:5039 # Server
+$ adb shell # Server
+# gdbserver :5029 /system/bin/balamator # Server
+Process /system/bin/balamator created; pid = 1801
+Listening on port 5029
+$ echo $ANDROID_PRODUCT_OUT # Client
+/home/student/android-ia/out/target/product/mini-emulator-x86
+$ export SYMBOLS=$ANDROID_PRODUCT_OUT/symbols/
+$ export SYMBOLS_LIB=$ANDROID_PRODUCT_OUT/symbols/system/lib
+$ $ANDROID_TOOLCHAIN/x86_64-linux-android-gdb \
+  -ex "set solib-search-path $SYMBOLS_LIB:$SYMBOLS_LIB/hw:$SYMBOLS_LIB/ssl/engines:$SYMBOLS_LIB/drm:$SYMBOLS_LIB/egl:$SYMBOLS_LIB/soundfx" \
+  -ex "target remote :5039" \
+  --quiet \
+  $SYMBOLS/system/bin/balamator
+
+Bug!
+https://github.com/xe1gyq/linuxlearning/blob/master/android/netavam/balam/framework/libbalamator_jni/jni/com_netavam_android_lib_balam_LibBalam.cpp
+private int nativeHandle
+ToDo! Investigate a field ID
+ToDo! Fix bug seeing nativeHandle from
+https://github.com/thenewcircle/alpha/blob/efe19a6dd2fceab44e645f06adebd2910fcac407/framework/libmrknlog_jni/jni/com_marakana_android_lib_log_LibLog.cpp
+
+DDMS
+
+Do not take more than 5 seconds, if so, create an async task, a thread
+At Phone, Developers Options
+
+=============================================================================================
+Binder
+=============================================================================================
+
+Every application process will have at least 2 binder threads
+ Whenever we use one of them, the application will have way to communicate
+IOCTL Polling
+$ cat drivers/staging/android/logger.c
+Example?
+$ cat /proc/kmsg
+IOCTL Blocking
+
+$ cat /d/binder/stats | grep "proc"
+root@mini-emulator-x86:/d/binder # cat stats | grep "proc"                     
+proc: active 16 total 18
+proc 1662
+proc 1635
+proc 1613
+proc 1579
+proc 1543
+proc 1478
+proc 1458
+proc 1364
+proc 1311
+proc 1209
+proc 937
+proc 936
+proc 924
+proc 939
+proc 922
+proc 920
+$ ps -aux | grep <id>
+u0_a14    1662  940   492288 36740 ffffffff b768b815 S com.netavam.android.balamatornative
+u0_a3     1635  940   495272 35728 ffffffff b768b815 S android.process.media
+u0_a9     1613  940   490464 28444 ffffffff b768b815 S com.android.printspooler
+u0_a12    1579  940   489920 26516 ffffffff b768b815 S com.android.smspush
+u0_a1     1543  940   495960 35784 ffffffff b768b815 S android.process.acore
+u0_a6     1478  940   489204 35984 ffffffff b768b815 S com.example.android.home
+radio     1458  940   505460 40428 ffffffff b768b815 S com.android.phone
+u0_a7     1364  940   506980 39496 ffffffff b768b815 S com.android.inputmethod.latin
+u0_a4     1311  940   511812 51100 ffffffff b768b815 S com.android.systemui
+system    1209  940   588648 78804 ffffffff b768b815 S system_server
+media     937   1     108580 9812  ffffffff b76e46a6 S /system/bin/mediaserver
+drm       936   1     16832  3932  ffffffff b76776a6 S /system/bin/drmserver
+system    924   1     24080  5664  ffffffff b771d815 S /system/bin/surfaceflinger
+keystore  939   1     7828   2164  c056a888 b76ed6a6 S /system/bin/keystore
+system    922   1     3844   840   c056a888 b77506a6 S /system/bin/servicemanager
+root      920   1     4000   456   c02d65b4 08095ab5 S /sbin/healthd
+
+ToDo! Create a script to get active processes and grab lot of info about them in other
+services
 
 Fun! https://www.vis.ethz.ch/en/visionen/pdfs/2014/visionen_2014_3.pdf?end=52&start=50
 
