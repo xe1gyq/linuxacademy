@@ -1,0 +1,160 @@
+=============================================================================================
+HAL Layer
+=============================================================================================
+
+Proxy
+Marshals the data to the service through the binder
+
+Stub Class
+Receives the data (on the service side) via onTransact and unmarshals the data and passed it
+up to the implementation of the service
+
+3rd Party Service
+- Runs if an activity needs them and kept in memory if thee is enough memory
+  to keep them cached
+- Takes time to load
+  . An application sends an intent to Activit	ManagerService
+  . Activity Manager Services asks from the PackageManagerService (which knows the location
+    of the DEX file) to talk to Zygote to start the application (.dex)
+  . Once the .dex file is loaded and the application started, the application communicates
+    to the AMS and register itself to it
+  . The the AMS calls with onServiceConnected to the application along with the iBinder
+    object and now the application has a proxy to the service
+
+=============================================================================================
+Android Boot Up
+=============================================================================================
+
+ 1. Power Button
+ 2. CPU Firmware
+ 3. Bootloader
+ 4. Kernel
+    Memory
+    Graphics
+    Power Management
+    Graphics
+ 5. Init
+    init.*.rc
+    init.rc
+    Chmod
+    Chown
+    Filesystem Setup
+    ~/aosp/out/target/product/balam/root
+
+   service lmkd /system/bin/lmkd
+    class core
+    critical
+    socket lmkd seqpacket 0660 system system
+
+   service ueventd /sbin/ueventd
+    class core
+    critical
+    seclabel u:r:ueventd:s0
+
+   service servicemanager /system/bin/servicemanager
+    class core
+    user system
+    group system
+    critical
+    onrestart restart healthd
+    onrestart restart zygote
+    onrestart restart media
+    onrestart restart surfaceflinger
+    onrestart restart drm
+
+   service surfaceflinger /system/bin/surfaceflinger
+    class core
+    user system
+    group graphics drmrpc
+    onrestart restart zygote
+
+  init.goldfish.rc
+  File: init.zygote32.rc
+  service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server
+    class main
+    socket zygote stream 660 root system
+    onrestart write /sys/android_power/request_state wake
+    onrestart write /sys/power/state on
+    onrestart restart media
+    onrestart restart netd
+
+     Adbd
+     Logd
+
+  6. Service Manager
+     healthd
+     surface flinger
+     zygote
+     repo grep init.grouper.rc
+  7. Zygote C++ 
+     ToDo! http://roylee17.blogspot.com/2011/02/zygote-initialization-flow.html
+     ART Virtual Machine started
+     $ ls ~/aosp/dalvik/
+     Zygote Java
+      $ "ZygoteInit.java"
+      Socket
+      Load +2600 Classes
+      Garbage Collector
+      System Server
+  8. System Erver
+     Package Manager Service
+     Activity Manager Service
+  9. Activity Manager Service
+     System External Intel
+     HOME Launcher
+     3rd Party Services (WhatsApp)
+
+     Logo
+
+     service bootanim /system/bin/bootanimation
+      class core
+      user graphics
+      group graphics audio
+      disabled
+      oneshot
+
+=============================================================================================
+LogCat
+=============================================================================================
+
+$ logcat -b system
+$ logcat -b crash
+$ dumpsys SurfaceFlinger
+$ dumpsys | grep "DUMP OF SERVICE"
+$ dmesg
+$ cat /proc/kmsg
+$ ls /data/tombstone
+$ make menuconfig # Kernel Hacking
+
+ToDo! dumpsys audio
+ToDo! Write an article about all logging & debugging
+ToDo! Script to Debug
+
+=============================================================================================
+Root A Device
+=============================================================================================
+
+$ cat default.prop
+
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=1
+ro.allow.mock.location=0
+ro.debuggable=1
+ro.zygote=zygote32
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+ro.dalvik.vm.native.bridge=0
+persist.sys.usb.config=adb
+
+AOSP/out/../grouper/
+$ repo grep init.grouper.rc
+adb reboot bootloader
+
+
+Fun! https://www.vis.ethz.ch/en/visionen/pdfs/2014/visionen_2014_3.pdf?end=52&start=50
+
+# Enf of File
