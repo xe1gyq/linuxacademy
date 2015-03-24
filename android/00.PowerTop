@@ -1,0 +1,17 @@
+$ git clone https://github.com/fenrus75/powertop.git
+$ cd powertop
+$ ./src/csstoh.sh src/powertop.css src/css.h
+$ patch -p1 < patches/android/prevent_segfaults.patch
+$ patch -p1 < patches/android/update_androidmk.patch
+$ patch -p1 < patches/android/disable-C-exceptions.patch
+
+$ cd ../pciutils && mm
+$ cd ../ncurses && mm
+
+$ make -j16
+
+$ cd ../powertop
+
+sudo apt-get install libncurses5-dev libncursesw5-dev
+
+make: *** No rule to make target `out/target/product/mini-emulator-x86/obj/SHARED_LIBRARIES/libpci_intermediates/export_includes', needed by `out/target/product/mini-emulator-x86/obj/EXECUTABLES/powertop_intermediates/import_includes'.  Stop.
