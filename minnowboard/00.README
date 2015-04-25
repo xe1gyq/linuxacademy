@@ -6,6 +6,8 @@ Minnowboard
 |03| GPIO
 |04| LED
 |05| Android
+|06| Audio
+|07| Software Defined Radio
 
 ~/android-ia/device/intel/gmin-kernel/x86_64/lib
 
