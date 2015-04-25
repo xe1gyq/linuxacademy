@@ -1,5 +1,29 @@
-$ sudo apt-get install gnuradio gnuradio-dev rtl-sdr gr-osmosdr
-$ sudo rmmod dvb_usb_rtl28xxu rtl2832
+$ echo "Review http://backports.debian.org/Instructions/"
+# nano /etc/apt/sources.list
+deb http://http.debian.net/debian wheezy-backports main
+# apt-get update
+# apt-get install gnuradio gnuradio-dev
+# apt-get install rtl-sdr
+# apt-get -t wheezy-backports install libvolk-bin
+# apt-get -t wheezy-backports install gr-osmosdr
+# apt-get -t wheezy-backports install gqrx-sdr
+
+Connect SDR
+
+$ dmesg
+[2146267.913545] usb 1-2: new high-speed USB device number 14 using xhci_hcd
+[2146268.109208] usb 1-2: New USB device found, idVendor=0bda, idProduct=2838
+[2146268.109217] usb 1-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[2146268.109224] usb 1-2: Product: RTL2838UHIDIR
+[2146268.109230] usb 1-2: Manufacturer: Realtek
+[2146268.109235] usb 1-2: SerialNumber: 00000001
+
+$ lsusb
+Bus 001 Device 014: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
+
+# rmmod dvb_usb_rtl28xxu rtl2832
+$ lusb
+Bus 001 Device 004: ID 0bda:2832 Realtek Semiconductor Corp. RTL2832U DVB-T
 $ rtl_test -t
 $ rtl_fm -f 96.3e6 -M wbfm -s 200000 -r 48000 - | aplay -r 48k -f S16_LE
 $ gqrx &

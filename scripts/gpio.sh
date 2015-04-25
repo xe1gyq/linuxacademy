@@ -42,4 +42,3 @@ if [ $VAL -ne 0 ] ; then
 fi
 
 echo $VAL > /sys/class/gpio/gpio$1/value
-
