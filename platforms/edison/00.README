@@ -1,0 +1,25 @@
+Edison
+
+|00| README
+|01| WiFi
+|02| Opkg
+|03| Mraa
+
+= Edison Board =
+
+root@edison:~/mraa/examples# uname -r
+3.10.17-poky-edison+
+
+= Development Platform =
+
+# sudo apt-get install dfu-util
+
+= Links =
+
+ http://www.intel.com/content/www/us/en/do-it-yourself/edison.html
+ https://www-ssl.intel.com/content/www/us/en/library/viewmore.results.html?prTag=rintelproduct:inteldesktopboardsandkits/inteledisonproducts
+ https://github.com/intel-iot-devkit/edison-guides/wiki
+ https://learn.sparkfun.com/tutorials/loading-debian-ubilinux-on-the-edison
+ http://www.helios.de/heliosapp/edison/index.html
+
+# End of file
