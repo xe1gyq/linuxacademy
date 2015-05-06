@@ -7,7 +7,7 @@ root@Minnowboard:~# apt-get upgrade
 root@Minnowboard:~# apt-get install linux-headers-$(uname -r) kernel-package libncurses5 libncurses5-dev git
 user@Minnowboard:~$ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 user@Minnowboard:~$ cd linux
-user@Minnowboard:~$ make oldconfig
+user@Minnowboard:~$ make olddefconfig
 user@Minnowboard:~$ make
 root@Minnowboard:~# make modules_install
 root@Minnowboard:~# make install
