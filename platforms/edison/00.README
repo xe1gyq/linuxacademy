@@ -19,6 +19,7 @@ root@edison:~/mraa/examples# uname -r
  http://www.intel.com/content/www/us/en/do-it-yourself/edison.html
  https://www-ssl.intel.com/content/www/us/en/library/viewmore.results.html?prTag=rintelproduct:inteldesktopboardsandkits/inteledisonproducts
  https://github.com/intel-iot-devkit/edison-guides/wiki
+ https://learn.sparkfun.com/tutorials/edison-getting-started-guide
  https://learn.sparkfun.com/tutorials/loading-debian-ubilinux-on-the-edison
  http://www.helios.de/heliosapp/edison/index.html
  http://mendrugory.weebly.com/blog/intel-edison-and-python
