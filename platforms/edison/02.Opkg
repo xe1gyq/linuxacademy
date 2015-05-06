@@ -20,6 +20,8 @@ root@edison:~# opkg install git
  Configuring git.
 root@edison:~# git config --global user.name "Name LastName"
 root@edison:~# git config --global user.email email@adress.com
+root@edison:~# opkg install libsdl-1.2-dev libv4l-dev
+root@edison:~# opkg install fswebcam
 
 root@edison:~# echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
 root@edison:~# opkg update
