@@ -11,13 +11,15 @@ root@edison:~# opkg update
  Updated list of available packages in /var/lib/opkg/x86.
  Downloading http://iotdk.intel.com/repos/1.1/iotdk/i586/Packages.
  Updated list of available packages in /var/lib/opkg/i586.
+root@edison:~# opkg upgrade
+...
 
 root@edison:~# opkg install git
  Installing git (1.9.0-r0) to root...
  Downloading http://iotdk.intel.com/repos/1.1/iotdk/i586/git_1.9.0-r0_i586.ipk.
  Configuring git.
-root@edison:~# git config --global user.name "Abraham Arce"
-root@edison:~# git config --global user.email xe1gyq@gmail.com
+root@edison:~# git config --global user.name "Name LastName"
+root@edison:~# git config --global user.email email@adress.com
 
 root@edison:~# echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
 root@edison:~# opkg update
