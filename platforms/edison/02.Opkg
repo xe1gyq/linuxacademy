@@ -25,4 +25,19 @@ root@edison:~# echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic
 root@edison:~# opkg update
 root@edison:~# opkg install libmraa0
 
+root@edison:~# echo "src intel-iotdk http://iotdk.intel.com/repo/1.1/intelgalactic" > /etc/opkg/intel-iotdk.conf
+root@edison:~# opkg update
+root@edison:~# opkg upgrade
+
+root@edison:~# vi /etc/opkg/base-feeds.conf
+ src/gz all http://repo.opkg.net/edison/repo/all
+ src/gz edison http://repo.opkg.net/edison/repo/edison
+ src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
+root@edison:~# opkg update
+root@edison:~# opkg install python-pip
+root@edison:~# scp user@machine:/home/user/Download/setuptools-15.2.tar.gz /home/root
+root@edison:~# tar zxf setuptools-15.2.tar.gz
+root@edison:~# python setuptools-15.2/ez_setup.py
+root@edison:~# pip install numpy
+
 # End of File
