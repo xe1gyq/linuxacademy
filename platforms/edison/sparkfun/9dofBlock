@@ -33,12 +33,22 @@ root@edison:~# ./RTIMULibDrive
  LSM9DS0 init complete
  Sample rate 91: : roll:178.355569, pitch:-6.785842, yaw:-84.47313068
 
+= RTIMULib Python =
+
+Go to Top Level directory of RTIMULib
+root@edison:~# cd Linux/python
+root@edison:~# python setup.py build
+root@edison:~# python setup.py install
+
 = Links =
 
 https://communities.intel.com/thread/67164
 https://richardstechnotes.wordpress.com/2015/04/27/rtimulib-arduino-the-sparkfun-lsm9ds0-block-and-the-intel-edison-arduino-board/
+https://richardstechnotes.wordpress.com/2015/02/26/this-is-why-trying-to-measure-position-with-a-mems-9-dof-imu-is-doomed-to-failure/
 https://github.com/richards-tech/RTIMULib
 https://communities.intel.com/thread/61505
 https://communities.intel.com/message/290364#290364
+http://en.wikipedia.org/wiki/Flight_dynamics
+http://en.wikipedia.org/wiki/Aircraft_principal_axes
 
 # End of File
