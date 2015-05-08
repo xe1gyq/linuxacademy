@@ -8,14 +8,30 @@ root@edison:~# nano  /etc/ld.so.conf
 /usr/local/lib
 root@edison:~# ldconfig
 root@edison:~# git clone https://github.com/richards-tech/RTIMULib.git
-root@edison:~# cd RTIMULib
-root@edison:~# cd RTIMULib
+root@edison:~# cd RTIMULib/RTIMULib
 root@edison:~# mkdir build
 root@edison:~# cd build
 root@edison:~# cmake ..
 root@edison:~# make install
 root@edison:~# ldconfig
 
+= RTIMULibDrive =
+
+Go to Top Level directory of RTIMULib
+root@edison:~# cd Linux/RTIMULibDrive
+root@edison:~# mkdir build
+root@edison:~# cd build
+root@edison:~# cmake ..
+root@edison:~# make install
+root@edison:~# ./RTIMULibDrive
+ Settings file not found. Using defaults and creating settings file
+ Detected LSM9DS0 at option/option address
+ Using fusion algorithm RTQF
+ min/max compass calibration not in use
+ Ellipsoid compass calibration not in use
+ Accel calibration not in use
+ LSM9DS0 init complete
+ Sample rate 91: : roll:178.355569, pitch:-6.785842, yaw:-84.47313068
 
 = Links =
 
