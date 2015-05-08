@@ -1,0 +1,20 @@
+microSD Block
+
+root@edison:~# echo "Insert the microSD into microSD slot"
+root@edison:~# dmesg | grep mmc
+
+ [ 3711.100801] mmc1: error -84 whilst initialising SD card
+ [ 3711.233902] mmc1: new high speed SDHC card at address aaaa
+ [ 3711.234898] mmcblk1: mmc1:aaaa SU08G 7.40 GiB 
+ [ 3711.249638]  mmcblk1: p1
+
+root@edison:~# mount | grep mmc
+ ...
+ /dev/mmcblk0p5 on /factory type ext4 (ro,nosuid,nodev,noatime,discard,noauto_da_alloc)
+ /dev/mmcblk0p10 on /home type ext4 (rw,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered)
+ /dev/mmcblk1p1 on /media/sdcard type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+
+root@edison:~# touch /media/sdcard/hellosdcard
+root@edison:~# ls /media/sdcard/
+
+# End of File
