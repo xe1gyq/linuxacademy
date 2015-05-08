@@ -4,6 +4,7 @@ Edison
 |01| WiFi
 |02| Opkg
 |03| Mraa
+|04| Upm
 
 = Edison Board =
 
@@ -25,5 +26,7 @@ root@edison:~/mraa/examples# uname -r
  http://mendrugory.weebly.com/blog/intel-edison-and-python
  http://sparkfun28.rssing.com/chan-8070788/all_p15.html
  https://communities.intel.com/thread/55692
+ https://github.com/richards-tech/meta-edison-rt
+ https://github.com/edouardrosset
 
 # End of file
