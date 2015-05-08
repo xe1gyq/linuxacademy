@@ -1,0 +1,28 @@
+root@edison:~# i2cdetect -r -y 1
+root@edison:~# i2cdump -y 1 0x1d
+root@edison:~# i2cdump -y 1 0x6b
+
+= RTIMULib =
+
+root@edison:~# nano  /etc/ld.so.conf
+/usr/local/lib
+root@edison:~# ldconfig
+root@edison:~# git clone https://github.com/richards-tech/RTIMULib.git
+root@edison:~# cd RTIMULib
+root@edison:~# cd RTIMULib
+root@edison:~# mkdir build
+root@edison:~# cd build
+root@edison:~# cmake ..
+root@edison:~# make install
+root@edison:~# ldconfig
+
+
+= Links =
+
+https://communities.intel.com/thread/67164
+https://richardstechnotes.wordpress.com/2015/04/27/rtimulib-arduino-the-sparkfun-lsm9ds0-block-and-the-intel-edison-arduino-board/
+https://github.com/richards-tech/RTIMULib
+https://communities.intel.com/thread/61505
+https://communities.intel.com/message/290364#290364
+
+# End of File
