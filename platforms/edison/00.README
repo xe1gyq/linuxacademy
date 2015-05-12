@@ -15,6 +15,15 @@ root@edison:~/mraa/examples# uname -r
 
 # sudo apt-get install dfu-util
 
+= More Space =
+
+ mkdir /home/node_modules
+ cd /usr/lib/node_modules
+ tar cpf - * | (cd /home/node_modules; tar xpf -)
+ cd ..
+ rm -r node_modules
+ ln -s /home/node_modules
+
 = Links =
 
  http://www.intel.com/content/www/us/en/do-it-yourself/edison.html
