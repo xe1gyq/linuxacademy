@@ -6,6 +6,7 @@ root@Edison:~# mkdir build
 root@Edison:~# cd build
 root@Edison:~# cmake ..
 root@Edison:~# make
+root@Edison:~# make install
 
 https://github.com/intel-iot-devkit/upm/tree/master/examples/python
 
