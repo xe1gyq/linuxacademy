@@ -8,8 +8,12 @@ Edison
 
 = Edison Board =
 
-root@edison:~/mraa/examples# uname -r
+root@edison:~# uname -r
 3.10.17-poky-edison+
+root@Edison:~# configure_edison
+ Configure Edison: Device Name
+ Configure Edison: Device Password
+ Configure Edison: WiFi Connection
 
 = Development Platform =
 
