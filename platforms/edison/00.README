@@ -6,7 +6,7 @@ Edison
 |03| Mraa
 |04| Upm
 
-= Edison Board =
+= Initial Configuration =
 
 root@edison:~# uname -r
 3.10.17-poky-edison+
@@ -14,6 +14,52 @@ root@Edison:~# configure_edison
  Configure Edison: Device Name
  Configure Edison: Device Password
  Configure Edison: WiFi Connection
+
+= Debug =
+
+boot > run do_ota
+boot > run do_flash
+
+= Flashing =
+
+root@Edison:~# reboot ota
+
+xe1gyq@sayulita:~/Downloads/toFlash$ sudo ./flashall.sh --recovery
+ Starting Recovery mode
+ Please plug and reboot the board
+ Flashing IFWI
+
+ XFSTK Downloader Solo 0.0.0 
+ Copyright (c) 2015 Intel Corporation
+ Build date and time: May 15 2015 22:29:28
+
+ .Intel SoC Device Detection Found
+ Parsing Commandline.... 
+ Registering Status Callback.... 
+ .Initiating Download Process.... 
+ ...
+ ...
+
+xe1gyq@sayulita:~/Downloads/toFlash$ sudo ./flashall.sh 
+ Using U-Boot target: edison-blankcdc
+ Now waiting for dfu device 8087:0a99
+ Please plug and reboot the board
+ Flashing IFWI
+ ##################################################] finished!
+ ##################################################] finished!
+ Flashing U-Boot
+ ##################################################] finished!
+ Flashing U-Boot Environment
+ ##################################################] finished!
+ Flashing U-Boot Environment Backup
+ ##################################################] finished!
+ Rebooting to apply partition changes
+ Now waiting for dfu device 8087:0a99
+ Flashing boot partition (kernel)
+ ##################################################] finished!
+ Flashing rootfs, (it can take up to 10 minutes... Please be patient)
+ ...
+ ...
 
 = Development Platform =
 
