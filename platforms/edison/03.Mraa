@@ -20,5 +20,10 @@ root@edison:~# ./hellomraa
   Version: v0.6.2
   Running on Intel Edison
 
+# Ubilinux
+
+Follow
+ https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison
+
 # End of File
 
