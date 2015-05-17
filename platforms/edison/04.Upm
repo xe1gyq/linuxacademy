@@ -1,3 +1,5 @@
+# Yocto Default Image
+
 UPM - Sensor/Actuator repository for libmraa
 
 root@Edison:~# git clone https://github.com/intel-iot-devkit/upm.git
