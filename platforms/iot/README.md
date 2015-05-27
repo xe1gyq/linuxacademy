@@ -61,5 +61,12 @@ Intel® System Studio is a fully validated and Intel-supported product optimized
 
 [Sparkfun Edison Getting Started](https://learn.sparkfun.com/tutorials/edison-getting-started-guide)
 
+# Workshop
+
+## plot.ly
+
+> Plotly is an online analytics and data visualization tool, headquartered in Montreal, Quebec. Plotly provides online graphing, analytics, and stats tools for individuals and collaboration, as well as scientific graphing libraries for Python, R, MATLAB, Perl, Julia, Arduino, and REST.
+
+[Plot.ly Homepage](https://plot.ly)
 
 # End of File
