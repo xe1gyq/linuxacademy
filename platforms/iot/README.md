@@ -14,14 +14,15 @@
 Intel® System Studio 2015 does exactly that, enabling developers to get the most out of Intel® architecture-based systems and embedded applications.
 Intel® System Studio 2015 is a comprehensive and integrated tool suite that provides developers with advanced system tools and technologies to help accelerate the delivery of the next-generation, energy-efficient, high-performance, and reliable embedded and mobile devices.
 Intel® System Studio is a fully validated and Intel-supported product optimized for Intel® architecture, while being compatible with open source technologies.
-> Host Operating Systems
-> Integrated Development Environment
-> Intel® C++ Compiler
-> Intel® Integrated Performance Primitives Library
-> Intel® Math Kernel Library
-> Intel® Threading Building Blocks
-> Intel-enhanced GDB* Application Debugger
-> More ...
+
+* Host Operating Systems
+* Integrated Development Environment
+* Intel® C++ Compiler
+* Intel® Integrated Performance Primitives Library
+* Intel® Math Kernel Library
+* Intel® Threading Building Blocks
+* Intel-enhanced GDB* Application Debugger
+* More ...
 
 **Windows, Android, Linux*, Embedded Linux, Wind River* Linux*, Yocto Project*, Tizen***
 
