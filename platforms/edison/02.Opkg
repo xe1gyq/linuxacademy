@@ -17,6 +17,7 @@ root@edison:~# opkg upgrade
 root@edison:~# echo "src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic" > /etc/opkg/mraa-upm.conf
 root@edison:~# opkg update
 root@edison:~# opkg install libmraa0
+root@edison:~# opkg install upm
 
 root@edison:~# echo "src intel-iotdk http://iotdk.intel.com/repo/1.1/intelgalactic" > /etc/opkg/intel-iotdk.conf
 root@edison:~# opkg update
