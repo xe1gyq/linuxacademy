@@ -34,6 +34,31 @@ $ gqrx &
 $ nano /etc/modprobe.d/blacklist-sdr.conf
 blacklist dvb_usb_rtl28xx
 
+Update the Apt cache:
+
+$ sudo apt-get update
+$ sudo apt-get install gnuradio gnuradio-dev libboost-all-dev libboost-thread-dev
+# blacklist dvb_usb_rtl28xxu
+$ sudo apt-get install rtl-sdr gr-osmosdr
+$ lusb
+Bus 001 Device 008: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
+# nano /etc/udev/rules.d/20.rtlsdr.rules
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="2838", GROUP="adm", MODE="0666", SYMLINK+="rtl_sdr"
+$ osmocom_fft
+
+gr-air-modes
+
+$ sudo apt-get install sqlite pyqt4-dev-tools liblog4cpp5-dev swig
+$ git clone https://github.com/bistromath/gr-air-modes.git
+$ cd gr-air-modes
+$ mkdir build
+$ cd build
+$ cmake ../
+$ make
+$ sudo make install
+$ sudo ldconfig
+$ modes_rx -s osmocom
+
 # End of File
 
 
