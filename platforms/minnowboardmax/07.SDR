@@ -73,7 +73,7 @@ ldconfig
 
 # HackRF AptGet
 
-apt-get install gnuradio gnuradio-dev hackrf gr-osmosdr rtl-sdr gqrx-sdr
+apt-get install gnuradio gnuradio-dev hackrf gr-osmosdr rtl-sdr gqrx-sdr git-core cmake g++ python-dev swig pkg-config libfftw3-dev libcppunit-dev libgsl0-dev libusb-dev libsdl1.2-dev python-numpy python-cheetah python-lxml doxygen libxi-dev python-sip libqt4-opengl-dev libqwt-dev libfontconfig1-dev libxrender-dev python-qwt5-qt4 python-sip python-sip-dev cmake xorg-dev libglu1-mesa-dev python-zmq pypy-zmq gedit
 
 $ hackrf_transfer -s 2 -f 147570000 -t test
 
