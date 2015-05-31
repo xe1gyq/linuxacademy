@@ -75,6 +75,8 @@ ldconfig
 
 apt-get install gnuradio gnuradio-dev hackrf gr-osmosdr rtl-sdr gqrx-sdr
 
+$ hackrf_transfer -s 2 -f 147570000 -t test
+
 
 # End of File
 
