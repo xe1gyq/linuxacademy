@@ -8,8 +8,6 @@ platforms    . Learning Documentation for Hardware Platforms
 
                edison      . Edison Dual-core Intel Quark x86
                              http://www.intel.com/content/www/us/en/do-it-yourself/edison.html
-               minnowboard . Minnowboard Intel ATOM Processor Based Boards
-                             http://www.minnowboard.org/
 
 scripts      . Scripts for whatever is needed
 training     . Linux Mastering Self Learning Guide
