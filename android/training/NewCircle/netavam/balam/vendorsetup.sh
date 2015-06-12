@@ -1,3 +1,0 @@
-add_lunch_combo full_balam-eng
-add_lunch_combo full_balam-userdebug
-add_lunch_combo full_balam-user

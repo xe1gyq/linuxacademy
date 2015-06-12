@@ -1,3 +1,0 @@
-== About Fibonacci Native
-
-This project was created to support Marakana's simple intro to Android NDK
