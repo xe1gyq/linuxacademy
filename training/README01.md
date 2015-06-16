@@ -19,9 +19,6 @@ Let's update, upgrade and install git
 
      root # apt-get update
      root # apt-get upgrade
-     /* Obsolete */
-     root # apt-get install git-core git-email
-     /***********/
      root # apt-get install git git-email
 
 Configure your name and email under Git:
@@ -45,7 +42,7 @@ The following section shows all the steps described in the links above plus the 
 On Github go to xe1gyq/linuxlearning and on the top-right corner of the page, click **Fork**
 
 On command line in your Linux box type the commands below and look at the output
- 
+
     user $ git clone https://github.com/YOUR_GITHUB_USERNAME/linuxlearning
     user $ cd linuxlearning
     user $ git remote -v
@@ -81,16 +78,15 @@ This first part creates both the directories needed and the c file
 
 This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database. When we commit our changes
 
-- **First line:** Title starting with your githubusername, 50 chars max
-- **Second line:** A blank line
-- **Third line:** Description of the changes, as many lines as required, 80 chars max per line
-
-
-     user $ git add c01.c
-     user $ git commit -s
-     githubusername: My first C Programming Example
-     <empty line>
-     My first example of a code in C language
+    **First line:** Title starting with your githubusername, 50 chars max
+    **Second line:** A blank line
+    **Third line:** Description of the changes, as many lines as required, 80 chars max per line
+    
+    user $ git add c01.c
+    user $ git commit -s
+    githubusername: My first C Programming Example
+    <empty line>
+    My first example of a code in C language
 
 ##### Pushing to a remote
 
@@ -153,6 +149,8 @@ The script will receive 3 arguments: the file location, version of the kernel an
 
 - If file location is the internet then use this repository to grab the kernel tar file **https://www.kernel.org/pub/linux/kernel/v3.x/** and download it to kernelimages directory
 
+https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.8.2.tar.xz
+
 - If file location is local then use kernelimages directory to grab the kernel tar file
 
 ##### Processing
@@ -170,7 +168,7 @@ File Names
 
     # of READMEs
     # of Kconfig
-    # of Kbuild
+    # of Kbuildvc
     # of Makefiles
     # of .c files
     # of .h files
@@ -181,7 +179,7 @@ File Names
 File Content
 
     # of ocurrences for Linus
-    # of architectures/directories found under arch/
+    # of directories found under arch/
     # of ocurrences for kernel_start
     # of ocurrences for __init
     # of files in its filename containing the word gpio
@@ -189,10 +187,9 @@ File Content
 
 Some Tasks To Do
 
-Sort in alphabetical order all **#include <linux/*>** under **drivers/i2c/**
-Make sure you identify all files you have modified, you will need their identity in the post processing phase
+Sort in alphabetical order all the inclusion of libraries using this format **#include <linux/*>** only under **drivers/i2c/** directory, please make sure you identify all files you have modified, you will need their identity in the post processing phase
 
-Let's populate our file called intel.contributors under our top level working directory directory, search for all Intel contributors matching **@intel.com** and identify the file where their name was located, one line per contributor and cannot repeat contributor e.g.
+Let's populate our file called **intel.contributors** under our top level working directory directory, search for all Intel contributors matching **@intel.com** and identify the file where their name was located, then write one line per contributor, cannot be repeated e.g.
 
     Path/to/file.c | Sara Sharp
     Path/to/file.c | Darren Hart
@@ -205,12 +202,15 @@ Create 3 directories under postworkspace and move all files from preworkspace wh
     files_h, all .h files
     files_others, all other files
 
-In all 3 directories, if we have files with the same name, add a number as identifier that will increase by 1 as required
+In all 3 directories, if we have files with the same name, add a number as identifier that will increase by 1 as required, e.g.
+
+    README_1
+    README_2
 
 ###### Some Tasks To Do
 
 1. Add your name to the beginning, middle and end of every .c file
-2. In all files substitute #include <linux/learningscripting.h> for every #include <linux/module.h> found
+2. In all files substitute #include <linux/scripting.h> for every #include <linux/module.h> found
 3. Fix your #include's order for the files coming from driver/i2c
 
 We will need the following information under stats.post files:
@@ -285,24 +285,22 @@ Reboot your workstation and confirm the new version has been installed
 ##### Linux Kernel Build System Overview ]
 
 
-Please read the "Kbuild: the Linux Kernel Build System" carefully,
-you will understand how this system works
- http://www.linuxjournal.com/content/kbuild-linux-kernel-build-system
+Please read the "Kbuild: the Linux Kernel Build System" carefully, you will understand how this system works
+[Kbuild Linux Kernel Build System](http://www.linuxjournal.com/content/kbuild-linux-kernel-build-system)
 
-Do you want to do another Linux Kernel Build System exercise by
-writing a Hello World Kernel Module? then keep reading...
+Do you want to do another Linux Kernel Build System exercise by writing a Hello World Kernel Module? then keep reading...
 
-
-[[ Linux Kernel Build System, Hello World Module ]]
-
+###### Linux Kernel Build System, Hello World Module
 
 Make a "helloworld" directory under drivers
-user@workstation:~$ mkdir drivers/helloworld
 
-Create helloworld.c file under our helloworld directory and add the C
-code below, this is a simple Hello World Kernel Module
-user@workstation:~$ nano drivers/helloworld/helloworld.c
+    user@workstation:~$ mkdir drivers/helloworld
 
+Create helloworld.c file under our helloworld directory and add the C code below, this is a simple Hello World Kernel Module
+
+    user@workstation:~$ nano drivers/helloworld/helloworld.c
+
+```
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -324,7 +322,7 @@ MODULE_DESCRIPTION("My First Linux Kernel Module");
 
 module_init(module_init_function);
 module_exit(module_exit_function);
-
+```
 
 [[ Linux Kernel Build System, Hello World Kconfig ]]
 
@@ -424,92 +422,87 @@ changes using dmesg command
 
 As Module (M)
 
-user@workstation:~$ make
-  CHK     include/config/kernel.release
-  CHK     include/generated/uapi/linux/version.h
-  CHK     include/generated/utsrelease.h
-  CALL    scripts/checksyscalls.sh
-  CHK     include/generated/compile.h
-  LD      drivers/helloworld/built-in.o
-  CC [M]  drivers/helloworld/helloworld.o
-Kernel: arch/x86/boot/bzImage is ready  (#2)
-  Building modules, stage 2.
-  MODPOST 2255 modules
-  CC      drivers/helloworld/helloworld.mod.o
-  LD [M]  drivers/helloworld/helloworld.ko
-root@workstation:~# make modules_install
-root@workstation:~# make install
-root@workstation:~# shutdown -r now
-<reboot>
-user@workstation:~$ dmesg
+    user@workstation:~$ make
+      CHK     include/config/kernel.release
+      CHK     include/generated/uapi/linux/version.h
+      CHK     include/generated/utsrelease.h
+      CALL    scripts/checksyscalls.sh
+      CHK     include/generated/compile.h
+      LD      drivers/helloworld/built-in.o
+      CC [M]  drivers/helloworld/helloworld.o
+    Kernel: arch/x86/boot/bzImage is ready  (#2)
+      Building modules, stage 2.
+      MODPOST 2255 modules
+      CC      drivers/helloworld/helloworld.mod.o
+      LD [M]  drivers/helloworld/helloworld.ko
+    root@workstation:~# make modules_install
+    root@workstation:~# make install
+    root@workstation:~# shutdown -r now
+    <reboot>
+    user@workstation:~$ dmesg
  
 Built-In (*)
 
-user@workstation:~$ make
-xe1gyq@Minnowboard:~/linux$ make                                                                                                                
-scripts/kconfig/conf --silentoldconfig Kconfig                                                                                                  
-  CHK     include/config/kernel.release                                                                                                         
-  CHK     include/generated/uapi/linux/version.h                                                                                                
-  CHK     include/generated/utsrelease.h                                                                                                        
-  CALL    scripts/checksyscalls.sh                                                                                                              
-  CHK     include/generated/compile.h                                                                                                           
-  CC      drivers/helloworld/helloworld.o                                                                                                       
-  LD      drivers/helloworld/built-in.o                                                                                                         
-  LD      drivers/built-in.o                                                                                                                    
-  LINK    vmlinux                                                                                                                               
-  LD      vmlinux.o                                                                                                                             
-  MODPOST vmlinux.o                                                                                                                             
-  GEN     .version                                                                                                                              
-  CHK     include/generated/compile.h                                                                                                           
-  UPD     include/generated/compile.h                                                                                                           
-  CC      init/version.o                                                                                                                        
-  LD      init/built-in.o                                                                                                                       
-  KSYM    .tmp_kallsyms1.o                                                                                                                      
-  KSYM    .tmp_kallsyms2.o                                                                                                                      
-  LD      vmlinux
-  SORTEX  vmlinux
-  SYSMAP  System.map
-  VOFFSET arch/x86/boot/voffset.h
-  OBJCOPY arch/x86/boot/compressed/vmlinux.bin
-  GZIP    arch/x86/boot/compressed/vmlinux.bin.gz
-  MKPIGGY arch/x86/boot/compressed/piggy.S
-  AS      arch/x86/boot/compressed/piggy.o
-  LD      arch/x86/boot/compressed/vmlinux
-  ZOFFSET arch/x86/boot/zoffset.h
-  AS      arch/x86/boot/header.o
-  CC      arch/x86/boot/version.o
-  LD      arch/x86/boot/setup.elf
-  OBJCOPY arch/x86/boot/setup.bin
-  OBJCOPY arch/x86/boot/vmlinux.bin
-  BUILD   arch/x86/boot/bzImage
-Setup is 17516 bytes (padded to 17920 bytes).
-System is 4046 kB
-CRC 113cf27d
-Kernel: arch/x86/boot/bzImage is ready  (#3)
-  Building modules, stage 2.
-  MODPOST 2254 modules
- 
-root@workstation:~# make modules_install
-root@workstation:~# make install
-root@workstation:~# shutdown -r now
-<reboot>
-user@workstation:~$ dmesg
+    user@workstation:~$ make
+    xe1gyq@Minnowboard:~/linux$ make                                                                                                               
+    scripts/kconfig/conf --silentoldconfig Kconfig
+      CHK     include/config/kernel.release                    
+      CHK     include/generated/uapi/linux/version.h                    
+      CHK     include/generated/utsrelease.h            
+      CALL    scripts/checksyscalls.sh                    
+      CHK     include/generated/compile.h                    
+      CC      drivers/helloworld/helloworld.o                    
+      LD      drivers/helloworld/built-in.o                    
+      LD      drivers/built-in.o                    
+      LINK    vmlinux                    
+      LD      vmlinux.o                    
+      MODPOST vmlinux.o                    
+      GEN     .version                    
+      CHK     include/generated/compile.h                    
+      UPD     include/generated/compile.h
+      CC      init/version.o                    
+      LD      init/built-in.o                    
+      KSYM    .tmp_kallsyms1.o                    
+      KSYM    .tmp_kallsyms2.o                    
+      LD      vmlinux
+      SORTEX  vmlinux
+      SYSMAP  System.map
+      VOFFSET arch/x86/boot/voffset.h
+      OBJCOPY arch/x86/boot/compressed/vmlinux.bin
+      GZIP    arch/x86/boot/compressed/vmlinux.bin.gz
+      MKPIGGY arch/x86/boot/compressed/piggy.S
+      AS      arch/x86/boot/compressed/piggy.o
+      LD      arch/x86/boot/compressed/vmlinux
+      ZOFFSET arch/x86/boot/zoffset.h
+      AS      arch/x86/boot/header.o
+      CC      arch/x86/boot/version.o
+      LD      arch/x86/boot/setup.elf
+      OBJCOPY arch/x86/boot/setup.bin
+      OBJCOPY arch/x86/boot/vmlinux.bin
+      BUILD   arch/x86/boot/bzImage
+    Setup is 17516 bytes (padded to 17920 bytes).
+    System is 4046 kB
+    CRC 113cf27d
+    Kernel: arch/x86/boot/bzImage is ready  (#3)
+      Building modules, stage 2.
+      MODPOST 2254 modules
+    root@workstation:~# make modules_install
+    root@workstation:~# make install
+    root@workstation:~# shutdown -r now
+    <reboot>
+    user@workstation:~$ dmesg
 
 ============================================================================
 
-|1| Core Development
-    ...
-    |1.3| Embedded
-          |1.3.2| Embedded Systems Programming
+## Core Development
+### Embedded
+#### Embedded Systems Programming
 
-Objective: Learn various fundamentals issues as well as practical development
-skill in the area of embedded systems programming.
-Proficiency Level: Basic
+> Objective: Learn various fundamentals issues as well as practical development skill in the area of embedded systems programming.
+> Proficiency Level: Basic
 
-2 Weeks Training (20 minute/lecture, 4 lectures/day)
+Want to start learning! Feel free to code if possible! 2 Weeks Training (20 minute/lecture, 4 lectures/day)
 
-Go to
- http://rts.lab.asu.edu/web_ESP_Summer2014/ESP_Main_page.htm
-to start learning! Feel free to code if possible!
- 
+[Summer Short Course on Embedded Systems Programming](http://rts.lab.asu.edu/web_ESP_Summer2014/ESP_Main_page.htm)
+
 # End of file
