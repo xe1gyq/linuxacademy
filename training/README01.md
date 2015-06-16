@@ -13,6 +13,8 @@ If you want to master your Git skills at a super level then read Pro Git Book av
 
 Make sure you have git installed
 - On /etc/apt/sources.list append:
+
+
      deb http://ftp.debian.org/debian/ squeeze main contrib non-free
 
 Let's update, upgrade and install git
@@ -78,9 +80,9 @@ This first part creates both the directories needed and the c file
 
 This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database. When we commit our changes
 
-    **First line:** Title starting with your githubusername, 50 chars max
-    **Second line:** A blank line
-    **Third line:** Description of the changes, as many lines as required, 80 chars max per line
+    First line: Title starting with your githubusername, 50 chars max
+    Second line: A blank line
+    Third line: Description of the changes, as many lines as required, 80 chars max per line
     
     user $ git add c01.c
     user $ git commit -s
@@ -104,8 +106,6 @@ This is a process entirely done at Github webpage, please follow the instruction
 
 You are now ready to go! Remember you will be pushing all your work to **xe1gyq/linuxlearning**
 
-============================================================================
-
 ## Core Development
 ### Programming Languages
 #### C
@@ -115,9 +115,7 @@ You are now ready to go! Remember you will be pushing all your work to **xe1gyq/
 
 Read "The C Programming Language" by Brian W. Kernighan and Dennis M. Ritchie
 
-**[Hands On]** Write and compile your exercises in your Linux Box and add them to this repository under your <username>/01.core/cXX.c, the more exercises you write the more familiar you get with C programming language. You will be a exemplary C Developer if you complete the last exercise of every chapter from "The C Programming Language"
-
-============================================================================
+**[Hands On]** Write and compile your exercises in your Linux Box and add them to this repository under your **<username>/01.core/cXX.c**, the more exercises you write the more familiar you get with C programming language. You will be a exemplary C Developer if you complete the last exercise of every chapter from "The C Programming Language"
 
 ## Core Development
 ### Programming Languages
@@ -126,9 +124,9 @@ Read "The C Programming Language" by Brian W. Kernighan and Dennis M. Ritchie
 > Objective: Shell scripting is a basic skill every Linux developer has
 > Proficiency Level: Advanced
 
-- We require a script to do some "processing" for every kernel released, make it work first then optimize it.
-- We need the following working directory structure
+We require a script to do some "processing" for every kernel released, make it work first then optimize it.
 
+We need the following working directory structure
 
     ...
     |- 01.core
@@ -147,11 +145,9 @@ The script will receive 3 arguments: the file location, version of the kernel an
 
     user $ myscript.sh <internet/local> <x.x.xx> <xz|gz>
 
-- If file location is the internet then use this repository to grab the kernel tar file **https://www.kernel.org/pub/linux/kernel/v3.x/** and download it to kernelimages directory
+If file location is the internet then use this repository to grab the kernel tar file **https://www.kernel.org/pub/linux/kernel/v3.x/** and download it to kernelimages directory
 
-https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.8.2.tar.xz
-
-- If file location is local then use kernelimages directory to grab the kernel tar file
+If file location is local then use kernelimages directory to grab the kernel tar file
 
 ##### Processing
 
@@ -236,12 +232,11 @@ File Content
     # of ocurrences for #include <linux/module.h>
     # of ocurrences for #include <linux/learningscripting.h>
 
-= Results =
+##### Results
 
 A message of Pass / Fail should be printed to stdout for each of the following:
 
 - Our Total number of files is the same in both stats.pre and stats.post
-- Our # of ocurrences for **#include <linux/module.h>** and **#include <linux/linuxlearning.h>** is the same in both **stats.pre** and **stats.post**
 
 ============================================================================
 
