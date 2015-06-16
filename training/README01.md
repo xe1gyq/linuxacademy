@@ -110,70 +110,61 @@ You are now ready to go! Remember you will be pushing all your work to **xe1gyq/
 
 ============================================================================
 
-|1| Core Development
-    |1.2| Programming Languages
-          |1.2.1| C
+## Core Development
+### Programming Languages
+#### C
 
-Objetive: Have solid C programming skills required to be a Linux developer
-Proficiency Level: Intermediate
+> Objetive: Have solid C programming skills required to be a Linux developer
+> Proficiency Level: Intermediate
 
 Read "The C Programming Language" by Brian W. Kernighan and Dennis M. Ritchie
 
-[Hands On] Write and compile your exercises in your Linux Box and add them to this
-repository under your <username>/01.core/cXX.c, the more exercises you write the more
-familiar you get with C programming language. You will be a exemplary C Developer
-if you complete the last exercise of every chapter from "The C Programming
-Language"
+**[Hands On]** Write and compile your exercises in your Linux Box and add them to this repository under your <username>/01.core/cXX.c, the more exercises you write the more familiar you get with C programming language. You will be a exemplary C Developer if you complete the last exercise of every chapter from "The C Programming Language"
 
 ============================================================================
 
-|1| Core Development
-    |1.2| Programming Languages
-          ...
-          |1.2.2| Shell Scripting
+## Core Development
+### Programming Languages
+#### Shell Scripting
 
-Objective: Shell scripting is a basic skill every Linux developer has
-Proficiency Level: Advanced
+> Objective: Shell scripting is a basic skill every Linux developer has
+> Proficiency Level: Advanced
 
-We require a script to do some "processing" for every kernel released, make it work
-first then optimize it.
+- We require a script to do some "processing" for every kernel released, make it work first then optimize it.
+- We need the following working directory structure
 
-We need the following working directory structure
 
-...
-  |- 01.core
-    |- shelllearning
-      |- kernelimages  (directory)
-      |- preworkspace  (directory)
-      |- postworksapce (directory)
-      |- script.sh (our script)
-      |- stats.pre (text file)
-      |- stats.post (text file)
-      |- intel.contributors (text file)
+    ...
+    |- 01.core
+      |- shelllearning
+        |- kernelimages  (directory)
+        |- preworkspace  (directory)
+        |- postworksapce (directory)
+        |- script.sh (our script)
+        |- stats.pre (text file)
+        |- stats.post (text file)
+        |- intel.contributors (text file)
 
-= Script Arguments =
+##### Script Arguments
 
 The script will receive 3 arguments: the file location, version of the kernel and the file type
 
-$ myscript.sh <internet/local> <x.x.xx> <xz|gz>
+    user $ myscript.sh <internet/local> <x.x.xx> <xz|gz>
 
-If file location is the internet then use this repository to grab the kernel tar file
- https://www.kernel.org/pub/linux/kernel/v3.x/
-and download it to kernelimages directory
-If file location is local then use kernelimages directory to grab the kernel tar file
+- If file location is the internet then use this repository to grab the kernel tar file **https://www.kernel.org/pub/linux/kernel/v3.x/** and download it to kernelimages directory
 
-= Processing =
+- If file location is local then use kernelimages directory to grab the kernel tar file
+
+##### Processing
 
 We will gather statistics and do some work in 2 phases, right after we have decompressed the kernel file under the preworkspace directory and after we make some changes to its directory structure under postworkspace, statistics will be populated in 2 different files under our top working directory, their names will be:
 
-    stats.pre
-    stats.post
+1. stats.pre
+2. stats.post
 
-= Pre Processing =
+##### Pre Processing
 
-Take kernel image from kernelimages directory and decompress under the preworkspace directory
-
-We will require the following information under stats.pre files:
+Take kernel image from kernelimages directory and decompress under the preworkspace directory. We will require the following information under **stats.pre** files:
 
 File Names
 
@@ -198,14 +189,15 @@ File Content
 
 Some Tasks To Do
 
-    Sort in alphabetical order all #include <linux/*> under drivers/i2c/ Make sure you identify all files you have modified, you will need their identity in the post processing phase
+Sort in alphabetical order all **#include <linux/*>** under **drivers/i2c/**
+Make sure you identify all files you have modified, you will need their identity in the post processing phase
 
-    Let's populate our file called intel.contributors under our top level working directory directory, search for all Intel contributors matching @intel.com and identify the file where their name was located, one line per contributor and cannot repeat contributor e.g.
+Let's populate our file called intel.contributors under our top level working directory directory, search for all Intel contributors matching **@intel.com** and identify the file where their name was located, one line per contributor and cannot repeat contributor e.g.
 
-Path/to/file.c | Sara Sharp
-Path/to/file.c | Darren Hart
+    Path/to/file.c | Sara Sharp
+    Path/to/file.c | Darren Hart
 
-= Post Processing =
+##### Post Processing
 
 Create 3 directories under postworkspace and move all files from preworkspace where kernel was decompressed according to the file extensions:
 
@@ -215,11 +207,11 @@ Create 3 directories under postworkspace and move all files from preworkspace wh
 
 In all 3 directories, if we have files with the same name, add a number as identifier that will increase by 1 as required
 
-Some Tasks To Do
+###### Some Tasks To Do
 
-    Add your name to the beginning, middle and end of every .c file
-    In all files substitute #include <linux/learningscripting.h> for every #include <linux/module.h> found
-    Fix your #include's order for the files coming from driver/i2c
+1. Add your name to the beginning, middle and end of every .c file
+2. In all files substitute #include <linux/learningscripting.h> for every #include <linux/module.h> found
+3. Fix your #include's order for the files coming from driver/i2c
 
 We will need the following information under stats.post files:
 
@@ -248,62 +240,49 @@ File Content
 
 A message of Pass / Fail should be printed to stdout for each of the following:
 
-    Our Total number of files is the same in both stats.pre and stats.post
-    Our # of ocurrences for #include <linux/module.h> and #include <linux/linuxlearning.h> is the same in both stats.pre and stats.post
+- Our Total number of files is the same in both stats.pre and stats.post
+- Our # of ocurrences for **#include <linux/module.h>** and **#include <linux/linuxlearning.h>** is the same in both **stats.pre** and **stats.post**
 
 ============================================================================
 
-|1| Core Development
-    |1.2| Programming Languages
-          ...
-          |1.2.3| Python
+## Core Development
+### Programming Languages
+#### Python
 
-Objective: Bring your basic skills up-to-speed
-Proficiency Level: Basic
+> Objective: Bring your basic skills up-to-speed
+> Proficiency Level: Basic
 
-Guess what? Port the previous script to Python :) remember to change the
-name of the host directory, now called, pythonlearning 
-
-...
-  |- 01.core
-    |- pythonlearning
-      |- kernelimages  (directory)
-         ... ...
-
-============================================================================
-
-|1| Core Development
-    ...
-    |1.3| Embedded
-          |1.3.1| Linux Kernel Introduction
-
-Objective: Understand the Linux Kernel compilation process and built system
-Proficiency Level: Basic
+Guess what? Port the previous script to Python :) remember to change the name of the host directory, now called, pythonlearning 
 
 
-[ Linux Kernel Compilation ]
+## Core Development
+### Embedded
+#### Linux Kernel Introduction
 
+> Objective: Understand the Linux Kernel compilation process and built system
+> Proficiency Level: Basic
 
-root@workstation:~# apt-get update
-root@workstation:~# apt-get upgrade
-root@workstation:~# apt-get install linux-headers-$(uname -r) kernel-package libncurses5 libncurses5-dev git
-user@workstation:~$ git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-user@workstation:~$ uname -a
-Linux Minnowboard 3.2.0-4-amd64 #1 SMP Debian 3.2.63-2+deb7u2 x86_64 GNU/Linux
-user@workstation:~$ cd linux
-user@workstation:~$ make oldconfig
-<You will be asked configuration questions not answered, hit Enter for all of them>
-user@workstation:~$ make
-root@workstation:~# make modules_install
-root@workstation:~# make install
+##### Linux Kernel Compilation
+
+    root@workstation:~# apt-get update
+    root@workstation:~# apt-get upgrade
+    root@workstation:~# apt-get install linux-headers-$(uname -r) kernel-package libncurses5 libncurses5-dev git
+    user@workstation:~$ git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+    user@workstation:~$ uname -a
+    Linux Minnowboard 3.2.0-4-amd64 #1 SMP Debian 3.2.63-2+deb7u2 x86_64 GNU/Linux
+    user@workstation:~$ cd linux
+    user@workstation:~$ make oldconfig
+    <You will be asked configuration questions not answered, hit Enter for all of them>
+    user@workstation:~$ make
+    root@workstation:~# make modules_install
+    root@workstation:~# make install
 
 Reboot your workstation and confirm the new version has been installed
 
-user@workstation:~$ uname -a
-Linux Minnowboard 3.19.0-rc7+ #1 SMP Debian ... x86_64 GNU/Linux
+    user@workstation:~$ uname -a
+    Linux Minnowboard 3.19.0-rc7+ #1 SMP Debian ... x86_64 GNU/Linux
 
-
-[ Linux Kernel Build System Overview ]
+##### Linux Kernel Build System Overview ]
 
 
 Please read the "Kbuild: the Linux Kernel Build System" carefully,
