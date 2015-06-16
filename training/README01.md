@@ -434,7 +434,8 @@ As Module (M)
     root@workstation:~# make install
     root@workstation:~# shutdown -r now
     <reboot>
-    user@workstation:~$ dmesg
+    root@workstation:~# modprobe helloworld
+    root@workstation:~# dmesg
  
 Built-In (*)
 
