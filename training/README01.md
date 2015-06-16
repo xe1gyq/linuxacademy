@@ -31,10 +31,10 @@ Configure your name and email under Git:
 
 Understand the following steps:
 
- [Fork a Repo](https://help.github.com/articles/fork-a-repo/)
- [Syncing A Repo](https://help.github.com/articles/syncing-a-fork/)
- [Pushing to a Remote](https://help.github.com/articles/pushing-to-a-remote/)
- [Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
+* [Fork a Repo](https://help.github.com/articles/fork-a-repo/)
+* [Syncing A Repo](https://help.github.com/articles/syncing-a-fork/)
+* [Pushing to a Remote](https://help.github.com/articles/pushing-to-a-remote/)
+* [Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
 
 So you can make a fork, sync, push and ask for a pull request of **xe1gyq/linuxlearning** instead of the example **octocat/Spoon-Knife**: https://github.com/xe1gyq/linuxlearning
 
@@ -81,15 +81,16 @@ This first part creates both the directories needed and the c file
 
 This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database. When we commit our changes
 
-* First line: Title starting with your githubusername, 50 chars max
-* Second line: a blank line 
-* Third line: Description of the changes, as many lines as required, 80 chars max per line 
- 
-    user $ git add c01.c
-    user $ git commit -s
-    githubusername: My first C Programming Example
-    <empty line>
-    My first example of a code in C language
+- **First line:** Title starting with your githubusername, 50 chars max
+- **Second line:** A blank line
+- **Third line:** Description of the changes, as many lines as required, 80 chars max per line
+
+
+     user $ git add c01.c
+     user $ git commit -s
+     githubusername: My first C Programming Example
+     <empty line>
+     My first example of a code in C language
 
 ##### Pushing to a remote
 
