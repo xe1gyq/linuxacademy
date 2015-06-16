@@ -1,68 +1,73 @@
-|1| Core Development
-    ...
-    |1.1| Tools
-          |1.1.1| GIT
+# Linux Learning Training
 
-Objective: Develop your Git skills using github infrastructure
-Proficiency Level: Medium
+## Core Development
+### Tools
+#### GIT
 
-If you want to master your Git skills at a super level then read Pro Git Book
-available at
- http://git-scm.com/book/en/v2
+> Objective: Develop your Git skills using github infrastructure
+> Proficiency Level: Medium
 
-Make sure you have git installed:
+If you want to master your Git skills at a super level then read Pro Git Book available at
 
-   On /etc/apt/sources.list append:
-	deb http://ftp.debian.org/debian/ squeeze main contrib non-free
- 
-# apt-get update
-# apt-get upgrade
-/* Obsolete */
-# apt-get install git-core git-email
-/***********/
-# apt-get install git git-email
+[Git book](http://git-scm.com/book/en/v2)
+
+Make sure you have git installed
+- On /etc/apt/sources.list append:
+     deb http://ftp.debian.org/debian/ squeeze main contrib non-free
+
+Let's update, upgrade and install git
+
+     root # apt-get update
+     root # apt-get upgrade
+     /* Obsolete */
+     root # apt-get install git-core git-email
+     /***********/
+     root # apt-get install git git-email
 
 Configure your name and email under Git:
-$ git config --global user.name "YourName YourLastName"
-$ git config --global user.email "your.email.address@wherever.com"
+
+    $ git config --global user.name "YourName YourLastName"
+    $ git config --global user.email "your.email.address@wherever.com"
 
 Understand the following steps:
- https://help.github.com/articles/fork-a-repo/
- https://help.github.com/articles/syncing-a-fork/
- https://help.github.com/articles/pushing-to-a-remote/
- https://help.github.com/articles/using-pull-requests/
 
-So you can make a fork, sync, push and ask for a pull request of
-xe1gyq/linuxlearning instead of the example octocat/Spoon-Knife:
- https://github.com/xe1gyq/linuxlearning
+ [Fork a Repo](https://help.github.com/articles/fork-a-repo/)
+ [Syncing A Repo](https://help.github.com/articles/syncing-a-fork/)
+ [Pushing to a Remote](https://help.github.com/articles/pushing-to-a-remote/)
+ [Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
 
-The following section shows all the steps described in the links above
-plus the way to commit your first changes, you are strongly required
-to read through all the links where apply to really understand what we
-are doing in our terminal. 
+So you can make a fork, sync, push and ask for a pull request of **xe1gyq/linuxlearning** instead of the example **octocat/Spoon-Knife**: https://github.com/xe1gyq/linuxlearning
 
- Fork a Repo
- - On Github go to xe1gyq/linuxlearning and on the top-right corner
-   of the page, click Fork
- - On command line in your Linux box type the commands below and look
-   at the output
-   $ git clone https://github.com/YOUR_GITHUB_USERNAME/linuxlearning
-   $ cd linuxlearning
-   $ git remote -v
-   $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
-   $ git remote -v
+The following section shows all the steps described in the links above plus the way to commit your first changes, you are strongly required to read through all the links where apply to really understand what we are doing in our terminal. 
 
- Syncing a Fork
- - In the same linuxlearning cloned directory 
-   $ git fetch upstream
-   $ git merge upstream/master
+##### Fork a Repo
 
- Code and Commit
- - This first part creates both the directories needed and the c file
-   $ mkdir -p training/users/<yourgithubusername>/01.core
-   $ cd training/users/<yourhithubusername>/01.core
-   $ nano c01.c
+On Github go to xe1gyq/linuxlearning and on the top-right corner of the page, click **Fork**
 
+On command line in your Linux box type the commands below and look at the output
+ 
+    user $ git clone https://github.com/YOUR_GITHUB_USERNAME/linuxlearning
+    user $ cd linuxlearning
+    user $ git remote -v
+    user $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
+    user $ git remote -v
+
+##### Syncing a Fork
+
+In the same linuxlearning cloned directory 
+ 
+    user $ git fetch upstream
+    user $ git merge upstream/master
+
+##### Code and Commit
+
+This first part creates both the directories needed and the c file
+ 
+    user $ mkdir -p training/users/<yourgithubusername>/01.core
+    user $ cd training/users/<yourhithubusername>/01.core
+    user $ nano c01.c
+
+```
      #include <stdio.h>
      
      int main()
@@ -72,40 +77,35 @@ are doing in our terminal.
      }
 
      /* End of File */
+```
 
- - This second part is the one you'll use everytime you modify a file.
-   Now let's tell git we want to add a new file or include new changes
-   into its database.
-   When we commit our changes
-    First line: Title starting with your githubusername, 50 chars max
-    Second line: a blank line 
-    Third line: Description of the changes, as many lines as required,
-                80 chars max per line 
+This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database. When we commit our changes
+
+* First line: Title starting with your githubusername, 50 chars max
+* Second line: a blank line 
+* Third line: Description of the changes, as many lines as required, 80 chars max per line 
  
-   $ git add c01.c
-   $ git commit -s
-     githubusername: My first C Programming Example
-     
-     My first example of a code in C language
+    user $ git add c01.c
+    user $ git commit -s
+    githubusername: My first C Programming Example
+    <empty line>
+    My first example of a code in C language
 
- Pushing to a remote
- - Push your local branch to your remote repository
-   $ git push origin master
+##### Pushing to a remote
 
- Using Pull Requests
- - This is a process entirely done at Github webpage, please follow the
-   instructions found under the link above
+Push your local branch to your remote repository
+    user $ git push origin master
 
-So remember every time you'll work in your local repository you'll need to
-follow the next steps:
+##### Using Pull Requests
 
- 1. Syncing a Fork
- 2. Code and Commit
- 3. Pushing to a Remote
- 4. Using Pull Requests
+This is a process entirely done at Github webpage, please follow the instructions found under the link above. So remember every time you'll work in your local repository you'll need to follow the next steps:
 
-You are now ready to go! Remember you will be pushing all your work to
-xe1gyq/linuxlearning
+1. Syncing a Fork
+2. Code and Commit
+3. Pushing to a Remote
+4. Using Pull Requests
+
+You are now ready to go! Remember you will be pushing all your work to **xe1gyq/linuxlearning**
 
 ============================================================================
 
