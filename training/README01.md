@@ -162,9 +162,9 @@ Take kernel image from kernelimages directory and decompress under the preworksp
 
 File Names
 
-    # of READMEs
+    # of README* (files as README.Locking also count)
     # of Kconfig
-    # of Kbuildvc
+    # of Kbuild
     # of Makefiles
     # of .c files
     # of .h files
