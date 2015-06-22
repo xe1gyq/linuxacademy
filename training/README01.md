@@ -11,13 +11,13 @@ If you want to master your Git skills at a super level then read Pro Git Book av
 
 [Git book](http://git-scm.com/book/en/v2)
 
-Make sure you have git installed
+Make sure you have git installed in your Linux box
 - On /etc/apt/sources.list append:
 
 
      deb http://ftp.debian.org/debian/ squeeze main contrib non-free
 
-Let's update, upgrade and install git
+In your same Linux Box, let's update, upgrade and install git
 
      root # apt-get update
      root # apt-get upgrade
@@ -28,6 +28,9 @@ Configure your name and email under Git:
     $ git config --global user.name "YourName YourLastName"
     $ git config --global user.email "your.email.address@wherever.com"
 
+Now, go to github.com and sign up for an account
+ [Github](www.github.com)
+
 Understand the following steps:
 
 * [Fork a Repo](https://help.github.com/articles/fork-a-repo/)
@@ -35,13 +38,17 @@ Understand the following steps:
 * [Pushing to a Remote](https://help.github.com/articles/pushing-to-a-remote/)
 * [Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
 
-So you can make a fork, sync, push and ask for a pull request of **xe1gyq/linuxlearning** instead of the example **octocat/Spoon-Knife**: https://github.com/xe1gyq/linuxlearning
+In order to work with our **Linux Learning Workshop** Use 
+[xe1gyq/linuxlearning](https://github.com/xe1gyq/linuxlearning)
+instead of the example
+[octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife)
+so you can make a fork, sync, push and ask for a pull request.
 
-The following section shows all the steps described in the links above plus the way to commit your first changes, you are strongly required to read through all the links where apply to really understand what we are doing in our terminal. 
+The following section shows all the steps described in the links above plus the way to commit your first changes to **Linux Learning Workshop**, you are strongly required to read through all the links where apply to really understand what we are doing in our terminal. 
 
 ##### Fork a Repo
 
-On Github go to xe1gyq/linuxlearning and on the top-right corner of the page, click **Fork**
+In your web browser with a Github account previously created go to [xe1gyq/linuxlearning](https://github.com/xe1gyq/linuxlearning) and on the top-right corner of the page, click **Fork**
 
 On command line in your Linux box type the commands below and look at the output
 
@@ -53,7 +60,7 @@ On command line in your Linux box type the commands below and look at the output
 
 ##### Syncing a Fork
 
-In the same linuxlearning cloned directory 
+In the same linuxlearning cloned directory
  
     user $ git fetch upstream
     user $ git merge upstream/master
