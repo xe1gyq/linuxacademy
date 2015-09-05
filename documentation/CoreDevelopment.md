@@ -278,7 +278,7 @@ Reboot your workstation and confirm the new version has been installed
     user@workstation:~$ uname -a
     Linux Minnowboard 3.19.0-rc7+ #1 SMP Debian ... x86_64 GNU/Linux
 
-#### Linux Kernel Build System Overview ]
+#### Linux Kernel Build System Overview
 
 
 Please read the "Kbuild: the Linux Kernel Build System" carefully, you will understand how this system works
@@ -324,26 +324,26 @@ module_exit(module_exit_function);
 
 
 Create the Kconfig file under helloworld directory and add the code below, make sure indentation is correct
-user@workstation:~$ nano drivers/helloworld/Kconfig
 
-menu "Hello Module Kernel Support"
+    user@workstation:~$ nano drivers/helloworld/Kconfig
 
-config HELLO_WORLD
-        tristate "Hello Module Driver"
-        depends on X86
-        help
-          Select this option to run a Hello World Module!
-
-endmenu
+    menu "Hello Module Kernel Support"
+    
+    config HELLO_WORLD
+            tristate "Hello Module Driver"
+            depends on X86
+            help
+              Select this option to run a Hello World Module!
+    endmenu
 
 
 [[ Linux Kernel Build System, Hello World Makefile ]]
 
 
 Create the Makefile under helloworld directory and add the code below
-user@workstation:~$ nano drivers/helloworld/Makefile
 
-obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
+    user@workstation:~$ nano drivers/helloworld/Makefile
+    obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 
 
 [[ Linux Kernel Build System, Device Drivers Kconfig seeing Hello World Directory ]]
@@ -351,10 +351,10 @@ obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 
 Modify Kconfig under drivers directory and add the line with helloworld
 
-user@workstation:~$ nano drivers/Kconfig
-menu "Device Drivers"
-source "drivers/helloworld/Kconfig"
-source "drivers/amba/Kconfig"
+    user@workstation:~$ nano drivers/Kconfig
+    menu "Device Drivers"
+    source "drivers/helloworld/Kconfig"
+    source "drivers/amba/Kconfig"
 
 [[ Linux Kernel Build System, Device Drivers Makefile compiling Hello World Directory ]]
 
