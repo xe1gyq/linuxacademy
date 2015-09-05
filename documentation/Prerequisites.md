@@ -12,7 +12,7 @@ Prerequisites
 
 ## Github
 
-- Github account (External))
+- Github account (External)
 
 ## Working Directory Structure
 
