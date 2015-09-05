@@ -370,30 +370,30 @@ user@workstation:~$ nano drivers/Makefile
 
 [[ Linux Kernel Build System, Hello World Menuconfig ]]
 
-
 We are ready to view our Hello World Module under menuconfig
-user@workstation:~$ make menuconfig
+    
+    user@workstation:~$ make menuconfig
 
 Go to its location under
--> Device Drivers
-  -> Hello Module Kernel Support
+    -> Device Drivers
+      -> Hello Module Kernel Support
 
 Understand the menu options seen below including their fast paths (one letter invocation)
 
-<Select>    < Exit >    < Help >    < Save >    < Load >
+    <Select>    < Exit >    < Help >    < Save >    < Load >
 
 Get help for the Hello Module Kernel Support using Help function, you should see this
 
-CONFIG_HELLO_WORLD:
-Select this option to run a Hello World Module!
-Symbol: HELLO_WORLD [=n]
-Type : tristate
-Prompt: Hello Module Driver
-   Location:
-     -> Device Drivers
-       -> Hello Module Kernel Support
-   Defined at drivers/helloworld/Kconfig:3
-   Depends on: X86 [=y]
+    CONFIG_HELLO_WORLD:
+    Select this option to run a Hello World Module!
+    Symbol: HELLO_WORLD [=n]
+    Type : tristate
+    Prompt: Hello Module Driver
+       Location:
+         -> Device Drivers
+           -> Hello Module Kernel Support
+       Defined at drivers/helloworld/Kconfig:3
+       Depends on: X86 [=y]
 
 Understand about the following options from Kconfig by googling or looking
 at other Kconfigs
@@ -404,7 +404,8 @@ at other Kconfigs
 
 Take a look at the default building state for our Hello World Module and
 modify Kconfig so you can have it built as default
- Symbol: HELLO_WORLD [=n]
+
+     Symbol: HELLO_WORLD [=n]
 
 
 [[ Linux Kernel Build System, Hello World Compilation ]]
@@ -489,9 +490,8 @@ Built-In (*)
 
 ============================================================================
 
-## Core Development
-### Embedded
-#### Embedded Systems Programming
+## Embedded
+### Embedded Systems Programming
 
 > Objective: Learn various fundamentals issues as well as practical development skill in the area of embedded systems programming.
 > Proficiency Level: Basic
