@@ -494,6 +494,7 @@ Built-In (*)
 ### Embedded Systems Programming
 
 > Objective: Learn various fundamentals issues as well as practical development skill in the area of embedded systems programming.
+    
 > Proficiency Level: Basic
 
 Want to start learning! Feel free to code if possible! 2 Weeks Training (20 minute/lecture, 4 lectures/day)
