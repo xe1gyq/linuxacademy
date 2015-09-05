@@ -360,13 +360,12 @@ Modify Kconfig under drivers directory and add the line with helloworld
 Modify Makefile under drivers directory and add the line with CONFIG_HELLO_WORLD
 user@workstation:~$ nano drivers/Makefile
 
-...
-# Rewritten to use lists instead of if-statements.
-#
-
-obj-$(CONFIG_HELLO_WORLD) += helloworld/
-obj-y += irqchip/
-...
+    ...
+    # Rewritten to use lists instead of if-statements.
+    #
+    obj-$(CONFIG_HELLO_WORLD) += helloworld/
+    obj-y += irqchip/
+    ...
 
 
 [[ Linux Kernel Build System, Hello World Menuconfig ]]
