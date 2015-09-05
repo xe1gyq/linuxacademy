@@ -2,5 +2,5 @@
 
 * [Introduction](documentation/Introduction.md)
 * [PreRequisites](documentation/Prerequisites.md)
-* Core Development
+* [Core Development](documentation/CoreDevelopment.md)
 
