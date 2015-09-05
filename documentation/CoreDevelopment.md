@@ -280,7 +280,6 @@ Reboot your workstation and confirm the new version has been installed
 
 #### Linux Kernel Build System Overview
 
-
 Please read the "Kbuild: the Linux Kernel Build System" carefully, you will understand how this system works
 [Kbuild Linux Kernel Build System](http://www.linuxjournal.com/content/kbuild-linux-kernel-build-system)
 
