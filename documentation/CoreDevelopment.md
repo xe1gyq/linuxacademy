@@ -1,6 +1,9 @@
-## Core Development
-### Tools
-#### GIT
+Core Development
+==
+
+## Tools
+
+### GIT
 
 > Objective: Develop your Git skills using github infrastructure
 > Proficiency Level: Medium
@@ -44,7 +47,7 @@ so you can make a fork, sync, push and ask for a pull request.
 
 The following section shows all the steps described in the links above plus the way to commit your first changes to **Linux Learning Workshop**, you are strongly required to read through all the links where apply to really understand what we are doing in our terminal. 
 
-##### Fork a Repo
+#### Fork a Repo
 
 In your web browser with a Github account previously created go to [xe1gyq/linuxlearning](https://github.com/xe1gyq/linuxlearning) and on the top-right corner of the page, click **Fork**
 
@@ -56,14 +59,14 @@ On command line in your Linux box type the commands below and look at the output
     user $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
     user $ git remote -v
 
-##### Syncing a Fork
+#### Syncing a Fork
 
 In the same linuxlearning cloned directory
  
     user $ git fetch upstream
     user $ git merge upstream/master
 
-##### Code and Commit
+#### Code and Commit
 
 This first part creates both the directories needed and the c file
  
@@ -95,12 +98,12 @@ This second part is the one you'll use everytime you modify a file. Now let's te
     <empty line>
     My first example of a code in C language
 
-##### Pushing to a remote
+#### Pushing to a remote
 
 Push your local branch to your remote repository
     user $ git push origin master
 
-##### Using Pull Requests
+#### Using Pull Requests
 
 This is a process entirely done at Github webpage, please follow the instructions found under the link above. So remember every time you'll work in your local repository you'll need to follow the next steps:
 
@@ -111,9 +114,9 @@ This is a process entirely done at Github webpage, please follow the instruction
 
 You are now ready to go! Remember you will be pushing all your work to **xe1gyq/linuxlearning**
 
-## Core Development
-### Programming Languages
-#### C
+## Programming Languages
+
+### C
 
 > Objetive: Have solid C programming skills required to be a Linux developer
 > Proficiency Level: Intermediate
@@ -122,9 +125,7 @@ Read "The C Programming Language" by Brian W. Kernighan and Dennis M. Ritchie
 
 **[Hands On]** Write and compile your exercises in your Linux Box and add them to this repository under your **<username>/01.core/cXX.c**, the more exercises you write the more familiar you get with C programming language. You will be a exemplary C Developer if you complete the last exercise of every chapter from "The C Programming Language"
 
-## Core Development
-### Programming Languages
-#### Shell Scripting
+### Shell Scripting
 
 > Objective: Shell scripting is a basic skill every Linux developer has
 > Proficiency Level: Advanced
@@ -144,7 +145,7 @@ We need the following working directory structure
         |- stats.post (text file)
         |- intel.contributors (text file)
 
-##### Script Arguments
+#### Script Arguments
 
 The script will receive 3 arguments: the file location, version of the kernel and the file type
 
@@ -154,14 +155,14 @@ If file location is the internet then use this repository to grab the kernel tar
 
 If file location is local then use kernelimages directory to grab the kernel tar file
 
-##### Processing
+#### Processing
 
 We will gather statistics and do some work in 2 phases, right after we have decompressed the kernel file under the preworkspace directory and after we make some changes to its directory structure under postworkspace, statistics will be populated in 2 different files under our top working directory, their names will be:
 
 1. stats.pre
 2. stats.post
 
-##### Pre Processing
+#### Pre Processing
 
 Take kernel image from kernelimages directory and decompress under the preworkspace directory. We will require the following information under **stats.pre** files:
 
@@ -195,7 +196,7 @@ Let's populate our file called **intel.contributors** under our top level workin
     Path/to/file.c | Sara Sharp
     Path/to/file.c | Darren Hart
 
-##### Post Processing
+#### Post Processing
 
 Create 3 directories under postworkspace and move all files from preworkspace where kernel was decompressed according to the file extensions:
 
@@ -208,7 +209,7 @@ In all 3 directories, if we have files with the same name, add a number as ident
     README_1
     README_2
 
-###### Some Tasks To Do
+##### Some Tasks To Do
 
 1. Add your name to the beginning, middle and end of every .c file
 2. In all files substitute #include <linux/scripting.h> for every #include <linux/module.h> found
@@ -237,17 +238,13 @@ File Content
     # of ocurrences for #include <linux/module.h>
     # of ocurrences for #include <linux/learningscripting.h>
 
-##### Results
+#### Results
 
 A message of Pass / Fail should be printed to stdout for each of the following:
 
 - Our Total number of files is the same in both stats.pre and stats.post
 
-============================================================================
-
-## Core Development
-### Programming Languages
-#### Python
+### Python
 
 > Objective: Bring your basic skills up-to-speed
 > Proficiency Level: Basic
@@ -255,8 +252,7 @@ A message of Pass / Fail should be printed to stdout for each of the following:
 Guess what? Port the previous script to Python :) remember to change the name of the host directory, now called, pythonlearning 
 
 
-## Core Development
-### Embedded
+## Embedded
 #### Linux Kernel Introduction
 
 > Objective: Understand the Linux Kernel compilation process and built system
