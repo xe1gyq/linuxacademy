@@ -253,12 +253,12 @@ Guess what? Port the previous script to Python :) remember to change the name of
 
 
 ## Embedded
-#### Linux Kernel Introduction
+### Linux Kernel Introduction
 
 > Objective: Understand the Linux Kernel compilation process and built system
 > Proficiency Level: Basic
 
-##### Linux Kernel Compilation
+#### Linux Kernel Compilation
 
     root@workstation:~# apt-get update
     root@workstation:~# apt-get upgrade
@@ -278,7 +278,7 @@ Reboot your workstation and confirm the new version has been installed
     user@workstation:~$ uname -a
     Linux Minnowboard 3.19.0-rc7+ #1 SMP Debian ... x86_64 GNU/Linux
 
-##### Linux Kernel Build System Overview ]
+#### Linux Kernel Build System Overview ]
 
 
 Please read the "Kbuild: the Linux Kernel Build System" carefully, you will understand how this system works
@@ -286,7 +286,7 @@ Please read the "Kbuild: the Linux Kernel Build System" carefully, you will unde
 
 Do you want to do another Linux Kernel Build System exercise by writing a Hello World Kernel Module? then keep reading...
 
-###### Linux Kernel Build System, Hello World Module
+##### Linux Kernel Build System, Hello World Module
 
 Make a "helloworld" directory under drivers
 
