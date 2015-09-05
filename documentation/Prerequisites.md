@@ -1,7 +1,7 @@
 Prerequisites
 ==
 
-# Workstation
+## Workstation
 
 - 30 GB available in hard disk if Desktop will be installed
 - 16 GB available in hard disk if no Desktop will be installed
@@ -10,13 +10,11 @@ Prerequisites
 
      $ export http_proxy=http://proxy.domain.com:port
 
-## Prerequisites
-### Github
+## Github
 
 - Github account (External))
 
-## Prerequisites
-### Working Directory Structure
+## Working Directory Structure
 
 Take in mind you need to follow this directory structure where
 
@@ -41,7 +39,6 @@ linuxlearning/
         03.android/
 ```
 
-## Prerequisites
-### Timeline
+## Timeline
 
 - Per suggestion, proposed timeline to be defined
