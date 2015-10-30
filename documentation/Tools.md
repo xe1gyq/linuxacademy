@@ -84,17 +84,19 @@ This first part creates both the directories needed and the c file
      /* End of File */
 ```
 
-This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database. When we commit our changes
+This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database:
 
-    First line: Title starting with your githubusername, 50 chars max
-    Second line: A blank line
-    Third line: Description of the changes, as many lines as required, 80 chars max per line
-    
     user $ git add c01.c
     user $ git commit -s
     githubusername: My first C Programming Example
     <empty line>
     My first example of a code in C language
+
+When we commit our changes
+
+    First line: Title starting with your githubusername, 50 chars max
+    Second line: A blank line
+    Third line: Description of the changes, as many lines as required, 80 chars max per line
 
 #### Pushing to a remote
 
