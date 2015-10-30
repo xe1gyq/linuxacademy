@@ -9,6 +9,6 @@
    * [Scripting Languages](documentation/ScriptingLanguages.md)
 * [Embedded](Embedded.md)
 * [Linux Kernel](documentation/LinuxKernel.md)
-   * Kernel Space
+   * [Kernel Space](documentation/KernelSpace.md)
    * User Space
 
