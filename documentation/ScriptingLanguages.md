@@ -21,7 +21,7 @@ We need the following working directory structure
         |- stats.post (text file)
         |- intel.contributors (text file)
 
-#### Script Arguments
+### Script Arguments
 
 The script will receive 3 arguments: the file location, version of the kernel and the file type
 
@@ -31,14 +31,14 @@ If file location is the internet then use this repository to grab the kernel tar
 
 If file location is local then use kernelimages directory to grab the kernel tar file
 
-#### Processing
+### Processing
 
 We will gather statistics and do some work in 2 phases, right after we have decompressed the kernel file under the preworkspace directory and after we make some changes to its directory structure under postworkspace, statistics will be populated in 2 different files under our top working directory, their names will be:
 
 1. stats.pre
 2. stats.post
 
-#### Pre Processing
+### Pre Processing
 
 Take kernel image from kernelimages directory and decompress under the preworkspace directory. We will require the following information under **stats.pre** files:
 
@@ -72,7 +72,7 @@ Let's populate our file called **intel.contributors** under our top level workin
     Path/to/file.c | Sara Sharp
     Path/to/file.c | Darren Hart
 
-#### Post Processing
+### Post Processing
 
 Create 3 directories under postworkspace and move all files from preworkspace where kernel was decompressed according to the file extensions:
 
@@ -85,7 +85,7 @@ In all 3 directories, if we have files with the same name, add a number as ident
     README_1
     README_2
 
-##### Some Tasks To Do
+#### Some Tasks To Do
 
 1. Add your name to the beginning, middle and end of every .c file
 2. In all files substitute #include <linux/scripting.h> for every #include <linux/module.h> found
@@ -114,13 +114,13 @@ File Content
     # of ocurrences for #include <linux/module.h>
     # of ocurrences for #include <linux/learningscripting.h>
 
-#### Results
+### Results
 
 A message of Pass / Fail should be printed to stdout for each of the following:
 
 - Our Total number of files is the same in both stats.pre and stats.post
 
-### Python
+## Python
 
 > Objective: Bring your basic skills up-to-speed
 > Proficiency Level: Basic
