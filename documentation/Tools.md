@@ -101,6 +101,7 @@ When we commit our changes
 #### Pushing to a remote
 
 Push your local branch to your remote repository
+
     user $ git push origin master
 
 #### Using Pull Requests
