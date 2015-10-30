@@ -7,4 +7,5 @@ Kernel Space
 ## Debug
 ## Examples
 
-See also https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/samples
+See also
+https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/samples
