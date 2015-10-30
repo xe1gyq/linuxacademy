@@ -1,3 +1,7 @@
+
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/512px-Tux.svg.png
+
 Linux Academy
 ==
 
@@ -14,4 +18,4 @@ Linux Academy
 - training     . Linux Mastering Self Learning Guide
 - userspace    . User Space Examples
 
-# End of File
+
