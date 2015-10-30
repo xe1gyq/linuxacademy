@@ -5,7 +5,6 @@ Linux Academy
 - android      . Android Open Source Project
 - config       . Linux Kernel Configurations
 - kernelspace  . Kernel Space Examples
-                 See also https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/samples
 - platforms    . Learning Documentation for Hardware Platforms
 
                edison      . Edison Dual-core Intel Quark x86
