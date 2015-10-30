@@ -9,7 +9,7 @@
    * [Scripting Languages](documentation/ScriptingLanguages.md)
 * [Embedded](Embedded.md)
 * [Linux Kernel](documentation/LinuxKernel.md)
+   * Compilation
    * [Kernel Space](documentation/KernelSpace.md)
    * [User Space](documentation/UserSpace.md)
-   * Compilation
 
