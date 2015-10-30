@@ -113,4 +113,4 @@ This is a process entirely done at Github webpage, please follow the instruction
 3. Pushing to a Remote
 4. Using Pull Requests
 
-You are now ready to go! Remember you will be pushing all your work to **xe1gyq/linuxlearning**
+You are now ready to go! Remember you will be pushing all your work to **xe1gyq/linuxacademy**
