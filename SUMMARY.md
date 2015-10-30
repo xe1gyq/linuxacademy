@@ -8,5 +8,5 @@
    * [Programming Languages](documentation/ProgrammingLanguages.md)
    * [Scripting Languages](documentation/ScriptingLanguages.md)
 * [Embedded](Embedded.md)
-* Linux Kernel
+* [Linux Kernel](documentation/LinuxKernel.md)
 
