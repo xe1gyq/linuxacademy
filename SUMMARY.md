@@ -6,4 +6,5 @@
 * [Core Development](documentation/CoreDevelopment.md)
    * [Tools](documentation/Tools.md)
    * [Programming Languages](documentation/ProgrammingLanguages.md)
+   * Scripting Languages
 
