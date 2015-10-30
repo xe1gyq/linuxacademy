@@ -11,7 +11,7 @@ If you want to master your Git skills at a super level then read Pro Git Book av
 [Git book](http://git-scm.com/book/en/v2)
 
 Make sure you have git installed in your Linux box
-- On __/etc/apt/sources.list__ append:
+- Under /etc/apt/sources.list append:
 
 
      deb http://ftp.debian.org/debian/ squeeze main contrib non-free
