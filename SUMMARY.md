@@ -3,7 +3,7 @@
 * [Cover](README.md)
 * [Introduction](documentation/Introduction.md)
 * [PreRequisites](documentation/Prerequisites.md)
-* [Core Development](documentation/CoreDevelopment.md)
+* [Core](documentation/Core.md)
    * [Tools](documentation/Tools.md)
    * [Programming Languages](documentation/ProgrammingLanguages.md)
    * [Scripting Languages](documentation/ScriptingLanguages.md)
