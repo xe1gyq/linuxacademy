@@ -102,7 +102,7 @@ Modify Kconfig under drivers directory and add the line with helloworld
     source "drivers/helloworld/Kconfig"
     source "drivers/amba/Kconfig"
 
-[[ Linux Kernel Build System, Device Drivers Makefile compiling Hello World Directory ]]
+#### Linux Kernel Build System, Device Drivers Makefile compiling Hello World Directory
 
 Modify Makefile under drivers directory and add the line with CONFIG_HELLO_WORLD
 user@workstation:~$ nano drivers/Makefile
