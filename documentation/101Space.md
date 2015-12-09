@@ -67,7 +67,7 @@ module_init(module_init_function);
 module_exit(module_exit_function);
 ```
 
-#### Linux Kernel Build System, Hello World Kconfi
+#### Linux Kernel Build System, Hello World Kconfig
 
 Create the Kconfig file under helloworld directory and add the code below, make sure indentation is correct
 
@@ -83,7 +83,7 @@ Create the Kconfig file under helloworld directory and add the code below, make 
     endmenu
 
 
-[[ Linux Kernel Build System, Hello World Makefile ]]
+#### Linux Kernel Build System, Hello World Makefile
 
 
 Create the Makefile under helloworld directory and add the code below
@@ -92,7 +92,7 @@ Create the Makefile under helloworld directory and add the code below
     obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 
 
-[[ Linux Kernel Build System, Device Drivers Kconfig seeing Hello World Directory ]]
+#### Linux Kernel Build System, Device Drivers Kconfig seeing Hello World Directory
 
 
 Modify Kconfig under drivers directory and add the line with helloworld
