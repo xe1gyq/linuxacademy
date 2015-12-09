@@ -115,7 +115,7 @@ user@workstation:~$ nano drivers/Makefile
     ...
 
 
-[[ Linux Kernel Build System, Hello World Menuconfig ]]
+#### Linux Kernel Build System, Hello World Menuconfig
 
 We are ready to view our Hello World Module under menuconfig
     
