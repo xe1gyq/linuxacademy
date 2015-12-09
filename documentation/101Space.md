@@ -48,7 +48,8 @@ Create helloworld.c file under our helloworld directory and add the C code below
 #include <linux/kernel.h>
 #include <linux/module.h>
 
-static int module_init_function(void)
+static int module_init_function(void)clear
+
 {
 	printk(KERN_INFO "Module? Hello!\n");
 	return 0;
