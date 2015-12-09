@@ -67,7 +67,7 @@ module_init(module_init_function);
 module_exit(module_exit_function);
 ```
 
-[[ Linux Kernel Build System, Hello World Kconfig ]]
+##### Linux Kernel Build System, Hello World Kconfig ]]
 
 
 Create the Kconfig file under helloworld directory and add the code below, make sure indentation is correct
