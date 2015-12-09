@@ -155,8 +155,7 @@ modify Kconfig so you can have it built as default
      Symbol: HELLO_WORLD [=n]
 
 
-[[ Linux Kernel Build System, Hello World Compilation ]]
-
+#### Linux Kernel Build System, Hello World Compilation
 
 Now compile your Hello World Module both as module and built-in into the
 Kernel image making sure you boot your system twice to confirm your
