@@ -1,15 +1,18 @@
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
+#include <linux/random.h>
 
 static struct kobject *sensor_kobject;
 static int sensor;
+int i, lessthan100;
 
 static ssize_t sensor_show(struct kobject *kobj, struct kobj_attribute *attr,
                       char *buf)
 {
-        
-        return sprintf(buf, "%d\n", sensor);
+        get_random_bytes(&i, sizeof(i));
+        lessthan100 = i % 100;
+        return sprintf(buf, "%d\n", lessthan100);
 }
 
 static ssize_t sensor_store(struct kobject *kobj, struct kobj_attribute *attr,
@@ -28,7 +31,7 @@ static int module_init_function(void)
 
 	printk(KERN_INFO "Hello Sensor\n");
 
-        sensor_kobject = kobject_create_and_add("sensor", kernel_kobj);
+        sensor_kobject = kobject_create_and_add("sensor", NULL);
         if(!sensor_kobject)
                 return -ENOMEM;
 
