@@ -48,7 +48,7 @@ static void module_exit_function(void)
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("xe1gyq");
-MODULE_DESCRIPTION("My First Linux Kernel Module");
+MODULE_DESCRIPTION("My First Linux Kernel Sensor Module");
 
 module_init(module_init_function);
 module_exit(module_exit_function);
