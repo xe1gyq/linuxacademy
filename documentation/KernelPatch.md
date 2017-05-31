@@ -42,6 +42,34 @@ user@workstation:~/linux$
 
 ```sh
 user@workstation:~/linux$ git commit -s
+```
+
+```sh
+Drivers: Hello World
+
+Optimized Hello World Kernel Module
+
+Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 31 18:01:26 2017 -0500
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       modified:   drivers/Kconfig
+#       modified:   drivers/Makefile
+#       new file:   drivers/helloworld/Kconfig
+#       new file:   drivers/helloworld/Makefile
+#       new file:   drivers/helloworld/helloworld.c
+#
+```
+
+```sh
 [master b81849d] Drivers: Hello World
  5 files changed, 36 insertions(+)
  create mode 100644 drivers/helloworld/Kconfig
