@@ -125,10 +125,10 @@ Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
  create mode 100644 drivers/helloworld/Makefile
 ```
 
-# Git Add ../HelloWorld/Makefile
+# Git Add ../HelloWorld/Kconfig
 
 ```sh
-user@workstation:~/linux$ git add drivers/helloworld/Makefile
+user@workstation:~/linux$ git add drivers/helloworld/Kconfig
 ```
 
 ```sh
@@ -136,5 +136,33 @@ user@workstation:~/linux$ git commit -s
 ```
 
 ```sh
+Drivers: Hello World Kconfig
 
+Kconfig for Optimized Hello World Kernel Module
+
+Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 31 18:49:24 2017 -0500
+#
+# On branch multiple
+# Your branch is ahead of 'origin/master' by 3 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       new file:   drivers/helloworld/Kconfig
+#
+# Changes not staged for commit:
+#       modified:   drivers/Kconfig
+#       modified:   drivers/Makefile
+#
+```
+
+```sh
+[multiple 82f295b] Drivers: Hello World Kconfig
+ Date: Wed May 31 18:49:24 2017 -0500
+ 1 file changed, 9 insertions(+)
+ create mode 100644 drivers/helloworld/Kconfig
 ```
