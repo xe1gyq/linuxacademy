@@ -21,6 +21,8 @@ warning: 2 lines add whitespace errors.
 xe1gyq@server:~/linux$ 
 ```
 
+# Git Status
+
 ```sh
 user@workstation:~/linux$ git status
 On branch multiple
@@ -39,6 +41,8 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+
+# Git Add ../HelloWorld/HelloWorld.c
 
 ```sh
 user@workstation:~/linux$ git add drivers/helloworld/helloworld.c
