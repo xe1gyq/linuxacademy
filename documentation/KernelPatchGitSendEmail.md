@@ -25,3 +25,7 @@ user@workstation:~/linux$ git format-patch -M origin/master
 0001-Drivers-Hello-World.patch
 ```
 
+```sh
+user@workstation:~/linux$ git format-patch -M origin/master -o patches/
+patches/0001-Drivers-Hello-World.patch
+```
