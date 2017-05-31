@@ -11,17 +11,17 @@ Do you want to do another Linux Kernel Build System exercise by writing a Hello 
 
 Make a "helloworld" directory under drivers
 
-```
+```sh
 user@workstation:~$ mkdir drivers/helloworld
 ```
 
 Create helloworld.c file under our helloworld directory and add the C code below, this is a simple Hello World Kernel Module
 
-```
+```sh
 user@workstation:~$ nano drivers/helloworld/helloworld.c
 ```
 
-```
+```sh
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -50,7 +50,7 @@ module_exit(module_exit_function);
 
 Create the Kconfig file under helloworld directory and add the code below, make sure indentation is correct
 
-```
+```sh
 user@workstation:~$ nano drivers/helloworld/Kconfig
 
 menu "Hello Module Kernel Support"
@@ -67,7 +67,7 @@ endmenu
 
 Create the Makefile under helloworld directory and add the code below
 
-```
+```sh
 user@workstation:~$ nano drivers/helloworld/Makefile
 obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 ```
@@ -78,7 +78,7 @@ obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 
 Modify Kconfig under drivers directory and add the line with helloworld
 
-```
+```sh
 user@workstation:~$ nano drivers/Kconfig
 menu "Device Drivers"
 source "drivers/helloworld/Kconfig"
@@ -92,7 +92,7 @@ source "drivers/amba/Kconfig"
 Modify Makefile under drivers directory and add the line with CONFIG\_HELLO\_WORLD  
 user@workstation:~$ nano drivers/Makefile
 
-```
+```sh
 ...
 # Rewritten to use lists instead of if-statements.
 #
@@ -105,7 +105,7 @@ obj-y += irqchip/
 
 We are ready to view our Hello World Module under menuconfig
 
-```
+```sh
 user@workstation:~$ make menuconfig
 ```
 
@@ -115,13 +115,13 @@ Go to its location under
 
 Understand the menu options seen below including their fast paths \(one letter invocation\)
 
-```
+```sh
 <Select>    < Exit >    < Help >    < Save >    < Load >
 ```
 
 Get help for the Hello Module Kernel Support using Help function, you should see this
 
-```
+```sh
 CONFIG_HELLO_WORLD:
 Select this option to run a Hello World Module!
 Symbol: HELLO_WORLD [=n]
@@ -144,11 +144,11 @@ at other Kconfigs
 Take a look at the default building state for our Hello World Module and  
 modify Kconfig so you can have it built as default
 
-```
+```sh
  Symbol: HELLO_WORLD [=n]
 ```
 
-# Linux Kernel Build System, Hello World Compilation
+# Hello World Compilation
 
 Now compile your Hello World Module both as module and built-in into the  
 Kernel image making sure you boot your system twice to confirm your  
@@ -156,7 +156,7 @@ changes using dmesg command
 
 As Module \(M\)
 
-```
+```sh
 user@workstation:~$ make
   CHK     include/config/kernel.release
   CHK     include/generated/uapi/linux/version.h
@@ -180,7 +180,7 @@ root@workstation:~# dmesg
 
 Built-In \(\*\)
 
-```
+```sh
 user@workstation:~$ make
 xe1gyq@Minnowboard:~/linux$ make                                                                                                               
 scripts/kconfig/conf --silentoldconfig Kconfig
