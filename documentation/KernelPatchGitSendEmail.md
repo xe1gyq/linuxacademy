@@ -57,13 +57,4 @@ X-Mailer: git-send-email 2.1.4
 
 Send this email? ([y]es|[n]o|[q]uit|[a]ll): y
 Password for 'smtp://hochob.vc@gmail.com@smtp.gmail.com:587': 
-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbu4
-5.7.14 HjsPDORb5A7rO9MMCjYl9baxZPFuACa5D7ajlv48FUk0CxT2GeImuDVFVe8JgBmL-V0zKm
-5.7.14 QFsZd6cfERyN5XxKF4U0D420OY3ygKp8EuvWS4VrQvH0uB7IhJQUJQX_bEBVawC9xesUki
-5.7.14 CaW8vA2g0fgXDFPaKjIei8Gwu4G7X1tnsKwsI5L4wCZhr4o0Vk5l0OeCrMKvttouI-eA1L
-5.7.14 gvJthOlcwFWaIGphyzZkIOOVsyaps> Please log in via your web browser and
-5.7.14 then try again.
-5.7.14  Learn more at
-5.7.14  https://support.google.com/mail/answer/78754 m5sm35678508pgd.28 - gsmtp
-user@workstation:~/linux$ 
 ```
