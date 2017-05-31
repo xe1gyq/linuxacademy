@@ -48,3 +48,30 @@ no changes added to commit (use "git add" and/or "git commit -a")
 user@workstation:~/linux$ git add drivers/helloworld/helloworld.c
 ```
 
+```sh
+Drivers: Hello World Source Code
+
+Optimized Hello World Kernel Module
+
+Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch multiple
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       new file:   drivers/helloworld/helloworld.c
+#
+# Changes not staged for commit:
+#       modified:   drivers/Kconfig
+#       modified:   drivers/Makefile
+#
+# Untracked files:
+#       drivers/helloworld/Kconfig
+#       drivers/helloworld/Makefile
+#
+```
+
+# Git Add ../HelloWorld/Makefile
+
