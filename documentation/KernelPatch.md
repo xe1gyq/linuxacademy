@@ -39,3 +39,13 @@ Changes to be committed:
 
 user@workstation:~/linux$ 
 ```
+
+```sh
+user@workstation:~/linux$ git commit -s
+[master b81849d] Drivers: Hello World
+ 5 files changed, 36 insertions(+)
+ create mode 100644 drivers/helloworld/Kconfig
+ create mode 100644 drivers/helloworld/Makefile
+ create mode 100644 drivers/helloworld/helloworld.c
+user@workstation:~/linux$ 
+```
