@@ -49,6 +49,10 @@ user@workstation:~/linux$ git add drivers/helloworld/helloworld.c
 ```
 
 ```sh
+user@workstation:~/linux$ git commit -s
+```
+
+```sh
 Drivers: Hello World Source Code
 
 Optimized Hello World Kernel Module
