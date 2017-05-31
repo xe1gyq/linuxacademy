@@ -118,3 +118,20 @@ Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
 #       drivers/helloworld/Kconfig
 #
 ```
+
+```sh
+[multiple b0c1d51] Drivers: Hello World Makefile
+ 1 file changed, 1 insertion(+)
+ create mode 100644 drivers/helloworld/Makefile
+```
+
+# Git Add ../HelloWorld/Makefile
+
+```sh
+user@workstation:~/linux$ git add drivers/helloworld/Makefile
+```
+
+```sh
+user@workstation:~/linux$ git commit -s
+```
+
