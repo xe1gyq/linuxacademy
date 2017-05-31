@@ -17,6 +17,9 @@ Untracked files:
 	drivers/helloworld/
 
 no changes added to commit (use "git add" and/or "git commit -a")
-user@server:~/linux$ 
+user@workstation:~/linux$ 
 ```
 
+```sh
+user@workstation:~/linux$ git add drivers/Kconfig drivers/Makefile drivers/helloworld/
+```
