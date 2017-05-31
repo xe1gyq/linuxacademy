@@ -31,7 +31,7 @@ patches/0001-Drivers-Hello-World.patch
 ```
 
 ```sh
-xe1gyq@server:~/linux$ git send-email patches/0001-Drivers-Hello-World.patch
+user@workstation:~/linux$ git send-email patches/0001-Drivers-Hello-World.patch
 patches/0001-Drivers-Hello-World.patch
 Who should the emails be sent to (if any)? xe1gyq@gmail.com
 Message-ID to be used as In-Reply-To for the first email (if any)? 
@@ -65,5 +65,5 @@ Password for 'smtp://hochob.vc@gmail.com@smtp.gmail.com:587':
 5.7.14 then try again.
 5.7.14  Learn more at
 5.7.14  https://support.google.com/mail/answer/78754 m5sm35678508pgd.28 - gsmtp
-xe1gyq@server:~/linux$ 
+user@workstation:~/linux$ 
 ```
