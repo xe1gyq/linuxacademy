@@ -161,7 +161,6 @@ Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
 
 ```sh
 [multiple 82f295b] Drivers: Hello World Kconfig
- Date: Wed May 31 18:49:24 2017 -0500
  1 file changed, 9 insertions(+)
  create mode 100644 drivers/helloworld/Kconfig
 ```
@@ -215,3 +214,9 @@ user@workstation:~/linux$ git add drivers/Kconfig
 user@workstation:~/linux$ git commit -s
 ```
 
+```sh
+
+```
+
+```sh
+```
