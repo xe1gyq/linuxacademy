@@ -8,6 +8,7 @@
   * [Programming Languages](documentation/ProgrammingLanguages.md)
   * [Scripting Languages](documentation/ScriptingLanguages.md)
 * [Embedded](Embedded.md)
+* [Linux Kernel Development Process](documentation/LinuxKernelDevelopmentProcess.md)
 * [Linux Kernel](documentation/LinuxKernel.md)
   * [Kernel Compilation](documentation/KernelCompilation.md)
   * [Kernel Build System](documentation/KernelBuildSystem.md)
