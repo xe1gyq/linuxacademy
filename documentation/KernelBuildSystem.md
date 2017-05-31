@@ -107,11 +107,16 @@ Modify Makefile under drivers directory and add the line with CONFIG\_HELLO\_WOR
 user@workstation:~$ nano drivers/Makefile
 
 ```sh
-...
+#
+# Makefile for the Linux kernel device drivers.
+#
+# 15 Sep 2000, Christoph Hellwig <hch@infradead.org>
 # Rewritten to use lists instead of if-statements.
 #
-obj-$(CONFIG_HELLO_WORLD) += helloworld/
-obj-y += irqchip/
+
+obj-$(CONFIG_HELLO_WORLD)       += helloworld/
+obj-y                           += irqchip/
+obj-y                           += bus/
 ...
 ```
 
