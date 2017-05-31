@@ -81,7 +81,6 @@ Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
 [multiple 761be25] Drivers: Hello World Source Code
  1 file changed, 23 insertions(+)
  create mode 100644 drivers/helloworld/helloworld.c
-user@workstation:~/linux$ 
 ```
 
 # Git Add ../HelloWorld/Makefile
@@ -166,3 +165,53 @@ Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
  1 file changed, 9 insertions(+)
  create mode 100644 drivers/helloworld/Kconfig
 ```
+
+# Git Add ../Makefile
+
+```sh
+user@workstation:~/linux$ git add drivers/Makefile
+```
+
+```sh
+user@workstation:~/linux$ git commit -s
+```
+
+```sh
+Drivers: Hello World Compilation
+
+Enable Hello World Kernel Module Compilation
+
+Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 31 18:51:39 2017 -0500
+#
+# On branch multiple
+# Your branch is ahead of 'origin/master' by 4 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       modified:   drivers/Makefile
+#
+# Changes not staged for commit:
+#       modified:   drivers/Kconfig
+#
+```
+
+```sh
+[multiple 7d44f56] Drivers: Hello World Compilation
+ 1 file changed, 1 insertion(+)
+```
+
+# Git Add ../Kconfig
+
+```sh
+user@workstation:~/linux$ git add drivers/Kconfig
+```
+
+```sh
+user@workstation:~/linux$ git commit -s
+```
+
