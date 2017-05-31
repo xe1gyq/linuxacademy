@@ -243,7 +243,7 @@ Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
 # Git Log
 
 ```sh
-
+user@workstation:~/linux$ git log --pretty=oneline
 ```
 
 ```sh
