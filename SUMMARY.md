@@ -13,6 +13,7 @@
   * [Kernel Compilation](documentation/KernelCompilation.md)
   * [Kernel Build System](documentation/KernelBuildSystem.md)
   * [Kernel Patch](documentation/KernelPatch.md)
+    * [Git Send Email](documentation/KernelPatchGitSendEmail.md)
   * [Kernel Space](documentation/KernelSpace.md)
   * [User Space](documentation/UserSpace.md)
 
