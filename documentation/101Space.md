@@ -29,9 +29,26 @@ user@workstation:~$
 ```sh
 user@workstation:~$ uname -a
 Linux Minnowboard 3.2.0-4-amd64 #1 SMP Debian 3.2.63-2+deb7u2 x86_64 GNU/Linux
+```
+
+```sh
 user@workstation:~$ cd linux
+```
+
+```sh
+user@workstation:~/linux$ ls
+arch   certs    CREDITS  Documentation  firmware  include  ipc     Kconfig  lib          Makefile  net     samples  security  tools  virt
+block  COPYING  crypto   drivers        fs        init     Kbuild  kernel   MAINTAINERS  mm        README  scripts  sound     usr
+user@workstation:~/linux$ 
+```
+
+```sh
 user@workstation:~$ make oldconfig
 <You will be asked configuration questions not answered, hit Enter for all of them>
+DesignWare Cores SATA support (SATA_DWC) [N/m/?] (NEW)
+```
+
+```sh
 user@workstation:~$ make
 root@workstation:~# make modules_install
 root@workstation:~# make install
