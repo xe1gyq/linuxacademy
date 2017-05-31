@@ -24,3 +24,4 @@ user@workstation:~/linux$ nano ~/.gitconfig
 user@workstation:~/linux$ git format-patch -M origin/master
 0001-Drivers-Hello-World.patch
 ```
+
