@@ -86,3 +86,7 @@ user@workstation:~/linux$
 
 # Git Add ../HelloWorld/Makefile
 
+```sh
+user@workstation:~/linux$ git add drivers/helloworld/Makefile
+```
+
