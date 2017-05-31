@@ -52,7 +52,6 @@ Create the Kconfig file under helloworld directory and add the code below, make 
 
 ```sh
 user@workstation:~$ nano drivers/helloworld/Kconfig
-
 menu "Hello Module Kernel Support"
 
 config HELLO_WORLD
@@ -94,7 +93,9 @@ Modify Kconfig under drivers directory and add the line with helloworld
 ```sh
 user@workstation:~$ nano drivers/Kconfig
 menu "Device Drivers"
+
 source "drivers/helloworld/Kconfig"
+
 source "drivers/amba/Kconfig"
 ```
 
