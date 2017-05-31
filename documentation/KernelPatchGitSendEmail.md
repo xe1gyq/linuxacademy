@@ -18,10 +18,4 @@ user@workstation:~/linux$ nano ~/.gitconfig
         smtpServer = smtp.gmail.com
         smtpUser = hochob.vc@gmail.com
         smtpServerPort = 587
-
-[sendemail]
-	smtpEncryption = tls
-	smtpServer = smtp.gmail.com
-	smtpUser = hochob.vc@gmail.com
-	smtpServerPort = 587
 ```
