@@ -101,7 +101,7 @@ obj-y += irqchip/
 ...
 ```
 
-# Linux Kernel Build System, Hello World Menuconfig
+# Hello World Menuconfig
 
 We are ready to view our Hello World Module under menuconfig
 
