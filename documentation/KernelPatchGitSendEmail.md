@@ -57,4 +57,19 @@ X-Mailer: git-send-email 2.1.4
 
 Send this email? ([y]es|[n]o|[q]uit|[a]ll): y
 Password for 'smtp://hochob.vc@gmail.com@smtp.gmail.com:587': 
+Password for 'smtp://hochob.vc@gmail.com@smtp.gmail.com:587': 
+OK. Log says:
+Server: smtp.gmail.com
+MAIL FROM:<xe1gyq@gmail.com>
+RCPT TO:<xe1gyq@gmail.com>
+From: Abraham Arce <xe1gyq@gmail.com>
+To: xe1gyq@gmail.com
+Subject: [PATCH] Drivers: Hello World
+Date: Wed, 31 May 2017 18:26:52 -0500
+Message-Id: <1496273212-7350-1-git-send-email-xe1gyq@gmail.com>
+X-Mailer: git-send-email 2.1.4
+
+Result: 250 2.0.0 OK 1496273188 v188sm27267079pgv.51 - gsmtp
+
+user@workstation:~/linux$ 
 ```
