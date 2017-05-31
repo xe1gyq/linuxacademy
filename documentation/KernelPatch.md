@@ -94,3 +94,41 @@ Date:   Wed May 31 18:01:26 2017 -0500
     Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
 
 ```
+
+```sh
+user@workstation:~/linux$ scripts/checkpatch.pl patches/0001-Drivers-Hello-World.patch 
+WARNING: added, moved or deleted file(s), does MAINTAINERS need updating?
+#45: 
+new file mode 100644
+
+WARNING: please, no spaces at the start of a line
+#79: FILE: drivers/helloworld/helloworld.c:8:
++    printk(KERN_INFO "Module? Hello!\n");$
+
+WARNING: Prefer [subsystem eg: netdev]_info([subsystem]dev, ... then dev_info(dev, ... then pr_info(...  to printk(KERN_INFO ...
+#79: FILE: drivers/helloworld/helloworld.c:8:
++    printk(KERN_INFO "Module? Hello!\n");
+
+WARNING: please, no spaces at the start of a line
+#80: FILE: drivers/helloworld/helloworld.c:9:
++    return 0;$
+
+WARNING: please, no spaces at the start of a line
+#85: FILE: drivers/helloworld/helloworld.c:14:
++    printk(KERN_INFO "Module? Bye!\n");$
+
+WARNING: Prefer [subsystem eg: netdev]_info([subsystem]dev, ... then dev_info(dev, ... then pr_info(...  to printk(KERN_INFO ...
+#85: FILE: drivers/helloworld/helloworld.c:14:
++    printk(KERN_INFO "Module? Bye!\n");
+
+total: 0 errors, 6 warnings, 47 lines checked
+
+NOTE: For some of the reported defects, checkpatch may be able to
+      mechanically convert to the typical style using --fix or --fix-inplace.
+
+patches/0001-Drivers-Hello-World.patch has style problems, please review.
+
+NOTE: If any of the errors are false positives, please report
+      them to the maintainer, see CHECKPATCH in MAINTAINERS.
+user@workstation:~/linux$ 
+```
