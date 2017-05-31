@@ -50,6 +50,14 @@ root@workstation:~# make modules_install
 root@workstation:~# make install
 ```
 
+```sh
+user@workstation:~/linux$ ls
+arch   COPYING  Documentation  fs       ipc      kernel       Makefile         modules.order   README   security    tools  vmlinux
+block  CREDITS  drivers        include  Kbuild   lib          mm               Module.symvers  samples  sound       usr    vmlinux.o
+certs  crypto   firmware       init     Kconfig  MAINTAINERS  modules.builtin  net             scripts  System.map  virt
+user@workstation:~/linux$ 
+```
+
 Reboot your workstation and confirm the new version has been installed
 
 ```
