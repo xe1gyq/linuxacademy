@@ -23,3 +23,19 @@ user@workstation:~/linux$
 ```sh
 user@workstation:~/linux$ git add drivers/Kconfig drivers/Makefile drivers/helloworld/
 ```
+
+```sh
+user@workstation:~/linux$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   drivers/Kconfig
+	modified:   drivers/Makefile
+	new file:   drivers/helloworld/Kconfig
+	new file:   drivers/helloworld/Makefile
+	new file:   drivers/helloworld/helloworld.c
+
+user@workstation:~/linux$ 
+```
