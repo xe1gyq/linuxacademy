@@ -215,8 +215,27 @@ user@workstation:~/linux$ git commit -s
 ```
 
 ```sh
+Drivers: Hello World Kernel Configuration
 
+Enable Hello World Kernel Module Compilation
+
+Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 31 18:54:22 2017 -0500
+#
+# On branch multiple
+# Your branch is ahead of 'origin/master' by 5 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       modified:   drivers/Kconfig
+#
 ```
 
 ```sh
+[multiple 4ee00c8] Drivers: Hello World Kernel Configuration
+ 1 file changed, 2 insertions(+)
 ```
