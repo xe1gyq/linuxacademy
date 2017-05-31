@@ -5,3 +5,8 @@
 ```sh
 root@workstation:~# apt install git-email
 ```
+
+```sh
+user@workstation:~/linux$ nano ~/.gitconfig
+
+```
