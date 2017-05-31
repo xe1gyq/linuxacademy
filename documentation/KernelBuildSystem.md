@@ -72,6 +72,19 @@ user@workstation:~$ nano drivers/helloworld/Makefile
 obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 ```
 
+```sh
+user@workstation:~/linux$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	drivers/helloworld/
+
+nothing added to commit but untracked files present (use "git add" to track)
+user@workstation:~/linux$ 
+```
+
 # Device Drivers Kconfig
 
 > Seeing Hello World Directory
