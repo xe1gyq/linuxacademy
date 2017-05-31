@@ -12,5 +12,5 @@
   * [101 Space](documentation/101Space.md)
   * [Kernel Space](documentation/KernelSpace.md)
   * [User Space](documentation/UserSpace.md)
-  * [Patch](documentation/patch.md)
+  * [Kernel Patch](documentation/KernelPatch.md)
 
