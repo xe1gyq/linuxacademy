@@ -14,8 +14,7 @@ root@workstation:~# apt-get install linux-headers-$(uname -r) kernel-package lib
 ```
 
 ```sh
-user@workstation:~$ git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-xe1gyq@server:~$ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+user@workstation:~$ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 Cloning into 'linux'...
 remote: Counting objects: 5396825, done.
 remote: Compressing objects: 100% (2538/2538), done.
