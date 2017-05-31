@@ -13,5 +13,6 @@
   * [Kernel Space](documentation/KernelSpace.md)
   * [User Space](documentation/UserSpace.md)
   * [Kernel Patch](documentation/KernelPatch.md)
+  * [Kernel Compilation](documentation/KernelCompilation.md)
   * [Kernel Build System](documentation/KernelBuildSystem.md)
 
