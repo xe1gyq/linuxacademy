@@ -19,3 +19,8 @@ user@workstation:~/linux$ nano ~/.gitconfig
         smtpUser = email@gmail.com
         smtpServerPort = 587
 ```
+
+```sh
+user@workstation:~/linux$ git format-patch -M origin/master
+0001-Drivers-Hello-World.patch
+```
