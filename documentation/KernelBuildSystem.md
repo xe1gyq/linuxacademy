@@ -1,13 +1,13 @@
 # Kernel Build System
 
-# Linux Kernel Build System Overview
+# Overview
 
 Please read the "Kbuild: the Linux Kernel Build System" carefully, you will understand how this system works  
 [Kbuild Linux Kernel Build System](http://www.linuxjournal.com/content/kbuild-linux-kernel-build-system)
 
 Do you want to do another Linux Kernel Build System exercise by writing a Hello World Kernel Module? then keep reading...
 
-# Linux Kernel Build System, Hello World Module
+# Hello World Module
 
 Make a "helloworld" directory under drivers
 
@@ -46,7 +46,7 @@ module_init(module_init_function);
 module_exit(module_exit_function);
 ```
 
-#### Linux Kernel Build System, Hello World Kconfig
+# Hello World Kconfig
 
 Create the Kconfig file under helloworld directory and add the code below, make sure indentation is correct
 
@@ -63,7 +63,7 @@ config HELLO_WORLD
 endmenu
 ```
 
-# Linux Kernel Build System, Hello World Makefile
+# Hello World Makefile
 
 Create the Makefile under helloworld directory and add the code below
 
@@ -72,7 +72,9 @@ user@workstation:~$ nano drivers/helloworld/Makefile
 obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
 ```
 
-# Linux Kernel Build System, Device Drivers Kconfig seeing Hello World Directory
+# Device Drivers Kconfig
+
+> Seeing Hello World Directory
 
 Modify Kconfig under drivers directory and add the line with helloworld
 
@@ -83,7 +85,9 @@ source "drivers/helloworld/Kconfig"
 source "drivers/amba/Kconfig"
 ```
 
-# Linux Kernel Build System, Device Drivers Makefile compiling Hello World Directory
+# Device Drivers Makefile
+
+> Compiling Hello World Directory
 
 Modify Makefile under drivers directory and add the line with CONFIG\_HELLO\_WORLD  
 user@workstation:~$ nano drivers/Makefile
