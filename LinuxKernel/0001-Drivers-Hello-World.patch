@@ -1,0 +1,97 @@
+From a5f811e5cd53fc7a4a07033d57694147d5b5c914 Mon Sep 17 00:00:00 2001
+From: Abraham Arce <xe1gyq@gmail.com>
+Date: Wed, 31 May 2017 18:01:26 -0500
+Subject: [PATCH] Drivers: Hello World
+
+Optimized Hello World Kernel Module
+
+Signed-off-by: Abraham Arce <xe1gyq@gmail.com>
+---
+ drivers/Kconfig                 |  2 ++
+ drivers/Makefile                |  1 +
+ drivers/helloworld/Kconfig      |  9 +++++++++
+ drivers/helloworld/Makefile     |  1 +
+ drivers/helloworld/helloworld.c | 23 +++++++++++++++++++++++
+ 5 files changed, 36 insertions(+)
+ create mode 100644 drivers/helloworld/Kconfig
+ create mode 100644 drivers/helloworld/Makefile
+ create mode 100644 drivers/helloworld/helloworld.c
+
+diff --git a/drivers/Kconfig b/drivers/Kconfig
+index ba2901e..333449d 100644
+--- a/drivers/Kconfig
++++ b/drivers/Kconfig
+@@ -1,5 +1,7 @@
+ menu "Device Drivers"
+ 
++source "drivers/helloworld/Kconfig"
++
+ source "drivers/amba/Kconfig"
+ 
+ source "drivers/base/Kconfig"
+diff --git a/drivers/Makefile b/drivers/Makefile
+index cfabd14..8f9eed7 100644
+--- a/drivers/Makefile
++++ b/drivers/Makefile
+@@ -5,6 +5,7 @@
+ # Rewritten to use lists instead of if-statements.
+ #
+ 
++obj-$(CONFIG_HELLO_WORLD)	+= helloworld/
+ obj-y				+= irqchip/
+ obj-y				+= bus/
+ 
+diff --git a/drivers/helloworld/Kconfig b/drivers/helloworld/Kconfig
+new file mode 100644
+index 0000000..35fe133
+--- /dev/null
++++ b/drivers/helloworld/Kconfig
+@@ -0,0 +1,9 @@
++menu "Hello Module Kernel Support"
++
++config HELLO_WORLD
++        tristate "Hello Module Driver"
++        depends on X86
++        help
++          Select this option to run a Hello World Module!
++endmenu
++
+diff --git a/drivers/helloworld/Makefile b/drivers/helloworld/Makefile
+new file mode 100644
+index 0000000..838459e
+--- /dev/null
++++ b/drivers/helloworld/Makefile
+@@ -0,0 +1 @@
++obj-$(CONFIG_HELLO_WORLD)               += helloworld.o
+diff --git a/drivers/helloworld/helloworld.c b/drivers/helloworld/helloworld.c
+new file mode 100644
+index 0000000..3f0b736f
+--- /dev/null
++++ b/drivers/helloworld/helloworld.c
+@@ -0,0 +1,23 @@
++#include <linux/init.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++
++static int module_init_function(void)
++
++{
++    printk(KERN_INFO "Module? Hello!\n");
++    return 0;
++}
++
++static void module_exit_function(void)
++{
++    printk(KERN_INFO "Module? Bye!\n");
++}
++
++MODULE_LICENSE("GPL");
++MODULE_AUTHOR("xe1gyq");
++MODULE_DESCRIPTION("My First Linux Kernel Module");
++
++module_init(module_init_function);
++module_exit(module_exit_function);
++
+-- 
+2.1.4
+
