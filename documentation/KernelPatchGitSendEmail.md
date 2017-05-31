@@ -10,12 +10,12 @@ root@workstation:~# apt install git-email
 user@workstation:~/linux$ nano ~/.gitconfig
 [user]
         name = Abraham Arce
-        email = xe1gyq@gmail.com
+        email = email@gmail.com
 [push]
         default = simple
 [sendemail]
         smtpEncryption = tls
         smtpServer = smtp.gmail.com
-        smtpUser = hochob.vc@gmail.com
+        smtpUser = email@gmail.com
         smtpServerPort = 587
 ```
