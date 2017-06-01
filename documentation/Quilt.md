@@ -8,6 +8,11 @@ user@workstation:~/linux$
 ```
 
 ```
+user@workstation:~/linux$ quilt series
+user@workstation:~/linux$ 
+```
+
+```
 user@workstation:~/linux$ quilt new patches/0001-Drivers-Hello-World-Source-Code.patch
 Patch patches/quilt new patches/0001-Drivers-Hello-World-Source-Code.patch
 
