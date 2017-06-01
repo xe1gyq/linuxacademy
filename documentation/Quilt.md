@@ -25,3 +25,8 @@ patches/0003-Drivers-Hello-World-Kconfig.patch
 patches/0004-Drivers-Hello-World-Compilation.patch
 patches/0005-Drivers-Hello-World-Kernel-Configuration.patch
 ```
+
+```sh
+user@workstation:~/linux$ quilt push
+File series fully applied, ends at patch patches/0005-Drivers-Hello-World-Kernel-Configuration.patch
+```
