@@ -1,5 +1,12 @@
 # Quilt
 
+
+```sh
+user@workstation:~/linux$ git reset --hard d602fb6844940b23afb64d4bf70bb963c15571ee
+HEAD is now at d602fb6 Merge branch 'overlayfs-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/mszeredi/vfs
+user@workstation:~/linux$ 
+```
+
 ```
 user@workstation:~/linux$ quilt new patches/0001-Drivers-Hello-World-Source-Code.patch
 Patch patches/quilt new patches/0001-Drivers-Hello-World-Source-Code.patch
