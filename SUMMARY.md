@@ -16,6 +16,7 @@
     * [Git Send Email](documentation/KernelPatchGitSendEmail.md)
   * [Kernel Patches](documentation/KernelPatches.md)
     * [Git Send Email](documentation/KernelPatchesGitSendEmail.md)
+  * [Quilt](documentation/Quilt.md)
   * [Kernel Space](documentation/KernelSpace.md)
   * [User Space](documentation/UserSpace.md)
 
