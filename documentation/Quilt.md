@@ -30,3 +30,11 @@ patches/0005-Drivers-Hello-World-Kernel-Configuration.patch
 user@workstation:~/linux$ quilt push
 File series fully applied, ends at patch patches/0005-Drivers-Hello-World-Kernel-Configuration.patch
 ```
+
+```sh
+user@workstation:~/linux$ quilt pop
+Patch patches/0005-Drivers-Hello-World-Kernel-Configuration.patch appears to be empty, removing
+
+Now at patch patches/0004-Drivers-Hello-World-Compilation.patch
+user@workstation:~/linux$ 
+```
