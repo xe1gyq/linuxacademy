@@ -26,11 +26,19 @@ Now at patch patches/0001-Drivers-Hello-World-Source-Code.patch
 user@workstation:~/linux$ 
 ```
 
-
 ```sh
 user@workstation:~/linux$ quilt new patches/0002-Drivers-Hello-World-Makefile.patch
 Patch patches/0002-Drivers-Hello-World-Makefile.patch  is now on top
+```
 
+```
+user@workstation:~/linux$ quilt series
+patches/0001-Drivers-Hello-World-Source-Code.patch
+patches/0002-Drivers-Hello-World-Makefile.patch
+user@workstation:~/linux$ 
+```
+
+```sh
 user@workstation:~/linux$ quilt new patches/0003-Drivers-Hello-World-Kconfig.patch 
 Patch patches/0003-Drivers-Hello-World-Kconfig.patch is now on top
 
