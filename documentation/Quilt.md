@@ -12,4 +12,7 @@ Patch patches/0003-Drivers-Hello-World-Kconfig.patch is now on top
 
 user@workstation:~/linux$ quilt new patches/0004-Drivers-Hello-World-Compilation.patch 
 Patch patches/0004-Drivers-Hello-World-Compilation.patch is now on top
+
+user@workstation:~/linux$ quilt new patches/0005-Drivers-Hello-World-Kernel-Configuration.patch 
+Patch patches/0005-Drivers-Hello-World-Kernel-Configuration.patch is now on top
 ```
