@@ -50,3 +50,32 @@ patches/0004-Drivers-Hello-World-Compilation.patch
 patches/0005-Drivers-Hello-World-Kernel-Configuration.patch
 xe1gyq@server:~/linux$ 
 ```
+
+```sh
+From 52441d5113d84f51d9090a94fe3be1df41411323 Mon Sep 17 00:00:00 2001
+From: Abraham Arce <xe1gyq@gmail.com>
+Date: Wed, 31 May 2017 19:01:24 -0500
+Subject: [PATCH 0/5] *** SUBJECT HERE ***
+
+*** BLURB HERE ***
+
+Abraham Arce (5):
+  Drivers: Hello World Source Code
+  Drivers: Hello World Makefile
+  Drivers: Hello World Kconfig
+  Drivers: Hello World Compilation
+  Drivers: Hello World Kernel Configuration
+
+ drivers/Kconfig                 |  2 ++
+ drivers/Makefile                |  1 +
+ drivers/helloworld/Kconfig      |  9 +++++++++
+ drivers/helloworld/Makefile     |  1 +
+ drivers/helloworld/helloworld.c | 23 +++++++++++++++++++++++
+ 5 files changed, 36 insertions(+)
+ create mode 100644 drivers/helloworld/Kconfig
+ create mode 100644 drivers/helloworld/Makefile
+ create mode 100644 drivers/helloworld/helloworld.c
+
+-- 
+2.1.4
+```
