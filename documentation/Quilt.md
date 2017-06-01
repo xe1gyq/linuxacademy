@@ -15,7 +15,19 @@ user@workstation:~/linux$
 ```
 user@workstation:~/linux$ quilt new patches/0001-Drivers-Hello-World-Source-Code.patch
 Patch patches/quilt new patches/0001-Drivers-Hello-World-Source-Code.patch
+```
 
+```sh
+user@workstation:~/linux$ quilt push
+Applying patch patches/0001-Drivers-Hello-World-Source-Code.patch
+patching file drivers/helloworld/helloworld.c
+
+Now at patch patches/0001-Drivers-Hello-World-Source-Code.patch
+user@workstation:~/linux$ 
+```
+
+
+```sh
 user@workstation:~/linux$ quilt new patches/0002-Drivers-Hello-World-Makefile.patch
 Patch patches/0002-Drivers-Hello-World-Makefile.patch  is now on top
 
