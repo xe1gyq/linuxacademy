@@ -43,24 +43,28 @@ Take kernel image from kernelimages directory and decompress under the preworksp
 
 File Names
 
-    # of README* (files as README.Locking also count)
-    # of Kconfig
-    # of Kbuild
-    # of Makefiles
-    # of .c files
-    # of .h files
-    # of .pl files
-    # of others files
-    Total number of files
+```sh
+# of README* (files as README.Locking also count)
+# of Kconfig
+# of Kbuild
+# of Makefiles
+# of .c files
+# of .h files
+# of .pl files
+# of others files
+Total number of files
+```
 
 File Content
 
-    # of ocurrences for Linus
-    # of directories found under arch/
-    # of ocurrences for kernel_start
-    # of ocurrences for __init
-    # of files in its filename containing the word gpio
-    # of ocurrences for #include <linux/module.h>
+```sh
+# of ocurrences for Linus
+# of directories found under arch/
+# of ocurrences for kernel_start
+# of ocurrences for __init
+# of files in its filename containing the word gpio
+# of ocurrences for #include <linux/module.h>
+```
 
 Some Tasks To Do
 
