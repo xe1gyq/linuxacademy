@@ -3,7 +3,7 @@
 > Objective: Understand the Linux Kernel compilation process and built system  
 > Proficiency Level: Basic
 
-```
+```sh
 root@workstation:~# apt-get update
 root@workstation:~# apt-get upgrade
 root@workstation:~# apt-get install linux-headers-$(uname -r) kernel-package libncurses5 libncurses5-dev git
