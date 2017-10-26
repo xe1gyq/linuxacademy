@@ -15,7 +15,7 @@ We need the following working directory structure
         |- kernelimages  (directory)
         |- preworkspace  (directory)
         |- postworksapce (directory)
-        |- script.sh (our script)
+        |- main.sh (our script)
         |- stats.pre (text file)
         |- stats.post (text file)
         |- intel.contributors (text file)
