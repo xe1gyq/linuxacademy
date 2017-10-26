@@ -75,7 +75,6 @@ user $ git merge upstream/master
 
 This first part creates both the directories needed and the c file
  
-
 ```sh
 user $ mkdir -p training/users/<yourgithubusername>/01.core
 user $ cd training/users/<yourhithubusername>/01.core
