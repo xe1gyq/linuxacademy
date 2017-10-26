@@ -20,7 +20,7 @@ We need the following working directory structure
         |- stats.post (text file)
         |- intel.contributors (text file)
 
-### Script Arguments
+## Script Arguments
 
 The script will receive 3 arguments: the file location, version of the kernel and the file type
 
@@ -30,14 +30,14 @@ If file location is the internet then use this repository to grab the kernel tar
 
 If file location is local then use kernelimages directory to grab the kernel tar file
 
-### Processing
+## Processing
 
 We will gather statistics and do some work in 2 phases, right after we have decompressed the kernel file under the preworkspace directory and after we make some changes to its directory structure under postworkspace, statistics will be populated in 2 different files under our top working directory, their names will be:
 
 1. stats.pre
 2. stats.post
 
-### Pre Processing
+## Pre Processing
 
 Take kernel image from kernelimages directory and decompress under the preworkspace directory. We will require the following information under **stats.pre** files:
 
