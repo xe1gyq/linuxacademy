@@ -1,7 +1,6 @@
-Programming Languages
-==
+# Programming Languages
 
-### C
+## C
 
 > Objetive: Have solid C programming skills required to be a Linux developer
 > Proficiency Level: Intermediate
