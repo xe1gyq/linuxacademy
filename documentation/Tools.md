@@ -1,7 +1,6 @@
-Tools
-==
+# Tools
 
-### GIT
+## GIT
 
 > Objective: Develop your Git skills using github infrastructure
 > Proficiency Level: Medium
@@ -13,19 +12,23 @@ If you want to master your Git skills at a super level then read Pro Git Book av
 Make sure you have git installed in your Linux box
 - Under /etc/apt/sources.list append:
 
-
+```sh
      deb http://ftp.debian.org/debian/ squeeze main contrib non-free
+```
 
 In your same Linux Box, let's update, upgrade and install git
 
-     root # apt-get update
-     root # apt-get upgrade
-     root # apt-get install git git-email
-
+```sh
+root # apt-get update
+root # apt-get upgrade
+root # apt-get install git git-email
+```
 Configure your name and email under Git:
 
-    $ git config --global user.name "YourName YourLastName"
-    $ git config --global user.email "your.email.address@wherever.com"
+```sh
+$ git config --global user.name "YourName YourLastName"
+$ git config --global user.email "your.email.address@wherever.com"
+```
 
 Now, go to github.com and sign up for an account
  [Github](www.github.com)
