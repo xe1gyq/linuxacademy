@@ -48,7 +48,7 @@ so you can make a fork, sync, push and ask for a pull request.
 
 The following section shows all the steps described in the links above plus the way to commit your first changes to **Linux Learning Workshop**, you are strongly required to read through all the links where apply to really understand what we are doing in our terminal. 
 
-#### Fork a Repo
+### Fork a Repo
 
 In your web browser with a Github account previously created go to [xe1gyq/linuxlearning](https://github.com/xe1gyq/linuxlearning) and on the top-right corner of the page, click **Fork**
 
@@ -62,7 +62,7 @@ user $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
 user $ git remote -v
 ```
 
-#### Syncing a Fork
+### Syncing a Fork
 
 In the same linuxlearning cloned directory
  
@@ -71,7 +71,7 @@ user $ git fetch upstream
 user $ git merge upstream/master
 ```
 
-#### Code and Commit
+### Code and Commit
 
 This first part creates both the directories needed and the c file
 
@@ -114,7 +114,7 @@ Second line: A blank line
     Third line: Description of the changes, as many lines as required, 80 chars max per line
 ```
 
-#### Pushing to a remote
+### Pushing to a remote
 
 Push your local branch to your remote repository
 
@@ -122,7 +122,7 @@ Push your local branch to your remote repository
 user $ git push origin master
 ```
 
-#### Using Pull Requests
+### Using Pull Requests
 
 This is a process entirely done at Github webpage, please follow the instructions found under the link above. So remember every time you'll work in your local repository you'll need to follow the next steps:
 
