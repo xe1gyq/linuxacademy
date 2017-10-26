@@ -74,23 +74,23 @@ user $ git merge upstream/master
 #### Code and Commit
 
 This first part creates both the directories needed and the c file
- 
+
 ```sh
 user $ mkdir -p training/users/<yourgithubusername>/01.core
 user $ cd training/users/<yourhithubusername>/01.core
 user $ nano c01.c
 ```
 
-```
-     #include <stdio.h>
+```c
+#include <stdio.h>
      
-     int main()
-     {
-     	printf("Hello World\n");
-     	return 0;
-     }
+int main()
+{
+    printf("Hello World\n");
+    return 0;
+}
 
-     /* End of File */
+/* End of File */
 ```
 
 This second part is the one you'll use everytime you modify a file. Now let's tell git we want to add a new file or include new changes into its database:
