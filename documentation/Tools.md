@@ -54,26 +54,33 @@ In your web browser with a Github account previously created go to [xe1gyq/linux
 
 On command line in your Linux box type the commands below and look at the output
 
-    user $ git clone https://github.com/YOUR_GITHUB_USERNAME/linuxlearning
-    user $ cd linuxlearning
-    user $ git remote -v
-    user $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
-    user $ git remote -v
+```sh
+user $ git clone https://github.com/YOUR_GITHUB_USERNAME/linuxlearning
+user $ cd linuxlearning
+user $ git remote -v
+user $ git remote add upstream https://github.com/xe1gyq/linuxlearning.git
+user $ git remote -v
+```
 
 #### Syncing a Fork
 
 In the same linuxlearning cloned directory
  
-    user $ git fetch upstream
-    user $ git merge upstream/master
+```sh
+user $ git fetch upstream
+user $ git merge upstream/master
+```
 
 #### Code and Commit
 
 This first part creates both the directories needed and the c file
  
-    user $ mkdir -p training/users/<yourgithubusername>/01.core
-    user $ cd training/users/<yourhithubusername>/01.core
-    user $ nano c01.c
+
+```sh
+user $ mkdir -p training/users/<yourgithubusername>/01.core
+user $ cd training/users/<yourhithubusername>/01.core
+user $ nano c01.c
+```
 
 ```
      #include <stdio.h>
